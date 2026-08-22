@@ -59,7 +59,7 @@ textarea{resize:vertical;min-height:110px}
 <script>
 // Envoi vers le webhook n8n de Solos (à configurer côté serveur).
 // Sans webhook : ouvre un email pré-rempli vers contact@solos.tn.
-var WEBHOOK = ""; // ex: "https://n8n.solos.tn/webhook/lead"
+var WEBHOOK = "https://races-montana-que-gsm.trycloudflare.com/lead";
 var CONTACT_EMAIL = "solos@agentmail.to";
 document.getElementById("f").addEventListener("submit", function(e){
   e.preventDefault();
@@ -72,7 +72,7 @@ document.getElementById("f").addEventListener("submit", function(e){
     message: document.getElementById("msg").value
   };
   if (WEBHOOK) {
-    fetch(WEBHOOK, {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(d)})
+    fetch(WEBHOOK, {method:"POST", headers:{"Content-Type":"application/json", "x-solos-secret":"MQKa_x81g8wsEGKfbHiE9g"}, body: JSON.stringify(d)})
       .then(function(){ showOk(); }).catch(function(){ mailFallback(d); });
   } else {
     mailFallback(d);
