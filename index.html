@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solos — Demande de service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Tajawal',sans-serif;background:radial-gradient(800px 600px at 50% 110%,rgba(124,58,237,.30),transparent 60%),radial-gradient(600px 500px at 50% 0%,rgba(34,211,238,.20),transparent 60%),linear-gradient(160deg,#0A0E1C,#05070F);min-height:100vh;color:#E2E8F0;display:flex;align-items:center;justify-content:center;padding:24px}
+.card{width:100%;max-width:560px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:32px;padding:40px 36px;backdrop-filter:blur(8px)}
+.logo{text-align:center;font-size:44px;font-weight:800;letter-spacing:10px;background:linear-gradient(90deg,#22D3EE,#A78BFA,#F472B6);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px}
+.sub{text-align:center;font-size:22px;color:#94A3B8;margin-bottom:32px}
+label{display:block;font-size:17px;font-weight:700;color:#CBD5E1;margin:18px 0 8px}
+input,select,textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:14px 16px;font-size:17px;color:#F1F5F9;font-family:'Tajawal',sans-serif;outline:none}
+input:focus,select:focus,textarea:focus{border-color:#22D3EE}
+textarea{resize:vertical;min-height:110px}
+.btn{width:100%;margin-top:28px;background:linear-gradient(90deg,#22D3EE,#A78BFA);border:none;border-radius:16px;padding:18px;font-size:20px;font-weight:800;color:#0B0F1A;cursor:pointer;font-family:'Tajawal',sans-serif}
+.btn:hover{filter:brightness(1.1)}
+.ok{display:none;text-align:center;margin-top:20px;color:#4ADE80;font-weight:800;font-size:18px}
+.foot{text-align:center;margin-top:24px;font-size:15px;color:#64748B}
+.hint{font-size:14px;color:#64748B;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">SOLOS</div>
+  <div class="sub">Votre commerce visible sur Google</div>
+
+  <form id="f">
+    <label>Nom complet *</label>
+    <input id="name" required placeholder="Votre nom">
+    <label>Nom du commerce / entreprise</label>
+    <input id="biz" placeholder="Nom de votre commerce">
+    <label>Téléphone</label>
+    <input id="phone" placeholder="+216 ...">
+    <label>Email (on vous répond sur cette adresse) *</label>
+    <input id="email" type="email" required placeholder="vous@exemple.com">
+    <label>Service souhaité *</label>
+    <select id="svc" required>
+      <option value="">— Choisir un service —</option>
+      <option>Intégration IA</option>
+      <option>Google Profile</option>
+      <option>Reels sur commande</option>
+      <option>Plusieurs services</option>
+    </select>
+    <label>Votre besoin</label>
+    <textarea id="msg" placeholder="Décrivez votre besoin..."></textarea>
+    <button class="btn" type="submit">Envoyer la demande</button>
+  </form>
+  <div class="ok" id="ok">✅ Demande envoyée ! On vous répond par email très vite.</div>
+  <div class="foot">Solos · Intégration IA · Google Profile · Reels sur commande</div>
+</div>
+
+<script>
+// Envoi vers le webhook n8n de Solos (à configurer côté serveur).
+// Sans webhook : ouvre un email pré-rempli vers contact@solos.tn.
+var WEBHOOK = ""; // ex: "https://n8n.solos.tn/webhook/lead"
+var CONTACT_EMAIL = "solos@agentmail.to";
+document.getElementById("f").addEventListener("submit", function(e){
+  e.preventDefault();
+  var d = {
+    name: document.getElementById("name").value,
+    biz: document.getElementById("biz").value,
+    phone: document.getElementById("phone").value,
+    email: document.getElementById("email").value,
+    service: document.getElementById("svc").value,
+    message: document.getElementById("msg").value
+  };
+  if (WEBHOOK) {
+    fetch(WEBHOOK, {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(d)})
+      .then(function(){ showOk(); }).catch(function(){ mailFallback(d); });
+  } else {
+    mailFallback(d);
+  }
+});
+function mailFallback(d){
+  var subject = encodeURIComponent("[Solos] Demande: " + d.service + " — " + d.name);
+  var body = encodeURIComponent(
+    "Nom: " + d.name + "\n" +
+    "Commerce: " + d.biz + "\n" +
+    "Téléphone: " + d.phone + "\n" +
+    "Email: " + d.email + "\n" +
+    "Service: " + d.service + "\n" +
+    "Besoin: " + d.message);
+  window.open("mailto:" + CONTACT_EMAIL + "?subject=" + subject + "&body=" + body, "_self");
+  showOk();
+}
+function showOk(){
+  document.getElementById("ok").style.display = "block";
+  document.getElementById("f").reset();
+}
+</script>
+</body>
+</html>
