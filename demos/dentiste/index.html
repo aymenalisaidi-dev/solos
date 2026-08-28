@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cabinet Dentaire El Manar — La Marsa</title>
+<meta name="description" content="Cabinet dentaire moderne à La Marsa : implantologie, blanchiment, orthodontie. Rendez-vous en 48h.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F4EE;
+    --ink:#1D2B2A;
+    --pine:#14655A;
+    --pine-deep:#0E4A42;
+    --gold:#D9A62E;
+    --mist:#E7EEEA;
+    --line:#D8DED8;
+    --radius:14px;
+    --shadow:0 20px 50px -20px rgba(20,60,55,.25);
+    --display:'Fraunces',serif;
+    --body:'Manrope',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(246,244,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-family:var(--display);font-weight:600;font-size:1.25rem;letter-spacing:-.01em}
+  .logo span{color:var(--pine)}
+  .nav-links{display:flex;gap:28px;font-size:.92rem;font-weight:600}
+  .nav-links a:hover{color:var(--pine)}
+  .nav-cta{background:var(--pine);color:#fff;padding:10px 20px;border-radius:999px;font-weight:700;font-size:.9rem;transition:background .2s}
+  .nav-cta:hover{background:var(--pine-deep)}
+  .burger{display:none;background:none;border:0;font-size:1.5rem;cursor:pointer}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden}
+  .hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;padding:88px 0 72px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--pine);background:var(--mist);padding:8px 14px;border-radius:999px;margin-bottom:22px}
+  .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
+  h1{font-family:var(--display);font-weight:500;font-size:clamp(2.4rem,5vw,3.7rem);line-height:1.08;letter-spacing:-.02em;margin-bottom:20px}
+  h1 em{font-style:normal;color:var(--pine)}
+  .hero p.lead{font-size:1.1rem;color:#4A5A57;max-width:46ch;margin-bottom:30px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:38px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;font-weight:700;font-size:.98rem;transition:transform .15s,box-shadow .15s}
+  .btn-primary{background:var(--pine);color:#fff;box-shadow:var(--shadow)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{border:1.5px solid var(--ink);background:transparent}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+  .hero-proof{display:flex;gap:34px;flex-wrap:wrap}
+  .proof{display:flex;flex-direction:column}
+  .proof b{font-family:var(--display);font-size:1.7rem;font-weight:600;color:var(--pine)}
+  .proof small{font-size:.82rem;color:#5A6A67}
+  .hero-card{position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
+  .hero-card img{width:100%;height:520px;object-fit:cover}
+  .hero-card .badge{position:absolute;bottom:18px;left:18px;right:18px;background:rgba(255,255,255,.94);border-radius:var(--radius);padding:16px 20px;display:flex;align-items:center;gap:14px;backdrop-filter:blur(6px)}
+  .badge-ico{width:44px;height:44px;border-radius:12px;background:var(--mist);display:grid;place-items:center;font-size:1.3rem;flex-shrink:0}
+  .badge b{font-size:.95rem;display:block}
+  .badge small{color:#5A6A67;font-size:.82rem}
+
+  /* Section générique */
+  section{padding:84px 0}
+  .sec-head{max-width:640px;margin-bottom:46px}
+  .kicker{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  h2{font-family:var(--display);font-weight:500;font-size:clamp(1.9rem,3.4vw,2.6rem);letter-spacing:-.015em;line-height:1.15;margin-bottom:14px}
+  .sec-head p{color:#4A5A57}
+
+  /* Services */
+  .services{background:#fff}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .svc{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:transform .18s,box-shadow .18s}
+  .svc:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .svc .ico{width:52px;height:52px;border-radius:14px;background:var(--mist);display:grid;place-items:center;font-size:1.5rem;margin-bottom:18px}
+  .svc h3{font-family:var(--display);font-weight:600;font-size:1.2rem;margin-bottom:8px}
+  .svc p{font-size:.92rem;color:#4A5A57}
+  .svc .price{display:inline-block;margin-top:14px;font-size:.82rem;font-weight:700;color:var(--pine);background:var(--mist);padding:5px 12px;border-radius:999px}
+
+  /* Pourquoi nous */
+  .why{background:var(--pine);color:#EDF4F1}
+  .why .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+  .why h2{color:#fff}
+  .why p{color:#BFD4CE}
+  .why-list{list-style:none;margin-top:8px}
+  .why-list li{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:.98rem}
+  .why-list li:last-child{border-bottom:0}
+  .why-list .n{font-family:var(--display);color:var(--gold);font-weight:600;min-width:34px}
+  .why-visual{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:34px;display:flex;flex-direction:column;gap:18px}
+  .why-visual .row{display:flex;justify-content:space-between;font-size:.92rem;padding-bottom:12px;border-bottom:1px dashed rgba(255,255,255,.2)}
+  .why-visual .row:last-child{border:0}
+  .why-visual b{font-family:var(--display);font-size:1.3rem;color:#fff}
+  .why-visual .pct{color:var(--gold);font-weight:700}
+
+  /* Témoignages */
+  .tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .tst{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .tst .stars{color:var(--gold);letter-spacing:2px;margin-bottom:12px}
+  .tst p{font-size:.93rem;color:#33413E}
+  .tst .who{margin-top:16px;display:flex;align-items:center;gap:12px}
+  .tst .ava{width:42px;height:42px;border-radius:50%;background:var(--mist);display:grid;place-items:center;font-weight:700;color:var(--pine)}
+  .tst .who b{font-size:.9rem;display:block}
+  .tst .who small{color:#6B7A77;font-size:.8rem}
+
+  /* RDV */
+  .rdv{background:#fff}
+  .rdv-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .rdv-info{display:flex;flex-direction:column;gap:18px}
+  .info-row{display:flex;gap:14px;align-items:flex-start}
+  .info-row .ico{width:44px;height:44px;border-radius:12px;background:var(--mist);display:grid;place-items:center;font-size:1.15rem;flex-shrink:0}
+  .info-row b{display:block;font-size:.95rem}
+  .info-row span{color:#4A5A57;font-size:.9rem}
+  form{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:30px;display:flex;flex-direction:column;gap:16px}
+  form h3{font-family:var(--display);font-weight:600;font-size:1.35rem}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field label{font-size:.82rem;font-weight:700;color:#33413E}
+  .field input,.field select,.field textarea{border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:13px 15px;font-family:var(--body);font-size:.95rem;color:var(--ink);outline:none;transition:border .15s}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--pine)}
+  .field textarea{resize:vertical;min-height:90px}
+  form .btn{align-self:flex-start;border:0;cursor:pointer;font-family:var(--body)}
+  .form-note{font-size:.78rem;color:#6B7A77}
+
+  /* Footer */
+  footer{background:var(--ink);color:#C9D6D3;padding:48px 0 40px}
+  .foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+  .foot .logo{color:#fff;font-size:1.15rem}
+  .foot p{font-size:.85rem;max-width:34ch;margin-top:10px}
+  .foot-links{display:flex;gap:44px}
+  .foot-links h4{color:#fff;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+  .foot-links li{list-style:none;font-size:.88rem;margin-bottom:9px}
+  .foot-links a:hover{color:#fff}
+  .foot-bottom{margin-top:34px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:.78rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* Responsive */
+  @media(max-width:920px){
+    .hero-inner{grid-template-columns:1fr;padding:56px 0 48px;gap:36px}
+    .hero-card img{height:380px}
+    .svc-grid,.tst-grid{grid-template-columns:1fr 1fr}
+    .why .wrap,.rdv-grid{grid-template-columns:1fr}
+    section{padding:64px 0}
+  }
+  @media(max-width:640px){
+    .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--paper);flex-direction:column;padding:20px 24px;gap:16px;border-bottom:1px solid var(--line)}
+    .nav-links.open{display:flex}
+    .burger{display:block}
+    .svc-grid,.tst-grid{grid-template-columns:1fr}
+    .hero-proof{gap:20px}
+    .btn{padding:13px 22px}
+    .hero-card img{height:300px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">El Manar<span>.</span> Dentaire</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Soins</a>
+      <a href="#pourquoi">La clinique</a>
+      <a href="#avis">Avis</a>
+      <a href="#rdv">Contact</a>
+    </nav>
+    <div style="display:flex;gap:12px;align-items:center">
+      <a href="tel:+21670123456" style="font-weight:700;font-size:.92rem">☎ 70 123 456</a>
+      <a href="#rdv" class="nav-cta">Prendre RDV</a>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Cabinet dentaire · La Marsa</span>
+      <h1>Un sourire sain, <em>en toute sérénité</em>.</h1>
+      <p class="lead">Implantologie, orthodontie, blanchiment et urgences — pris en charge par une équipe de 4 praticiens, avec un rendez-vous garanti sous 48h.</p>
+      <div class="hero-actions">
+        <a href="#rdv" class="btn btn-primary">Prendre rendez-vous →</a>
+        <a href="#services" class="btn btn-ghost">Découvrir les soins</a>
+      </div>
+      <div class="hero-proof">
+        <div class="proof"><b>4,9★</b><small>142 avis Google</small></div>
+        <div class="proof"><b>15 ans</b><small>d'expérience</small></div>
+        <div class="proof"><b>48h</b><small>délai RDV garanti</small></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop" alt="Cabinet dentaire moderne El Manar">
+      <div class="badge">
+        <div class="badge-ico">🦷</div>
+        <div><b>Nouveau : scanner 3D</b><small>Diagnostic précis en 20 minutes</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Nos soins</span>
+      <h2>Des soins complets, des tarifs transparents.</h2>
+      <p>Chaque traitement commence par un diagnostic sans engagement. Devis écrit avant toute intervention.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><div class="ico">🦷</div><h3>Implantologie</h3><p>Remplacement de dents manquantes par implants en titane, pose sous scanner 3D.</p><span class="price">Dès 1 200 DT</span></div>
+      <div class="svc"><div class="ico">✨</div><h3>Blanchiment</h3><p>Éclaircissement en cabinet ou gouttières à domicile, résultat visible dès la 1re séance.</p><span class="price">Dès 350 DT</span></div>
+      <div class="svc"><div class="ico">😁</div><h3>Orthodontie</h3><p>Aligneurs invisibles ou bagues : plan de traitement personnalisé et suivi mensuel.</p><span class="price">Dès 90 DT/mois</span></div>
+      <div class="svc"><div class="ico">🩺</div><h3>Détartrage & contrôle</h3><p>Examen complet, détartrage et conseils d'hygiène. Recommandé 2×/an.</p><span class="price">Dès 120 DT</span></div>
+      <div class="svc"><div class="ico">⚡</div><h3>Urgences</h3><p>Douleur, fracture, abcès : accueil prioritaire le jour même, 7j/7.</p><span class="price">Sur appel</span></div>
+      <div class="svc"><div class="ico">👶</div><h3>Dentisterie enfants</h3><p>Suivi pédiatrique doux, scellement de sillons, éducation à l'hygiène bucco-dentaire.</p><span class="price">Dès 80 DT</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="pourquoi">
+  <div class="wrap">
+    <div>
+      <span class="kicker">La clinique</span>
+      <h2>Pourquoi les patients d'El Manar restent.</h2>
+      <p>Nous avons construit le cabinet autour d'une seule idée : la peur du dentiste se soigne avec de l'écoute et de la transparence.</p>
+      <ul class="why-list">
+        <li><span class="n">01</span><span><b>RDV sous 48h, toujours.</b> Un créneau réservé chaque jour pour les urgences.</span></li>
+        <li><span class="n">02</span><span><b>Devis écrit avant soin.</b> Aucune surprise sur la facture, jamais.</span></li>
+        <li><span class="n">03</span><span><b>Matériel de pointe.</b> Scanner 3D, radiographie numérique, stérilisation tracée.</span></li>
+        <li><span class="n">04</span><span><b>Suivi après traitement.</b> Un appel à J+1, un contrôle gratuit à 6 mois.</span></li>
+      </ul>
+    </div>
+    <div class="why-visual">
+      <div class="row"><span>Patients satisfaits</span><b>97<span class="pct">%</span></b></div>
+      <div class="row"><span>Réussite des implants</span><b>98,6<span class="pct">%</span></b></div>
+      <div class="row"><span>RDV honorés</span><b>94<span class="pct">%</span></b></div>
+      <div class="row"><span>Patients qui nous recommandent</span><b>91<span class="pct">%</span></b></div>
+      <div class="row"><span>Ancienneté moyenne des patients</span><b>6,2 ans</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="tst" id="avis" style="padding:84px 0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Ils nous font confiance</span>
+      <h2>4,9/5 sur Google — 142 avis.</h2>
+      <p>Des patients réels, des mots simples, un rendez-vous d'essai sans engagement.</p>
+    </div>
+    <div class="tst-grid">
+      <div class="tst"><div class="stars">★★★★★</div><p>« J'avais peur des soins depuis des années. Le Dr Ben Salah m'a tout expliqué, zéro douleur. Je n'ai plus peur de venir. »</p><div class="who"><div class="ava">SI</div><div><b>Salma I.</b><small>Avis Google · août 2026</small></div></div></div>
+      <div class="tst"><div class="stars">★★★★★</div><p>« Urgence un dimanche : pris en 30 minutes, soigné le jour même. Service exceptionnel. »</p><div class="who"><div class="ava">MK</div><div><b>Mehdi K.</b><small>Avis Google · juillet 2026</small></div></div></div>
+      <div class="tst"><div class="stars">★★★★★</div><p>« Deux implants posés au scanner 3D. Devis respecté au centime. Je recommande les yeux fermés. »</p><div class="who"><div class="ava">AB</div><div><b>Amina B.</b><small>Avis Google · juin 2026</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="rdv" id="rdv">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Contact & rendez-vous</span>
+      <h2>Essayez-nous. Le premier RDV est sans engagement.</h2>
+    </div>
+    <div class="rdv-grid">
+      <div class="rdv-info">
+        <div class="info-row"><div class="ico">📍</div><div><b>Adresse</b><span>12, Avenue de la République, La Marsa 2078</span></div></div>
+        <div class="info-row"><div class="ico">📞</div><div><b>Téléphone & WhatsApp</b><span>+216 70 123 456 · +216 98 765 432</span></div></div>
+        <div class="info-row"><div class="ico">🕐</div><div><b>Horaires</b><span>Lun–Ven : 9h–19h · Sam : 9h–14h · Urgences 7j/7</span></div></div>
+        <div class="info-row"><div class="ico">🅿️</div><div><b>Accès</b><span>Parking gratuit devant le cabinet · Bus 20 & 33, arrêt « La Marsa Plage »</span></div></div>
+        <div class="info-row"><div class="ico">💳</div><div><b>Paiement</b><span>Espèces, carte, virement · Convention avec la plupart des mutuelles</span></div></div>
+      </div>
+      <form id="rdvForm">
+        <h3>Demande de rendez-vous</h3>
+        <div class="field"><label for="nom">Nom complet</label><input id="nom" type="text" placeholder="Votre nom" required></div>
+        <div class="field"><label for="tel">Téléphone</label><input id="tel" type="tel" placeholder="+216 __ ___ ___" required></div>
+        <div class="field"><label for="soin">Motif</label>
+          <select id="soin">
+            <option>Contrôle / détartrage</option>
+            <option>Urgence</option>
+            <option>Implantologie</option>
+            <option>Blanchiment</option>
+            <option>Orthodontie</option>
+            <option>Enfant</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="field"><label for="msg">Message (optionnel)</label><textarea id="msg" placeholder="Décrivez votre besoin en quelques mots…"></textarea></div>
+        <button type="submit" class="btn btn-primary">Envoyer ma demande →</button>
+        <p class="form-note">Réponse sous 2h ouvrées. Vos données ne sont jamais partagées.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="logo">El Manar<span style="color:var(--gold)">.</span> Dentaire</div>
+        <p>Cabinet dentaire moderne à La Marsa — soins, implants, orthodontie et urgences.</p>
+      </div>
+      <div class="foot-links">
+        <div><h4>Soins</h4><ul><li><a href="#services">Implantologie</a></li><li><a href="#services">Orthodontie</a></li><li><a href="#services">Blanchiment</a></li><li><a href="#services">Urgences</a></li></ul></div>
+        <div><h4>Contact</h4><ul><li><a href="tel:+21670123456">+216 70 123 456</a></li><li><a href="mailto:contact@elmanar-dentaire.tn">contact@elmanar-dentaire.tn</a></li><li><a href="#rdv">Plan d'accès</a></li></ul></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Cabinet Dentaire El Manar — Tous droits réservés.</span>
+      <span>Conçu et réalisé par Solos.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Menu mobile
+  document.getElementById('burger').addEventListener('click', function(){
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  // Fermer le menu après clic (mobile)
+  document.querySelectorAll('#navLinks a').forEach(function(a){
+    a.addEventListener('click', function(){ document.getElementById('navLinks').classList.remove('open'); });
+  });
+  // Formulaire : démo locale — stocke la demande et confirme (sans backend)
+  document.getElementById('rdvForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var nom = document.getElementById('nom').value;
+    var tel = document.getElementById('tel').value;
+    var soin = document.getElementById('soin').value;
+    try {
+      var hist = JSON.parse(localStorage.getItem('elmanar_rdv') || '[]');
+      hist.push({nom:nom, tel:tel, soin:soin, date:new Date().toISOString()});
+      localStorage.setItem('elmanar_rdv', JSON.stringify(hist));
+    } catch(err){}
+    var btn = this.querySelector('button[type=submit]');
+    btn.textContent = '✅ Demande envoyée — on vous rappelle sous 2h';
+    btn.disabled = true;
+    this.reset();
+  });
+</script>
+</body>
+</html>

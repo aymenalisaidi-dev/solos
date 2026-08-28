@@ -3,99 +3,296 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Solos — Demande de service</title>
+<title>Solos — Agence digitale : sites web, Fiche Google, reels, IA pour commerces tunisiens</title>
+<meta name="description" content="Solos rend votre commerce visible sur Google : Fiche Google (250 DT), sites web vitrine/pro/boutique (dès 700 DT), reels motion design (dès 200 DT), intégration IA. Livraison 1-3 jours. Tunis.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-
-
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Tajawal',sans-serif;background:radial-gradient(800px 600px at 50% 110%,rgba(124,58,237,.30),transparent 60%),radial-gradient(600px 500px at 50% 0%,rgba(34,211,238,.20),transparent 60%),linear-gradient(160deg,#0A0E1C,#05070F);min-height:100vh;color:#E2E8F0;display:flex;align-items:center;justify-content:center;padding:24px}
-.card{width:100%;max-width:560px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:32px;padding:40px 36px;backdrop-filter:blur(8px)}
-.logo{text-align:center;font-size:44px;font-weight:800;letter-spacing:10px;background:linear-gradient(90deg,#22D3EE,#A78BFA,#F472B6);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px}
-.sub{text-align:center;font-size:22px;color:#94A3B8;margin-bottom:32px}
-label{display:block;font-size:17px;font-weight:700;color:#CBD5E1;margin:18px 0 8px}
-input,select,textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:14px 16px;font-size:17px;color:#F1F5F9;font-family:'Tajawal',sans-serif;outline:none}
-input:focus,select:focus,textarea:focus{border-color:#22D3EE}
-textarea{resize:vertical;min-height:110px}
-.btn{width:100%;margin-top:28px;background:linear-gradient(90deg,#22D3EE,#A78BFA);border:none;border-radius:16px;padding:18px;font-size:20px;font-weight:800;color:#0B0F1A;cursor:pointer;font-family:'Tajawal',sans-serif}
-.btn:hover{filter:brightness(1.1)}
-.ok{display:none;text-align:center;margin-top:20px;color:#4ADE80;font-weight:800;font-size:18px}
-.foot{text-align:center;margin-top:24px;font-size:15px;color:#64748B}
-.hint{font-size:14px;color:#64748B;margin-top:6px}
+html{scroll-behavior:smooth}
+body{font-family:'Tajawal',sans-serif;background:radial-gradient(900px 600px at 85% -10%,rgba(124,58,237,.22),transparent 60%),radial-gradient(700px 500px at -10% 30%,rgba(34,211,238,.14),transparent 60%),linear-gradient(160deg,#0A0E1C,#05070F);min-height:100vh;color:#E2E8F0;line-height:1.6}
+.grad{background:linear-gradient(90deg,#22D3EE,#A78BFA,#F472B6);-webkit-background-clip:text;background-clip:text;color:transparent}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+/* NAV */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(5,7,15,.72);border-bottom:1px solid rgba(255,255,255,.08)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-size:24px;font-weight:800;letter-spacing:8px}
+.menu{display:flex;gap:26px;align-items:center;font-size:15.5px;font-weight:700;color:#CBD5E1}
+.menu a:hover{color:#22D3EE}
+.nav-cta{background:linear-gradient(90deg,#22D3EE,#A78BFA);color:#0B0F1A!important;padding:9px 18px;border-radius:999px;font-weight:800}
+.nav-cta:hover{filter:brightness(1.12);color:#0B0F1A!important}
+/* HERO */
+.hero{padding:92px 0 64px;text-align:center}
+.badge{display:inline-block;font-size:14px;font-weight:700;color:#67E8F9;border:1px solid rgba(34,211,238,.4);background:rgba(34,211,238,.08);padding:7px 16px;border-radius:999px;margin-bottom:26px}
+h1{font-size:clamp(34px,5.4vw,58px);font-weight:800;line-height:1.15;letter-spacing:-.5px}
+.hero p.sub{font-size:clamp(17px,2.2vw,21px);color:#94A3B8;max-width:680px;margin:20px auto 0}
+.ctas{display:flex;gap:14px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+.btn{display:inline-block;padding:15px 30px;border-radius:16px;font-size:17px;font-weight:800;transition:.15s}
+.btn-p{background:linear-gradient(90deg,#22D3EE,#A78BFA);color:#0B0F1A}
+.btn-p:hover{filter:brightness(1.12);transform:translateY(-1px)}
+.btn-o{border:1px solid rgba(255,255,255,.22);color:#E2E8F0}
+.btn-o:hover{border-color:#22D3EE;color:#22D3EE}
+.stats{display:flex;gap:34px;justify-content:center;margin-top:44px;flex-wrap:wrap;font-size:14.5px;color:#94A3B8;font-weight:700}
+.stats b{display:block;font-size:22px;color:#E2E8F0}
+/* SECTIONS */
+section{padding:70px 0}
+h2{font-size:clamp(26px,3.6vw,38px);font-weight:800;text-align:center}
+.sec-sub{text-align:center;color:#94A3B8;max-width:640px;margin:12px auto 44px;font-size:16.5px}
+/* SERVICES */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:28px 24px;transition:.18s}
+.card:hover{transform:translateY(-3px);border-color:rgba(34,211,238,.5);background:rgba(255,255,255,.08)}
+.card .ic{font-size:30px}
+.card h3{font-size:19px;font-weight:800;margin:12px 0 8px}
+.card p{color:#94A3B8;font-size:15px}
+.card .price{display:block;margin-top:14px;font-size:15px;font-weight:800;color:#22D3EE}
+/* TARIFS */
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.tier{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:30px 26px;display:flex;flex-direction:column}
+.tier.hot{border-color:rgba(167,139,250,.55);background:rgba(167,139,250,.08)}
+.tier .tag{font-size:13px;font-weight:800;letter-spacing:1.5px;color:#67E8F9;text-transform:uppercase}
+.tier.hot .tag{color:#C4B5FD}
+.tier h3{font-size:21px;font-weight:800;margin:8px 0 4px}
+.tier .prix{font-size:30px;font-weight:800}
+.tier .prix small{font-size:15px;color:#94A3B8;font-weight:700}
+.tier ul{list-style:none;margin:16px 0 22px;font-size:14.5px;color:#CBD5E1;flex:1}
+.tier ul li{padding:5px 0;padding-left:22px;position:relative}
+.tier ul li::before{content:"✓";position:absolute;left:0;color:#34D399;font-weight:800}
+.tier .btn{text-align:center}
+.extras{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+.extra{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:18px 20px;font-size:14.5px}
+.extra b{color:#E2E8F0}
+.extra .e-p{float:right;font-weight:800;color:#22D3EE}
+/* MODELES */
+.mods{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.mod{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:24px;overflow:hidden;transition:.18s}
+.mod:hover{transform:translateY(-3px);border-color:rgba(244,114,182,.5)}
+.mod .frame{height:150px;background:radial-gradient(400px 200px at 30% 20%,rgba(34,211,238,.18),transparent 60%),radial-gradient(300px 200px at 80% 90%,rgba(167,139,250,.18),transparent 60%),linear-gradient(150deg,#101631,#0A0E1C);display:flex;align-items:center;justify-content:center;font-size:40px}
+.mod .body{padding:20px 22px 24px}
+.mod .body h3{font-size:18px;font-weight:800}
+.mod .body .m-p{font-size:14px;color:#22D3EE;font-weight:800;margin:2px 0 8px}
+.mod .body p{font-size:14.5px;color:#94A3B8}
+.mod .body .lnk{display:inline-block;margin-top:14px;font-weight:800;color:#F472B6;font-size:14.5px}
+.mod .body .lnk:hover{color:#fff}
+.mods-cta{text-align:center;margin-top:30px}
+/* PROCESS */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.step{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:24px}
+.step .n{font-size:13px;font-weight:800;color:#F472B6;letter-spacing:2px}
+.step h3{font-size:17px;font-weight:800;margin:8px 0 6px}
+.step p{font-size:14.5px;color:#94A3B8}
+/* CTA FINAL */
+.cta-band{background:radial-gradient(600px 300px at 50% 0%,rgba(124,58,237,.25),transparent 65%),rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);border-radius:32px;padding:56px 30px;text-align:center}
+.cta-band h2{font-size:clamp(26px,3.6vw,36px)}
+.cta-band p{color:#94A3B8;margin:12px auto 28px;max-width:520px;font-size:16.5px}
+/* FOOTER */
+footer{border-top:1px solid rgba(255,255,255,.08);padding:34px 0 44px;margin-top:30px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:14px;color:#64748B}
+footer .logo{font-size:20px}
+@media(max-width:640px){nav .menu{display:none}.stats{gap:20px}}
 </style>
 </head>
 <body>
-<div class="card">
-  <div class="logo">SOLOS</div>
-  <div class="sub">Votre commerce visible sur Google</div>
 
-  <form id="f">
-    <label>Nom complet *</label>
-    <input id="name" required placeholder="Votre nom">
-    <label>Nom du commerce / entreprise</label>
-    <input id="biz" placeholder="Nom de votre commerce">
-    <label>Téléphone</label>
-    <input id="phone" placeholder="+216 ...">
-    <label>Email (on vous répond sur cette adresse) *</label>
-    <input id="email" type="email" required placeholder="vous@exemple.com">
-    <label>Service souhaité *</label>
-    <select id="svc" required>
-      <option value="">— Choisir un service —</option>
-      <option>Intégration IA</option>
-      <option>Google Profile</option>
-      <option>Reels sur commande</option>
-      <option>Site web (vitrine / pro / boutique en ligne)</option>
-      <option>Plusieurs services</option>
-    </select>
-    <label>Votre besoin</label>
-    <textarea id="msg" placeholder="Décrivez votre besoin..."></textarea>
-    <button class="btn" type="submit">Envoyer la demande</button>
-  </form>
-  <div class="ok" id="ok">✅ Demande envoyée ! On vous répond par email très vite.</div>
-  <div class="foot">Solos · Intégration IA · Google Profile · Reels · Sites web</div>
-  <div class="hint" style="text-align:center;margin-top:8px">👀 Voir des exemples de sites : <a href="demos/vitrine-commerce/" style="color:#22D3EE">commerce</a> · <a href="demos/pro-sante/" style="color:#22D3EE">santé</a> · <a href="demos/boutique-ecommerce/" style="color:#22D3EE">boutique en ligne</a></div>
-</div>
+<nav>
+  <div class="wrap">
+    <a class="logo grad" href="index.html">SOLOS</a>
+    <div class="menu">
+      <a href="#services">Services</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="modeles.html">Modèles</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="formulaire.html">Devis gratuit</a>
+    </div>
+  </div>
+</nav>
 
-<script>
-// Envoi vers le webhook n8n de Solos (à configurer côté serveur).
-// Sans webhook : ouvre un email pré-rempli vers contact@solos.tn.
-var WEBHOOK = "https://races-montana-que-gsm.trycloudflare.com/lead";
-var CONTACT_EMAIL = "solos@agentmail.to";
-document.getElementById("f").addEventListener("submit", function(e){
-  e.preventDefault();
-  var d = {
-    name: document.getElementById("name").value,
-    biz: document.getElementById("biz").value,
-    phone: document.getElementById("phone").value,
-    email: document.getElementById("email").value,
-    service: document.getElementById("svc").value,
-    message: document.getElementById("msg").value
-  };
-  if (WEBHOOK) {
-    fetch(WEBHOOK, {method:"POST", headers:{"Content-Type":"application/json", "x-solos-secret":"MQKa_x81g8wsEGKfbHiE9g"}, body: JSON.stringify(d)})
-      .then(function(){ showOk(); }).catch(function(){ mailFallback(d); });
-  } else {
-    mailFallback(d);
-  }
-});
-function mailFallback(d){
-  var subject = encodeURIComponent("[Solos] Demande: " + d.service + " — " + d.name);
-  var body = encodeURIComponent(
-    "Nom: " + d.name + "\n" +
-    "Commerce: " + d.biz + "\n" +
-    "Téléphone: " + d.phone + "\n" +
-    "Email: " + d.email + "\n" +
-    "Service: " + d.service + "\n" +
-    "Besoin: " + d.message);
-  window.open("mailto:" + CONTACT_EMAIL + "?subject=" + subject + "&body=" + body, "_self");
-  showOk();
-}
-function showOk(){
-  document.getElementById("ok").style.display = "block";
-  document.getElementById("f").reset();
-}
-</script>
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">🚀 Agence digitale — Tunis</span>
+    <h1>Votre commerce mérite<br>d'être <span class="grad">trouvé sur Google</span></h1>
+    <p class="sub">Fiche Google · Site web · Reels · Intégration IA — Solos rend votre business visible, crédible et disponible 24h/24. Livraison en 1 à 3 jours.</p>
+    <div class="ctas">
+      <a class="btn btn-p" href="modeles.html">Voir les modèles de sites</a>
+      <a class="btn btn-o" href="formulaire.html">Demander un devis gratuit</a>
+    </div>
+    <div class="stats">
+      <div><b>1-3 jours</b>Livraison</div>
+      <div><b>0 bug</b>QC avant livraison</div>
+      <div><b>100 %</b>Design sur mesure</div>
+    </div>
+  </div>
+</header>
+
+<section id="services">
+  <div class="wrap">
+    <h2>Ce que <span class="grad">Solos</span> fait pour vous</h2>
+    <p class="sec-sub">Quatre services pensés pour les commerces tunisiens — séparément ou en pack complet.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="ic">📍</div>
+        <h3>Fiche Google</h3>
+        <p>Création ou optimisation complète de votre fiche : infos exactes, photos, horaires, avis, itinéraire, bouton d'appel. Vos clients vous trouvent immédiatement.</p>
+        <span class="price">250 DT · gestion 150 DT/mois</span>
+      </div>
+      <div class="card">
+        <div class="ic">🌐</div>
+        <h3>Sites web</h3>
+        <p>Vitrine, site pro multi-pages ou boutique en ligne avec paiement tunisien (Flouci / GoPay). Mobile, SEO Google, formulaire qui reçoit vos demandes.</p>
+        <span class="price">Dès 700 DT</span>
+      </div>
+      <div class="card">
+        <div class="ic">🎬</div>
+        <h3>Reels motion design</h3>
+        <p>Vidéos 1080×1920 sur mesure pour vos réseaux : musique originale, votre logo, votre message. Parfait pour annoncer une promo ou fidéliser.</p>
+        <span class="price">Dès 200 DT</span>
+      </div>
+      <div class="card">
+        <div class="ic">🤖</div>
+        <h3>Intégration IA</h3>
+        <p>Automatisation de vos tâches : réponses aux clients, devis, relances, gestion des demandes. Votre commerce répond même quand vous dormez.</p>
+        <span class="price">Sur devis</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tarifs">
+  <div class="wrap">
+    <h2>Tarifs <span class="grad">simples et clairs</span></h2>
+    <p class="sec-sub">Un prix fixe, sans surprise. Paiement par Flouci (particuliers) ou virement bancaire (professionnels).</p>
+    <div class="tiers">
+      <div class="tier">
+        <span class="tag">Site Vitrine</span>
+        <h3>Pour se présenter</h3>
+        <div class="prix">700 <small>DT</small></div>
+        <ul>
+          <li>1 page professionnelle sur mesure</li>
+          <li>Mobile + SEO Google</li>
+          <li>Formulaire contact → vos demandes</li>
+          <li>Lien vers votre fiche Google</li>
+          <li>Mise en ligne + formation (15 min)</li>
+        </ul>
+        <a class="btn btn-o" href="formulaire.html?modele=vitrine">Commander</a>
+      </div>
+      <div class="tier hot">
+        <span class="tag">Site Pro</span>
+        <h3>Pour gagner la confiance</h3>
+        <div class="prix">1 400 <small>DT</small></div>
+        <ul>
+          <li>4 à 6 pages (services, équipe, avis…)</li>
+          <li>Formulaire de rendez-vous</li>
+          <li>Schéma LocalBusiness (SEO local)</li>
+          <li>Fiche Google intégrée</li>
+          <li>Idéal : santé, conseil, coach, pro</li>
+        </ul>
+        <a class="btn btn-p" href="formulaire.html?modele=pro">Commander</a>
+      </div>
+      <div class="tier">
+        <span class="tag">Boutique en ligne</span>
+        <h3>Pour vendre en ligne</h3>
+        <div class="prix">2 500 <small>DT</small></div>
+        <ul>
+          <li>Catalogue produits + panier</li>
+          <li>Commande + paiement Flouci / GoPay</li>
+          <li>Suivi de livraison</li>
+          <li>Fiche Google incluse</li>
+          <li>Vêtements, cosmétiques, alimentaire…</li>
+        </ul>
+        <a class="btn btn-o" href="formulaire.html?modele=boutique">Commander</a>
+      </div>
+    </div>
+    <div class="extras">
+      <div class="extra"><b>Fiche Google complète</b> <span class="e-p">250 DT</span><br>Optimisation totale + photos + avis</div>
+      <div class="extra"><b>Gestion fiche mensuelle</b> <span class="e-p">150 DT/mois</span><br>Avis, posts Google, statistiques</div>
+      <div class="extra"><b>Reel motion design</b> <span class="e-p">200 DT</span><br>Pack 3 : 540 DT · Pack 5 : 800 DT</div>
+      <div class="extra"><b>Abonnement reels</b> <span class="e-p">680 DT/mois</span><br>4 reels/mois · 8 reels : 1 200 DT/mois</div>
+      <div class="extra"><b>Pack Présence complète</b> <span class="e-p">1 900 DT</span><br>Fiche + site + 3 reels (au lieu de 2 350 DT)</div>
+      <div class="extra"><b>Maintenance site</b> <span class="e-p">120 DT/mois</span><br>Contenu, photos, tarifs, retouches</div>
+    </div>
+  </div>
+</section>
+
+<section id="modeles">
+  <div class="wrap">
+    <h2>Nos <span class="grad">modèles de sites</span></h2>
+    <p class="sec-sub">Des bases prêtes, personnalisées à 100 % pour votre commerce : couleurs, textes, photos et logo. Cliquez sur un modèle pour le voir en vrai.</p>
+    <div class="mods">
+      <div class="mod">
+        <div class="frame">🏪</div>
+        <div class="body">
+          <h3>Vitrine commerce</h3>
+          <span class="m-p">700 DT</span>
+          <p>Boutique, salon, resto, pressing, garage… une page pro qui présente votre activité.</p>
+          <a class="lnk" href="https://solos-tn.github.io/solos/demos/vitrine-commerce/" target="_blank">Voir la démo →</a>
+        </div>
+      </div>
+      <div class="mod">
+        <div class="frame">🩺</div>
+        <div class="body">
+          <h3>Santé & services pro</h3>
+          <span class="m-p">1 400 DT</span>
+          <p>Dentiste, médecin, avocat, coach : multi-pages, rendez-vous, confiance immédiate.</p>
+          <a class="lnk" href="https://solos-tn.github.io/solos/demos/pro-sante/" target="_blank">Voir la démo →</a>
+        </div>
+      </div>
+      <div class="mod">
+        <div class="frame">🛒</div>
+        <div class="body">
+          <h3>Boutique en ligne</h3>
+          <span class="m-p">2 500 DT</span>
+          <p>Catalogue, panier, commande et paiement tunisien Flouci / GoPay intégré.</p>
+          <a class="lnk" href="https://solos-tn.github.io/solos/demos/boutique-ecommerce/" target="_blank">Voir la démo →</a>
+        </div>
+      </div>
+    </div>
+    <div class="mods-cta"><a class="btn btn-o" href="modeles.html">Voir tout le catalogue →</a></div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <h2>Comment ça <span class="grad">marche</span></h2>
+    <p class="sec-sub">Un process simple, sans réunion inutile.</p>
+    <div class="steps">
+      <div class="step">
+        <span class="n">ÉTAPE 1</span>
+        <h3>Vous demandez un devis</h3>
+        <p>Via le formulaire ou Instagram — décrivez votre commerce, on vous répond par email en quelques heures.</p>
+      </div>
+      <div class="step">
+        <span class="n">ÉTAPE 2</span>
+        <h3>On personnalise (1-3 jours)</h3>
+        <p>Vos photos, vos textes, vos couleurs. Vous validez, on peaufine, aucun bug ne part sans contrôle qualité.</p>
+      </div>
+      <div class="step">
+        <span class="n">ÉTAPE 3</span>
+        <h3>Vous êtes en ligne</h3>
+        <p>Site livré, fiche Google à jour, reels publiés. On vous forme 15 minutes, puis on reste disponibles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>Prêt à être <span class="grad">visible sur Google</span> ?</h2>
+      <p>Réponse par email en quelques heures. Audit de votre fiche Google offert — dites-nous juste le nom de votre commerce.</p>
+      <a class="btn btn-p" href="formulaire.html" style="font-size:18px;padding:17px 36px">Demander mon devis gratuit</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="logo grad" href="index.html">SOLOS</a>
+    <span>Fait avec ❤️ en Tunisie 🇹🇳 · solos-tn.github.io/solos</span>
+    <span><a href="formulaire.html" style="color:#94A3B8">Devis</a> · <a href="modeles.html" style="color:#94A3B8">Modèles</a> · <a href="https://www.instagram.com/solos.tn" target="_blank" style="color:#94A3B8">Instagram</a></span>
+  </div>
+</footer>
+
 </body>
 </html>
