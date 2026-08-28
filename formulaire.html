@@ -14,8 +14,6 @@
 body{font-family:'Tajawal',sans-serif;background:#05070F;min-height:100vh;color:#F0EBDF;display:flex;align-items:center;justify-content:center;padding:24px;line-height:1.6}
 body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(800px 560px at 50% 115%,rgba(201,151,43,.30),transparent 60%),radial-gradient(640px 480px at 50% -10%,rgba(233,180,76,.18),transparent 60%),#05070F}
 body::after{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 20%,transparent 70%);pointer-events:none}
-svg.sprite{position:absolute;width:0;height:0;overflow:hidden}
-.lg{width:46px;height:46px;filter:drop-shadow(0 0 16px rgba(233,180,76,.4))}
 .logo-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:10px}
 .logo-t{font-family:'Space Grotesk',sans-serif;font-size:27px;font-weight:700;letter-spacing:9px;background:linear-gradient(92deg,#E9B44C,#F0C75E 55%,#C9972B);-webkit-background-clip:text;background-clip:text;color:transparent}
 .card{width:100%;max-width:600px;background:linear-gradient(165deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:44px 40px;backdrop-filter:blur(10px);position:relative;overflow:hidden}
@@ -39,34 +37,8 @@ textarea{resize:vertical;min-height:100px}
 </head>
 <body>
 
-<svg class="sprite" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="lgCloud" x1="10" y1="42" x2="54" y2="56" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#3A2C10"/><stop offset="1" stop-color="#0E0B06"/>
-    </linearGradient>
-    <radialGradient id="lgCore" cx="50%" cy="50%" r="50%">
-      <stop stop-color="#FBE9B0"/><stop offset=".45" stop-color="#E9B44C"/><stop offset="1" stop-color="#8A5A00"/>
-    </radialGradient>
-    <symbol id="logo" viewBox="0 0 64 64">
-      <path d="M15 44.5a9 9 0 0 1 2.2-17.6 12.2 12.2 0 0 1 23.4-.3A10.2 10.2 0 0 1 50.5 37a8.2 8.2 0 0 1-2.3 16H16.8a6.2 6.2 0 0 1-1.8-8.5Z" fill="url(#lgCloud)" stroke="rgba(255,255,255,.25)" stroke-width="1.1"/>
-      <path d="M32 27.5v3.5" stroke="#E9B44C" stroke-width="1.3" stroke-linecap="round" opacity=".8"/>
-      <path d="M27.5 29l-3.2 3.2" stroke="#F0C75E" stroke-width="1.1" stroke-linecap="round" opacity=".55"/>
-      <path d="M36.5 29l3.2 3.2" stroke="#F0C75E" stroke-width="1.1" stroke-linecap="round" opacity=".55"/>
-      <circle cx="32" cy="21" r="9.5" fill="#E9B44C" opacity=".16"/>
-      <circle cx="32" cy="21" r="6" fill="#E9B44C" opacity=".32"/>
-      <circle cx="32" cy="21" r="3.8" fill="url(#lgCore)"/>
-      <circle cx="19" cy="11.5" r="1.5" fill="#F0C75E" opacity=".9"/>
-      <circle cx="43" cy="8.5" r="1.9" fill="#E9B44C" opacity=".85"/>
-      <circle cx="51" cy="17.5" r="1.15" fill="#C9972B" opacity=".9"/>
-      <circle cx="14" cy="19.5" r="1.15" fill="#F0C75E" opacity=".7"/>
-      <circle cx="47.5" cy="24" r="1" fill="#F0C75E" opacity=".6"/>
-    </symbol>
-  </defs>
-</svg>
-
 <div class="card">
   <div class="logo-row">
-    <svg class="lg"><use href="#logo"/></svg>
     <span class="logo-t">SOLOS</span>
   </div>
   <div class="sub"><b>Devis gratuit</b> — réponse par email en quelques heures.<br>Audit de votre fiche Google offert.</div>
@@ -83,10 +55,12 @@ textarea{resize:vertical;min-height:100px}
     <label>Service souhaité *</label>
     <select id="svc" required>
       <option value="">— Choisir un service —</option>
-      <option>Site web (vitrine / pro / boutique en ligne)</option>
-      <option>Fiche Google</option>
-      <option>Reels sur commande</option>
-      <option>Intégration IA</option>
+      <option>Site vitrine — 700 DT</option>
+      <option>Site pro / santé — 1 400 DT</option>
+      <option>Boutique en ligne — 2 500 DT</option>
+      <option>Fiche Google — 250 DT</option>
+      <option>Reels — dès 200 DT</option>
+      <option>Intégration IA — sur devis</option>
       <option>Plusieurs services</option>
     </select>
     <label>Votre besoin</label>
@@ -110,9 +84,9 @@ var CONTACT_EMAIL = "solos@agentmail.to";
   var m = new URLSearchParams(location.search).get('modele');
   if(!m) return;
   var map = {
-    'vitrine':  ['Site web (vitrine / pro / boutique en ligne)', 'Modèle souhaité : Vitrine commerce — 700 DT (offre de lancement, au lieu de 1 200 DT). '],
-    'pro':      ['Site web (vitrine / pro / boutique en ligne)', 'Modèle souhaité : Site Pro / Santé — 1 400 DT (offre de lancement, au lieu de 2 500 DT). '],
-    'boutique': ['Site web (vitrine / pro / boutique en ligne)', 'Modèle souhaité : Boutique en ligne — 2 500 DT (offre de lancement, au lieu de 4 000 DT). ']
+    'vitrine':  ['Site vitrine — 700 DT', 'Modèle souhaité : Vitrine — 700 DT (offre de lancement, au lieu de 1 200 DT). '],
+    'pro':      ['Site pro / santé — 1 400 DT', 'Modèle souhaité : Site Pro / Santé — 1 400 DT (offre de lancement, au lieu de 2 500 DT). '],
+    'boutique': ['Boutique en ligne — 2 500 DT', 'Modèle souhaité : Boutique en ligne — 2 500 DT (offre de lancement, au lieu de 4 000 DT). ']
   };
   var v = map[m]; if(!v) return;
   var sel = document.getElementById('svc');

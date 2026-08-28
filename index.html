@@ -21,8 +21,6 @@ a{color:inherit;text-decoration:none}
 body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(900px 560px at 82% -8%,rgba(201,151,43,.20),transparent 60%),radial-gradient(760px 520px at -12% 28%,rgba(233,180,76,.12),transparent 60%),radial-gradient(700px 600px at 50% 118%,rgba(201,151,43,.08),transparent 60%)}
 body::after{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 30%,transparent 75%);pointer-events:none}
 /* LOGO */
-svg.sprite{position:absolute;width:0;height:0;overflow:hidden}
-.lg{width:42px;height:42px;flex:none;filter:drop-shadow(0 0 14px rgba(233,180,76,.35))}
 .logo-row{display:flex;align-items:center;gap:12px}
 .logo-t{font-size:23px;font-weight:700;letter-spacing:7px}
 /* NAV */
@@ -153,36 +151,9 @@ footer a:hover{color:#E9B44C}
 </head>
 <body>
 
-<!-- sprite logo (dégradés + symbole) -->
-<svg class="sprite" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="lgCloud" x1="10" y1="42" x2="54" y2="56" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#3A2C10"/><stop offset="1" stop-color="#0E0B06"/>
-    </linearGradient>
-    <radialGradient id="lgCore" cx="50%" cy="50%" r="50%">
-      <stop stop-color="#FBE9B0"/><stop offset=".45" stop-color="#E9B44C"/><stop offset="1" stop-color="#8A5A00"/>
-    </radialGradient>
-    <symbol id="logo" viewBox="0 0 64 64">
-      <path d="M15 44.5a9 9 0 0 1 2.2-17.6 12.2 12.2 0 0 1 23.4-.3A10.2 10.2 0 0 1 50.5 37a8.2 8.2 0 0 1-2.3 16H16.8a6.2 6.2 0 0 1-1.8-8.5Z" fill="url(#lgCloud)" stroke="rgba(255,255,255,.25)" stroke-width="1.1"/>
-      <path d="M32 27.5v3.5" stroke="#E9B44C" stroke-width="1.3" stroke-linecap="round" opacity=".8"/>
-      <path d="M27.5 29l-3.2 3.2" stroke="#F0C75E" stroke-width="1.1" stroke-linecap="round" opacity=".55"/>
-      <path d="M36.5 29l3.2 3.2" stroke="#F0C75E" stroke-width="1.1" stroke-linecap="round" opacity=".55"/>
-      <circle cx="32" cy="21" r="9.5" fill="#E9B44C" opacity=".16"/>
-      <circle cx="32" cy="21" r="6" fill="#E9B44C" opacity=".32"/>
-      <circle cx="32" cy="21" r="3.8" fill="url(#lgCore)"/>
-      <circle cx="19" cy="11.5" r="1.5" fill="#F0C75E" opacity=".9"/>
-      <circle cx="43" cy="8.5" r="1.9" fill="#E9B44C" opacity=".85"/>
-      <circle cx="51" cy="17.5" r="1.15" fill="#C9972B" opacity=".9"/>
-      <circle cx="14" cy="19.5" r="1.15" fill="#F0C75E" opacity=".7"/>
-      <circle cx="47.5" cy="24" r="1" fill="#F0C75E" opacity=".6"/>
-    </symbol>
-  </defs>
-</svg>
-
 <nav>
   <div class="wrap">
     <a class="logo-row" href="index.html">
-      <svg class="lg"><use href="#logo"/></svg>
       <span class="logo-t grad">SOLOS</span>
     </a>
     <div class="menu">
@@ -314,46 +285,46 @@ footer a:hover{color:#E9B44C}
 <section id="modeles">
   <div class="wrap">
     <div class="sec-head rv"><span class="sec-n">03</span><h2>Nos modèles de sites</h2></div>
-    <p class="sec-sub rv">Des bases conçues par notre IA, personnalisées à 100 % pour votre commerce : couleurs, textes, photos et logo. Cliquez pour voir chaque modèle en vrai.</p>
+    <p class="sec-sub rv">Neuf modèles conçus par notre IA, personnalisés à 100 % : vos textes, vos photos, votre logo et la couleur de votre choix. Chaque service a son prix — vitrine 700 DT · pro 1 400 DT · boutique 2 500 DT.</p>
     <div class="mods">
       <div class="mod rv">
         <div class="brow"><div class="bdots"><i></i><i></i><i></i></div><span class="burl">vitrine.solos.tn</span></div>
-        <div class="bhero" style="background:linear-gradient(120deg,rgba(233,180,76,.20),rgba(233,180,76,.05))"></div>
+        <div class="bhero" style="background:linear-gradient(120deg,rgba(233,180,76,.25),rgba(233,180,76,.04))"></div>
         <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
-          <h3>Vitrine commerce</h3>
+          <h3>Vitrines — 3 modèles</h3>
           <span class="m-p"><s>1 200 DT</s>700 DT</span>
-          <p>Une page pro qui présente votre activité, vos horaires et votre localisation — et reçoit vos demandes.</p>
+          <p>Mode, salon, restaurant… une page pro qui présente votre activité et reçoit vos demandes.</p>
           <div class="btns">
-            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/vitrine-commerce/" target="_blank">Démo</a>
+            <a class="btn btn-o" href="modeles.html">Voir les 3 vitrines</a>
             <a class="btn btn-p" href="formulaire.html?modele=vitrine">Commander</a>
           </div>
         </div>
       </div>
       <div class="mod rv">
         <div class="brow"><div class="bdots"><i></i><i></i><i></i></div><span class="burl">pro.solos.tn</span></div>
-        <div class="bhero" style="background:linear-gradient(120deg,rgba(233,180,76,.22),rgba(233,180,76,.05))"></div>
+        <div class="bhero" style="background:linear-gradient(120deg,rgba(233,180,76,.25),rgba(233,180,76,.04))"></div>
         <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
-          <h3>Santé & services pro</h3>
+          <h3>Pro &amp; Santé — 3 modèles</h3>
           <span class="m-p"><s>2 500 DT</s>1 400 DT</span>
-          <p>Multi-pages, prise de rendez-vous, avis clients : un site qui inspire confiance avant même la première visite.</p>
+          <p>Dentiste, clinique, avocat : multi-pages, rendez-vous en ligne, confiance immédiate.</p>
           <div class="btns">
-            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/pro-sante/" target="_blank">Démo</a>
+            <a class="btn btn-o" href="modeles.html">Voir les 3 sites pro</a>
             <a class="btn btn-p" href="formulaire.html?modele=pro">Commander</a>
           </div>
         </div>
       </div>
       <div class="mod rv">
         <div class="brow"><div class="bdots"><i></i><i></i><i></i></div><span class="burl">boutique.solos.tn</span></div>
-        <div class="bhero" style="background:linear-gradient(120deg,rgba(201,151,43,.22),rgba(201,151,43,.05))"></div>
+        <div class="bhero" style="background:linear-gradient(120deg,rgba(233,180,76,.25),rgba(233,180,76,.04))"></div>
         <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
-          <h3>Boutique en ligne</h3>
+          <h3>Boutiques — 3 modèles</h3>
           <span class="m-p"><s>4 000 DT</s>2 500 DT</span>
-          <p>Catalogue, panier, commande et paiement 100 % tunisien (Flouci / GoPay) intégré.</p>
+          <p>Sneakers, cosmétiques, épicerie fine : panier, commande et paiement 100 % tunisien.</p>
           <div class="btns">
-            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/boutique-ecommerce/" target="_blank">Démo</a>
+            <a class="btn btn-o" href="modeles.html">Voir les 3 boutiques</a>
             <a class="btn btn-p" href="formulaire.html?modele=boutique">Commander</a>
           </div>
         </div>
@@ -401,7 +372,6 @@ footer a:hover{color:#E9B44C}
 <footer>
   <div class="wrap">
     <a class="logo-row" href="index.html">
-      <svg class="lg"><use href="#logo"/></svg>
       <span class="logo-t grad">SOLOS</span>
     </a>
     <span>Intelligence artificielle · Tunis</span>

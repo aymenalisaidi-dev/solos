@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atelier Kicks — Sneakers & lifestyle · Tunis</title>
+<meta name="description" content="Boutique en ligne de sneakers à Tunis. Livraison offerte dès 400 DT, paiement Flouci ou à la livraison, échange sous 7 jours.">
+<meta property="og:title" content="Atelier Kicks — Sneakers & lifestyle · Tunis">
+<meta property="og:description" content="Sneakers authentiques, livraison offerte dès 400 DT, paiement Flouci ou à la livraison.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_TN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Atelier Kicks",
+  "description": "Boutique en ligne de sneakers à Tunis — livraison sur tout le Grand Tunis.",
+  "address": {"@type": "PostalAddress", "streetAddress": "8 Rue de Marseille", "addressLocality": "Tunis", "postalCode": "1000", "addressCountry": "TN"},
+  "telephone": "+216 22 345 678",
+  "priceRange": "$$"
+}
+</script>
+<style>
+  :root{
+    --paper:#FAF8F5; --ink:#141B22; --navy:#16233A; --coral:#FF5A36;
+    --mist:#EFEBE3; --line:#E2DCD0; --ok:#1F8A5B; --warn:#B45309;
+    --display:'Bebas Neue',sans-serif; --body:'Outfit',system-ui,sans-serif;
+    --radius:14px; --shadow:0 24px 60px -28px rgba(20,27,34,.4);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font-family:var(--body)}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+  :focus-visible{outline:3px solid var(--coral);outline-offset:2px;border-radius:4px}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+
+  header{position:sticky;top:0;z-index:60;background:var(--navy);color:#fff}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+  .logo{font-family:var(--display);font-size:1.7rem;letter-spacing:.08em}
+  .logo span{color:var(--coral)}
+  .nav-links{display:flex;gap:26px;font-size:.92rem;font-weight:600;color:#D7DEE9}
+  .nav-links a:hover{color:#fff}
+  .nav-actions{display:flex;gap:14px;align-items:center}
+  .cart-btn{position:relative;background:rgba(255,255,255,.1);border:0;color:#fff;padding:10px 16px;border-radius:999px;font-weight:700;font-size:.9rem;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .2s}
+  .cart-btn:hover{background:rgba(255,255,255,.2)}
+  .cart-count{background:var(--coral);color:#fff;font-size:.72rem;font-weight:800;min-width:20px;height:20px;border-radius:999px;display:inline-grid;place-items:center;padding:0 5px}
+  .burger{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer;color:#fff}
+
+  .hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+  .hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;padding:72px 0;align-items:center}
+  .eyebrow{display:inline-block;font-size:.78rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--coral);margin-bottom:16px}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(3rem,7vw,5rem);line-height:.95;letter-spacing:.02em;margin-bottom:18px}
+  h1 em{font-style:normal;color:var(--coral)}
+  .hero p{color:#C6CFDC;font-size:1.05rem;max-width:44ch;margin-bottom:30px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:999px;font-weight:800;font-size:.95rem;border:0;cursor:pointer;transition:transform .15s,box-shadow .15s}
+  .btn-primary{background:var(--coral);color:#fff;box-shadow:0 18px 40px -16px rgba(255,90,54,.6)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-light{background:#fff;color:var(--navy)}
+  .btn-light:hover{transform:translateY(-2px)}
+  .hero-img{position:relative}
+  .hero-img img{width:100%;aspect-ratio:4/3.4;object-fit:cover;border-radius:20px}
+  .hero-tag{position:absolute;bottom:-16px;left:20px;background:#fff;color:var(--ink);border-radius:12px;padding:12px 18px;box-shadow:var(--shadow);font-size:.85rem;font-weight:700}
+  .hero-tag b{color:var(--coral)}
+
+  .band{background:var(--coral);color:#fff;padding:12px 0;font-weight:700;font-size:.88rem;letter-spacing:.04em}
+  .band-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  section{padding:80px 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:38px}
+  .kicker{font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--coral);margin-bottom:10px}
+  h2{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,4vw,3.2rem);letter-spacing:.02em;line-height:1}
+  .filters{display:flex;gap:10px;flex-wrap:wrap}
+  .filter{background:var(--mist);border:0;padding:9px 18px;border-radius:999px;font-weight:700;font-size:.85rem;cursor:pointer;transition:background .15s,color .15s}
+  .filter:hover{background:var(--line)}
+  .filter.active{background:var(--navy);color:#fff}
+
+  .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .prod{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+  .prod:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .prod-img{position:relative;overflow:hidden}
+  .prod-img img{aspect-ratio:1/1;object-fit:cover;width:100%;transition:transform .4s}
+  .prod:hover .prod-img img{transform:scale(1.05)}
+  .prod .tag{position:absolute;top:12px;left:12px;background:var(--navy);color:#fff;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+  .prod .tag.hot{background:var(--coral)}
+  .quick-add{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(22,35,58,.92);color:#fff;border:0;border-radius:10px;padding:11px;font-weight:800;font-size:.88rem;cursor:pointer;transition:background .2s}
+  .quick-add:hover{background:var(--coral)}
+  .prod-info{padding:16px 18px 20px;display:flex;flex-direction:column;gap:4px;flex:1}
+  .prod-info h3{font-size:.98rem;font-weight:700}
+  .prod-info .cat{font-size:.76rem;color:#8A8072;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+  .prod-info .price{font-family:var(--display);font-size:1.5rem;letter-spacing:.03em;margin-top:6px}
+  .prod-info .price small{font-size:1rem;color:#8A8072;font-weight:400}
+
+  .how{background:var(--mist)}
+  .how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .how-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;text-align:center}
+  .how-card .ico{font-size:1.8rem;margin-bottom:10px}
+  .how-card b{display:block;font-size:.95rem;margin-bottom:4px}
+  .how-card small{color:#6E6457;font-size:.82rem}
+
+  .avis{background:var(--navy);color:#fff}
+  .avis .kicker{color:var(--coral)}
+  .avis h2{color:#fff}
+  .avis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .av{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:22px}
+  .av .stars{color:var(--coral);letter-spacing:2px;margin-bottom:10px}
+  .av p{font-size:.92rem;color:#D7DEE9}
+  .av .who{margin-top:14px;font-size:.82rem;color:#9AA7B8}
+
+  .checkout{background:#fff}
+  .co-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .order-box{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;position:sticky;top:90px}
+  .order-box h3{font-family:var(--display);font-size:1.6rem;font-weight:400;letter-spacing:.04em;margin-bottom:16px}
+  .order-line{display:flex;justify-content:space-between;font-size:.92rem;padding:9px 0;border-bottom:1px dashed var(--line)}
+  .order-line b{font-weight:700}
+  .free-bar{background:var(--mist);border-radius:999px;height:10px;overflow:hidden;margin:14px 0 8px}
+  .free-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--coral),#FF9A5A);border-radius:999px;transition:width .3s}
+  .free-msg{font-size:.82rem;font-weight:700;color:var(--warn);margin-bottom:8px}
+  .free-msg.ok{color:var(--ok)}
+  form{display:flex;flex-direction:column;gap:14px}
+  form h3{font-family:var(--display);font-size:1.8rem;font-weight:400;letter-spacing:.04em;margin-bottom:4px}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field label{font-size:.82rem;font-weight:700;color:#4A443C}
+  .field input,.field select{border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:13px 15px;font-family:var(--body);font-size:.95rem;color:var(--ink);outline:none;transition:border .15s}
+  .field input:focus,.field select:focus{border-color:var(--coral)}
+  .co-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .pay-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .pay-opt{border:1.5px solid var(--line);border-radius:12px;padding:12px;text-align:center;font-size:.85rem;font-weight:700;cursor:pointer;background:#fff;transition:border .15s}
+  .pay-opt input{position:absolute;opacity:0;pointer-events:none}
+  .pay-opt:has(input:checked){border-color:var(--coral);background:#FFF3EE}
+  .order-total{display:flex;justify-content:space-between;align-items:center;padding-top:14px;margin-top:6px;border-top:2px solid var(--navy);font-weight:800}
+  .order-total .amount{font-family:var(--display);font-size:1.9rem;letter-spacing:.03em;color:var(--coral)}
+  form .btn{justify-content:center;width:100%}
+  .form-note{font-size:.78rem;color:#8A8072;text-align:center}
+  .success{border:2px solid var(--ok);background:#F0FAF4;border-radius:16px;padding:26px;text-align:center;display:none}
+  .success b{font-size:1.15rem;color:var(--ok);display:block;margin-bottom:8px}
+  .success .pay-link{display:inline-block;margin-top:14px;background:var(--navy);color:#fff;padding:13px 26px;border-radius:999px;font-weight:800;font-size:.92rem}
+  .empty-msg{color:#8A8072;font-size:.9rem;text-align:center;padding:18px 0}
+
+  footer{background:var(--ink);color:#C9D1DB;padding:46px 0 36px}
+  .foot{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap}
+  .foot .logo{color:#fff;font-size:1.4rem;font-family:var(--display);letter-spacing:.06em}
+  .foot-links{display:flex;gap:44px}
+  .foot-links h4{color:#fff;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+  .foot-links li{list-style:none;font-size:.88rem;margin-bottom:9px}
+  .foot-bottom{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:.78rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* Drawer panier */
+  .overlay{position:fixed;inset:0;background:rgba(10,14,20,.5);opacity:0;pointer-events:none;transition:opacity .25s;z-index:70}
+  .overlay.open{opacity:1;pointer-events:auto}
+  .drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);background:#fff;z-index:80;transform:translateX(100%);transition:transform .28s;display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(0,0,0,.25)}
+  .drawer.open{transform:translateX(0)}
+  .drawer-head{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--line)}
+  .drawer-head h3{font-family:var(--display);font-size:1.5rem;font-weight:400;letter-spacing:.04em}
+  .drawer-close{background:var(--mist);border:0;width:36px;height:36px;border-radius:50%;font-size:1.1rem;cursor:pointer}
+  .drawer-body{flex:1;overflow-y:auto;padding:18px 24px;display:flex;flex-direction:column;gap:14px}
+  .cart-item{display:flex;gap:12px;border:1px solid var(--line);border-radius:12px;padding:10px}
+  .cart-item img{width:64px;height:64px;border-radius:8px;object-fit:cover;flex-shrink:0}
+  .cart-item .ci-info{flex:1;display:flex;flex-direction:column}
+  .cart-item .ci-info b{font-size:.88rem}
+  .cart-item .ci-info small{color:#8A8072;font-size:.78rem}
+  .cart-item .ci-price{font-weight:800;font-size:.88rem;margin-top:auto}
+  .qty{display:inline-flex;align-items:center;gap:8px;margin-top:6px}
+  .qty button{width:24px;height:24px;border-radius:6px;border:1px solid var(--line);background:#fff;cursor:pointer;font-weight:800;line-height:1}
+  .qty span{font-weight:700;min-width:18px;text-align:center;font-size:.88rem}
+  .ci-remove{background:none;border:0;color:#B45309;font-size:.74rem;font-weight:700;cursor:pointer;align-self:flex-start}
+  .drawer-foot{border-top:1px solid var(--line);padding:18px 24px 24px}
+  .drawer-total{display:flex;justify-content:space-between;font-weight:800;margin-bottom:14px}
+  .drawer-total .amount{font-family:var(--display);font-size:1.5rem;color:var(--coral)}
+  .drawer-foot .btn{width:100%;justify-content:center}
+
+  @media(max-width:960px){
+    .hero-inner{grid-template-columns:1fr;padding:56px 0}
+    .prod-grid{grid-template-columns:1fr 1fr}
+    .how-grid{grid-template-columns:1fr 1fr}
+    .co-grid{grid-template-columns:1fr}
+    .order-box{position:static}
+    section{padding:60px 0}
+  }
+  @media(max-width:640px){
+    .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:var(--navy);flex-direction:column;padding:20px 24px;gap:16px;border-bottom:1px solid rgba(255,255,255,.15)}
+    .nav-links.open{display:flex}
+    .burger{display:block}
+    .prod-grid,.avis-grid{grid-template-columns:1fr}
+    .quick-add{opacity:1;transform:none}
+    .co-row{grid-template-columns:1fr}
+  }
+:root{--AC1:#FF5A36;--AC2:#D63E1F;--coral:var(--AC1)}
+
+/* Solos — sélecteur de couleur d'essai (retiré à la livraison) */
+.solos-picker{position:fixed;bottom:16px;right:16px;z-index:999;background:rgba(18,16,12,.94);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:10px 13px;backdrop-filter:blur(8px);display:flex;flex-direction:column;gap:8px;box-shadow:0 14px 38px rgba(0,0,0,.45);font-family:system-ui,sans-serif}
+.solos-picker .sp-label{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CFC7BA}
+.solos-picker .sp-swatches{display:flex;gap:7px}
+.solos-picker button{width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,255,255,.28);cursor:pointer;padding:0;transition:transform .12s,border-color .12s}
+.solos-picker button:hover{transform:scale(1.18);border-color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">ATELIER <span>KICKS</span></a>
+    <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+      <a href="#catalogue">Catalogue</a>
+      <a href="#comment">Comment ça marche</a>
+      <a href="#avis">Avis</a>
+      <a href="#commande">Commander</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="cart-btn" id="cartBtn" aria-label="Ouvrir le panier">
+        🛒 Panier <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" aria-label="Présentation">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Nouveautés · Été 2026</span>
+      <h1>LA PAIRE QUE <em>TOUT LE MONDE</em> REGARDERA.</h1>
+      <p>Sneakers authentiques, sélectionnées et vérifiées une à une. Livraison 24-48h sur tout le Grand Tunis.</p>
+      <a href="#catalogue" class="btn btn-primary">Voir le catalogue →</a>
+    </div>
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop" alt="Paire de sneakers rouge vif" loading="eager">
+      <div class="hero-tag">🔥 <b>-20 %</b> sur la collection Rétro</div>
+    </div>
+  </div>
+</section>
+
+<div class="band" aria-hidden="true">
+  <div class="wrap band-inner">
+    <span>✦ Livraison offerte dès 400 DT</span>
+    <span>✦ Paiement Flouci ou à la livraison</span>
+    <span>✦ Échange sous 7 jours</span>
+    <span>✦ Authenticité garantie</span>
+  </div>
+</div>
+
+<section id="catalogue">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="kicker">Le catalogue</span>
+        <h2>NOS SNEAKERS</h2>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrer par catégorie">
+        <button class="filter active" data-filter="all">Tous</button>
+        <button class="filter" data-filter="running">Running</button>
+        <button class="filter" data-filter="casual">Casual</button>
+        <button class="filter" data-filter="retro">Rétro</button>
+      </div>
+    </div>
+    <div class="prod-grid" id="prodGrid">
+      <article class="prod" data-category="running">
+        <div class="prod-img">
+          <span class="tag hot">Best-seller</span>
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&auto=format&fit=crop" alt="Sneaker Air Zoom Runner rouge" loading="lazy">
+          <button class="quick-add" data-name="Air Zoom Runner" data-price="420" data-img="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=200&auto=format&fit=crop">+ Ajouter au panier</button>
+        </div>
+        <div class="prod-info"><span class="cat">Running</span><h3>Air Zoom Runner</h3><span class="price"><small>420 DT</small></span></div>
+      </article>
+      <article class="prod" data-category="casual">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=800&auto=format&fit=crop" alt="Sneaker Court Classic blanche" loading="lazy">
+          <button class="quick-add" data-name="Court Classic" data-price="380" data-img="https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=200&auto=format&fit=crop">+ Ajouter au panier</button>
+        </div>
+        <div class="prod-info"><span class="cat">Casual</span><h3>Court Classic</h3><span class="price"><small>380 DT</small></span></div>
+      </article>
+      <article class="prod" data-category="casual">
+        <div class="prod-img">
+          <span class="tag">Nouveau</span>
+          <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=800&auto=format&fit=crop" alt="Sneaker Street Low noire" loading="lazy">
+          <button class="quick-add" data-name="Street Low Noir" data-price="350" data-img="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=200&auto=format&fit=crop">+ Ajouter au panier</button>
+        </div>
+        <div class="prod-info"><span class="cat">Casual</span><h3>Street Low Noir</h3><span class="price"><small>350 DT</small></span></div>
+      </article>
+      <article class="prod" data-category="running">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=800&auto=format&fit=crop" alt="Sneaker Trail Grip marron" loading="lazy">
+          <button class="quick-add" data-name="Trail Grip" data-price="450" data-img="https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=200&auto=format&fit=crop">+ Ajouter au panier</button>
+        </div>
+        <div class="prod-info"><span class="cat">Running</span><h3>Trail Grip</h3><span class="price"><small>450 DT</small></span></div>
+      </article>
+      <article class="prod" data-category="retro">
+        <div class="prod-img">
+          <span class="tag hot">-20 %</span>
+          <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?q=80&w=800&auto=format&fit=crop" alt="Sneaker Retro High rouge et blanche" loading="lazy">
+          <button class="quick-add" data-name="Retro High" data-price="352" data-old="440" data-img="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?q=80&w=200&auto=format&fit=crop">+ Ajouter au panier</button>
+        </div>
+        <div class="prod-info"><span class="cat">Rétro</span><h3>Retro High</h3><span class="price"><small>352 DT</small></span></div>
+      </article>
+      <article class="prod" data-category="retro">
+        <div class="prod-img">
+          <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=800&auto=format&fit=crop" alt="Sneaker Slip-on cuir beige" loading="lazy">
+          <button class="quick-add" data-name="Slip-on Cuir" data-price="320" data-img="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=200&auto=format&fit=crop">+ Ajouter au panier</button>
+        </div>
+        <div class="prod-info"><span class="cat">Rétro</span><h3>Slip-on Cuir</h3><span class="price"><small>320 DT</small></span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="comment">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="kicker">Simple &amp; rapide</span>
+        <h2>COMMENT ÇA MARCHE</h2>
+      </div>
+    </div>
+    <div class="how-grid">
+      <div class="how-card"><div class="ico">🛒</div><b>1. Choisissez</b><small>Ajoutez vos paires au panier</small></div>
+      <div class="how-card"><div class="ico">📝</div><b>2. Commandez</b><small>Nom, téléphone, adresse de livraison</small></div>
+      <div class="how-card"><div class="ico">💳</div><b>3. Payez</b><small>Flouci (lien sécurisé) ou à la livraison</small></div>
+      <div class="how-card"><div class="ico">🚚</div><b>4. Recevez</b><small>24-48h sur le Grand Tunis</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="avis" id="avis">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="kicker">Ils portent Atelier Kicks</span>
+        <h2>4,9/5 · 320 AVIS</h2>
+      </div>
+    </div>
+    <div class="avis-grid">
+      <div class="av"><div class="stars">★★★★★</div><p>« Paires authentiques, livrées en 24h à La Marsa. Emballage soigné, je recommande à 100 %. »</p><div class="who">Yassine M. · Avis Google · août 2026</div></div>
+      <div class="av"><div class="stars">★★★★★</div><p>« Le paiement Flouci est super simple. J'ai échangé une taille sans aucune discussion. »</p><div class="who">Omar B. · Avis Google · juillet 2026</div></div>
+      <div class="av"><div class="stars">★★★★★</div><p>« Meilleur choix de sneakers à Tunis. Les prix sont justes et le service client répond vite. »</p><div class="who">Fedii K. · Avis Google · juin 2026</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="checkout" id="commande">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="kicker">Finaliser</span>
+        <h2>VOTRE COMMANDE</h2>
+      </div>
+    </div>
+    <div class="co-grid">
+      <form id="orderForm">
+        <h3>Coordonnées</h3>
+        <div class="field"><label for="nom">Nom complet</label><input id="nom" name="nom" type="text" placeholder="Votre nom" required autocomplete="name"></div>
+        <div class="field"><label for="tel">Téléphone</label><input id="tel" name="tel" type="tel" placeholder="+216 __ ___ ___" required autocomplete="tel"></div>
+        <div class="field"><label for="ville">Ville</label>
+          <select id="ville" name="ville">
+            <option>Tunis</option><option>Ariana</option><option>Ben Arous</option><option>La Manouba</option><option>Autre (Grand Tunis)</option>
+          </select>
+        </div>
+        <div class="field"><label for="adresse">Adresse de livraison</label><input id="adresse" name="adresse" type="text" placeholder="Rue, numéro, étage…" required></div>
+        <div class="field"><label>Paiement</label>
+          <div class="pay-options">
+            <label class="pay-opt"><input type="radio" name="pay" value="flouci" checked>💳 Flouci (lien sécurisé)</label>
+            <label class="pay-opt"><input type="radio" name="pay" value="cod">💵 À la livraison</label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" id="orderBtn">Commander — <span id="btnTotal">0 DT</span></button>
+        <p class="form-note">Réponse de confirmation par téléphone sous 1h ouvrée.</p>
+        <div class="success" id="successBox">
+          <b>✅ Commande envoyée !</b>
+          <span id="successMsg">On vous appelle pour confirmer.</span>
+          <a href="https://flouci.com" class="pay-link" id="payLink" target="_blank" rel="noopener">💳 Payer maintenant via Flouci</a>
+        </div>
+      </form>
+      <div class="order-box">
+        <h3>Résumé</h3>
+        <div id="orderLines"><p class="empty-msg">Votre panier est vide — ajoutez une paire depuis le catalogue.</p></div>
+        <div class="free-bar"><i id="freeBar" style="width:0%"></i></div>
+        <p class="free-msg" id="freeMsg">Plus que 400 DT pour la livraison offerte</p>
+        <div class="order-total"><span>TOTAL</span><span class="amount" id="orderTotal">0 DT</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="logo">ATELIER <span style="color:var(--coral)">KICKS</span></div>
+        <p style="font-size:.85rem;margin-top:8px;max-width:34ch">Sneakers authentiques à Tunis — depuis 2021.</p>
+      </div>
+      <div class="foot-links">
+        <div><h4>Boutique</h4><ul><li><a href="#catalogue">Catalogue</a></li><li><a href="#comment">Livraison</a></li><li><a href="#avis">Avis</a></li></ul></div>
+        <div><h4>Contact</h4><ul><li><a href="tel:+21622345678">+216 22 345 678</a></li><li><a href="mailto:contact@atelierkicks.tn">contact@atelierkicks.tn</a></li><li><a href="#commande">Commander</a></li></ul></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Atelier Kicks — Tous droits réservés.</span>
+      <span>Conçu et réalisé par Solos.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Panier" aria-hidden="true">
+  <div class="drawer-head"><h3>Votre panier</h3><button class="drawer-close" id="drawerClose" aria-label="Fermer le panier">✕</button></div>
+  <div class="drawer-body" id="drawerBody"><p class="empty-msg">Votre panier est vide.</p></div>
+  <div class="drawer-foot">
+    <div class="drawer-total"><span>Total</span><span class="amount" id="drawerTotal">0 DT</span></div>
+    <a href="#commande" class="btn btn-primary" id="checkoutLink">Passer la commande →</a>
+  </div>
+</aside>
+
+<script>
+(function(){
+  var FREE_LIMIT = 400, SHIP_FEE = 12;
+  var cart = [];
+  try { cart = JSON.parse(localStorage.getItem('kicks_cart') || '[]'); } catch(e){ cart = []; }
+
+  var cartCount = document.getElementById('cartCount');
+  var drawerBody = document.getElementById('drawerBody');
+  var drawerTotal = document.getElementById('drawerTotal');
+  var orderLines = document.getElementById('orderLines');
+  var orderTotal = document.getElementById('orderTotal');
+  var btnTotal = document.getElementById('btnTotal');
+  var freeBar = document.getElementById('freeBar');
+  var freeMsg = document.getElementById('freeMsg');
+
+  function fmt(n){ return n.toLocaleString('fr-FR') + ' DT'; }
+
+  function save(){ try { localStorage.setItem('kicks_cart', JSON.stringify(cart)); } catch(e){} }
+
+  function subTotal(){ return cart.reduce(function(s,i){ return s + i.price * i.qty; }, 0); }
+
+  function render(){
+    var n = cart.reduce(function(s,i){ return s + i.qty; }, 0);
+    cartCount.textContent = n;
+    // NB sécurité : les innerHTML de ce script ne rendent QUE des valeurs statiques issues
+    // des attributs data-* du template (nom/prix/image codés en dur). Aucune saisie
+    // utilisateur n'y transite — les champs formulaire passent par textContent.
+    // Drawer
+    if(!cart.length){
+      drawerBody.innerHTML = '<p class="empty-msg">Votre panier est vide.</p>';
+    } else {
+      drawerBody.innerHTML = cart.map(function(i, idx){
+        return '<div class="cart-item">' +
+          '<img src="' + i.img + '" alt="' + i.name + '">' +
+          '<div class="ci-info"><b>' + i.name + '</b><small>' + fmt(i.price) + '</small>' +
+          '<div class="qty"><button data-dec="' + idx + '" aria-label="Diminuer la quantité">−</button><span>' + i.qty + '</span><button data-inc="' + idx + '" aria-label="Augmenter la quantité">+</button></div></div>' +
+          '<div style="display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end"><span class="ci-price">' + fmt(i.price * i.qty) + '</span><button class="ci-remove" data-del="' + idx + '">Retirer</button></div>' +
+          '</div>';
+      }).join('');
+    }
+    var sub = subTotal();
+    drawerTotal.textContent = fmt(sub);
+    // Résumé commande
+    if(!cart.length){
+      orderLines.innerHTML = '<p class="empty-msg">Votre panier est vide — ajoutez une paire depuis le catalogue.</p>';
+    } else {
+      orderLines.innerHTML = cart.map(function(i){
+        return '<div class="order-line"><span>' + i.name + ' × ' + i.qty + '</span><b>' + fmt(i.price * i.qty) + '</b></div>';
+      }).join('');
+    }
+    var shipping = (sub >= FREE_LIMIT || sub === 0) ? 0 : SHIP_FEE;
+    var total = sub + shipping;
+    orderTotal.textContent = fmt(total);
+    btnTotal.textContent = fmt(total);
+    var pct = Math.min(100, Math.round(sub / FREE_LIMIT * 100));
+    freeBar.style.width = pct + '%';
+    if(sub === 0){ freeMsg.textContent = 'Plus que ' + fmt(FREE_LIMIT) + ' pour la livraison offerte'; freeMsg.classList.remove('ok'); }
+    else if(sub >= FREE_LIMIT){ freeMsg.textContent = '🎉 Livraison offerte !'; freeMsg.classList.add('ok'); }
+    else { freeMsg.textContent = 'Plus que ' + fmt(FREE_LIMIT - sub) + ' pour la livraison offerte'; freeMsg.classList.remove('ok'); }
+  }
+
+  function addToCart(name, price, img){
+    var found = cart.filter(function(i){ return i.name === name; })[0];
+    if(found){ found.qty += 1; } else { cart.push({name:name, price:price, img:img, qty:1}); }
+    save(); render();
+    openDrawer();
+  }
+
+  var drawer = document.getElementById('drawer');
+  var overlay = document.getElementById('overlay');
+  function openDrawer(){ drawer.classList.add('open'); overlay.classList.add('open'); drawer.setAttribute('aria-hidden','false'); }
+  function closeDrawer(){ drawer.classList.remove('open'); overlay.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); }
+
+  document.getElementById('cartBtn').addEventListener('click', openDrawer);
+  document.getElementById('drawerClose').addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+  document.getElementById('checkoutLink').addEventListener('click', closeDrawer);
+
+  document.querySelectorAll('.quick-add').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      addToCart(btn.dataset.name, parseInt(btn.dataset.price, 10), btn.dataset.img);
+    });
+  });
+
+  drawerBody.addEventListener('click', function(e){
+    var t = e.target;
+    if(t.dataset.inc !== undefined){
+      cart[+t.dataset.inc].qty += 1; save(); render();
+    } else if(t.dataset.dec !== undefined){
+      var it = cart[+t.dataset.dec]; it.qty -= 1;
+      if(it.qty <= 0){ cart.splice(+t.dataset.dec, 1); }
+      save(); render();
+    } else if(t.dataset.del !== undefined){
+      cart.splice(+t.dataset.del, 1); save(); render();
+    }
+  });
+
+  // Filtres catalogue
+  document.querySelectorAll('.filter').forEach(function(f){
+    f.addEventListener('click', function(){
+      document.querySelectorAll('.filter').forEach(function(x){ x.classList.remove('active'); });
+      f.classList.add('active');
+      var cat = f.dataset.filter;
+      document.querySelectorAll('.prod').forEach(function(p){
+        p.style.display = (cat === 'all' || p.dataset.category === cat) ? '' : 'none';
+      });
+    });
+  });
+
+  // Menu mobile
+  var burger = document.getElementById('burger');
+  var nav = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+
+  // Commande
+  document.getElementById('orderForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var nom = document.getElementById('nom').value.trim();
+    var tel = document.getElementById('tel').value.trim();
+    var adresse = document.getElementById('adresse').value.trim();
+    if(!nom || !tel || !adresse) return;
+    if(!cart.length){ alert('Votre panier est vide.'); return; }
+    var pay = document.querySelector('input[name=pay]:checked').value;
+    var sub = subTotal();
+    var shipping = sub >= FREE_LIMIT ? 0 : SHIP_FEE;
+    var total = sub + shipping;
+    var order = {nom:nom, tel:tel, adresse:adresse, ville:document.getElementById('ville').value, pay:pay, items:cart.slice(), total:total, date:new Date().toISOString()};
+    try {
+      var hist = JSON.parse(localStorage.getItem('kicks_orders') || '[]');
+      hist.push(order);
+      localStorage.setItem('kicks_orders', JSON.stringify(hist));
+    } catch(err){}
+    document.getElementById('successMsg').textContent = 'Merci ' + nom + ' ! Total à régler : ' + fmt(total) + '. On vous appelle au ' + tel + ' pour confirmer.';
+    if(pay === 'flouci'){
+      document.getElementById('payLink').style.display = 'inline-block';
+    } else {
+      document.getElementById('payLink').style.display = 'none';
+    }
+    document.getElementById('successBox').style.display = 'block';
+    var btn = document.getElementById('orderBtn');
+    btn.disabled = true;
+    btn.textContent = '✅ Commande envoyée';
+    cart = []; save(); render();
+  });
+
+  render();
+})();
+</script>
+
+<div class="solos-picker" aria-label="Couleur d'essai">
+  <span class="sp-label">Couleur d'essai — la vôtre sera appliquée</span>
+  <div class="sp-swatches">
+    <button style="background:#5C2A3E" data-i="0" aria-label="Prune"></button>
+    <button style="background:#14655A" data-i="1" aria-label="Vert sapin"></button>
+    <button style="background:#FF5A36" data-i="2" aria-label="Corail"></button>
+    <button style="background:#1E5AA8" data-i="3" aria-label="Bleu"></button>
+    <button style="background:#B91C1C" data-i="4" aria-label="Rouge"></button>
+    <button style="background:#B8860B" data-i="5" aria-label="Doré"></button>
+    <button style="background:#0F766E" data-i="6" aria-label="Teal"></button>
+    <button style="background:#7C3AED" data-i="7" aria-label="Violet"></button>
+  </div>
+</div>
+<script>
+(function(){
+  var s=[["#5C2A3E","#47202F"],["#14655A","#0E4A42"],["#FF5A36","#D63E1F"],["#1E5AA8","#15407A"],["#B91C1C","#7F1D1D"],["#B8860B","#8A6A00"],["#0F766E","#115E59"],["#7C3AED","#5B21B6"]];
+  var box=document.querySelector('.solos-picker'); if(!box) return;
+  box.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=+b.getAttribute('data-i');
+      document.documentElement.style.setProperty('--AC1',s[i][0]);
+      document.documentElement.style.setProperty('--AC2',s[i][1]);
+    });
+  });
+})();
+</script>
+</body>
+</html>

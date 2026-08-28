@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jalloul Conseil — Cabinet d'avocat · Tunis</title>
+<meta name="description" content="Cabinet d'avocat à Tunis : droit des affaires, immobilier, famille et contentieux. Conseil stratégique et représentation devant toutes les juridictions.">
+<meta property="og:title" content="Jalloul Conseil — Cabinet d'avocat">
+<meta property="og:description" content="Droit des affaires, immobilier, famille, contentieux. Premier rendez-vous de conseil offert.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_TN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Jalloul Conseil",
+  "description": "Cabinet d'avocat à Tunis : droit des affaires, immobilier, famille, contentieux.",
+  "image": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop",
+  "address": {"@type": "PostalAddress", "streetAddress": "18 Rue des Lions", "addressLocality": "Tunis", "postalCode": "1000", "addressCountry": "TN"},
+  "telephone": "+216 71 345 678",
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00"}
+  ],
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "96"},
+  "priceRange": "$$$"
+}
+</script>
+<style>
+  :root{
+    --paper:#F6F4EE; --ink:#1D2B2A; --pine:#1C2E4A; --pine-deep:#121E33;
+    --gold:#D9A62E; --mist:#E7EEEA; --line:#D8DED8;
+    --radius:14px; --shadow:0 20px 50px -20px rgba(20,60,55,.25);
+    --display:'Fraunces',serif; --body:'Manrope',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(246,244,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-family:var(--display);font-weight:600;font-size:1.25rem;letter-spacing:-.01em}
+  .logo span{color:var(--pine)}
+  .nav-links{display:flex;gap:28px;font-size:.92rem;font-weight:600}
+  .nav-links a:hover{color:var(--pine)}
+  .nav-cta{background:var(--pine);color:#fff;padding:10px 20px;border-radius:999px;font-weight:700;font-size:.9rem;transition:background .2s}
+  .nav-cta:hover{background:var(--pine-deep)}
+  .burger{display:none;background:none;border:0;font-size:1.5rem;cursor:pointer;color:var(--ink)}
+
+  .hero{position:relative;overflow:hidden}
+  .hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;padding:88px 0 72px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--pine);background:var(--mist);padding:8px 14px;border-radius:999px;margin-bottom:22px}
+  .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
+  h1{font-family:var(--display);font-weight:500;font-size:clamp(2.4rem,5vw,3.7rem);line-height:1.08;letter-spacing:-.02em;margin-bottom:20px}
+  h1 em{font-style:normal;color:var(--pine)}
+  .hero p.lead{font-size:1.1rem;color:#4A5A57;max-width:46ch;margin-bottom:30px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:38px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;font-weight:700;font-size:.98rem;transition:transform .15s,box-shadow .15s}
+  .btn-primary{background:var(--pine);color:#fff;box-shadow:var(--shadow)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{border:1.5px solid var(--ink);background:transparent}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+  .hero-proof{display:flex;gap:34px;flex-wrap:wrap}
+  .proof{display:flex;flex-direction:column}
+  .proof b{font-family:var(--display);font-size:1.7rem;font-weight:600;color:var(--pine)}
+  .proof small{font-size:.82rem;color:#5A6A67}
+  .hero-card{position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
+  .hero-card img{width:100%;height:520px;object-fit:cover}
+  .hero-card .badge{position:absolute;bottom:18px;left:18px;right:18px;background:rgba(255,255,255,.78);border-radius:var(--radius);padding:16px 20px;display:flex;align-items:center;gap:14px;backdrop-filter:blur(6px)}
+  .badge-ico{width:44px;height:44px;border-radius:12px;background:var(--mist);display:grid;place-items:center;font-size:1.3rem;flex-shrink:0}
+  .badge b{font-size:.95rem;display:block}
+  .badge small{color:#5A6A67;font-size:.82rem}
+
+  section{padding:84px 0}
+  .sec-head{max-width:640px;margin-bottom:46px}
+  .kicker{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  h2{font-family:var(--display);font-weight:500;font-size:clamp(1.9rem,3.4vw,2.6rem);letter-spacing:-.015em;line-height:1.15;margin-bottom:14px}
+  .sec-head p{color:#4A5A57}
+
+  .services{background:#fff}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .svc{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:transform .18s,box-shadow .18s}
+  .svc:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .svc .ico{width:52px;height:52px;border-radius:14px;background:var(--mist);display:grid;place-items:center;font-size:1.5rem;margin-bottom:18px}
+  .svc h3{font-family:var(--display);font-weight:600;font-size:1.2rem;margin-bottom:8px}
+  .svc p{font-size:.92rem;color:#4A5A57}
+  .svc .price{display:inline-block;margin-top:14px;font-size:.82rem;font-weight:700;color:var(--pine);background:var(--mist);padding:5px 12px;border-radius:999px}
+
+  .why{background:var(--pine);color:#EDF4F1}
+  .why .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+  .why h2{color:#fff}
+  .why p{color:#BFD4CE}
+  .why-list{list-style:none;margin-top:8px}
+  .why-list li{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:.98rem}
+  .why-list li:last-child{border-bottom:0}
+  .why-list .n{font-family:var(--display);color:var(--gold);font-weight:600;min-width:34px}
+  .why-visual{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:34px;display:flex;flex-direction:column;gap:18px}
+  .why-visual .row{display:flex;justify-content:space-between;font-size:.92rem;padding-bottom:12px;border-bottom:1px dashed rgba(255,255,255,.2)}
+  .why-visual .row:last-child{border:0}
+  .why-visual b{font-family:var(--display);font-size:1.3rem;color:#fff}
+  .why-visual .pct{color:var(--gold);font-weight:700}
+
+  .tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .tst{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .tst .stars{color:var(--gold);letter-spacing:2px;margin-bottom:12px}
+  .tst p{font-size:.93rem;color:#33413E}
+  .tst .who{margin-top:16px;display:flex;align-items:center;gap:12px}
+  .tst .ava{width:42px;height:42px;border-radius:50%;background:var(--mist);display:grid;place-items:center;font-weight:700;color:var(--pine)}
+  .tst .who b{font-size:.9rem;display:block}
+  .tst .who small{color:#6B7A77;font-size:.8rem}
+
+  .rdv{background:#fff}
+  .rdv-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .rdv-info{display:flex;flex-direction:column;gap:18px}
+  .info-row{display:flex;gap:14px;align-items:flex-start}
+  .info-row .ico{width:44px;height:44px;border-radius:12px;background:var(--mist);display:grid;place-items:center;font-size:1.15rem;flex-shrink:0}
+  .info-row b{display:block;font-size:.95rem}
+  .info-row span{color:#4A5A57;font-size:.9rem}
+  form{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:30px;display:flex;flex-direction:column;gap:16px}
+  form h3{font-family:var(--display);font-weight:600;font-size:1.35rem}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field label{font-size:.82rem;font-weight:700;color:#33413E}
+  .field input,.field select,.field textarea{border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:13px 15px;font-family:var(--body);font-size:.95rem;color:var(--ink);outline:none;transition:border .15s}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--pine)}
+  .field textarea{resize:vertical;min-height:90px}
+  form .btn{align-self:flex-start;border:0;cursor:pointer;font-family:var(--body)}
+  .form-note{font-size:.78rem;color:#6B7A77}
+
+  footer{background:var(--ink);color:#C9D6D3;padding:48px 0 40px}
+  .foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+  .foot .logo{color:#fff;font-size:1.15rem}
+  .foot p{font-size:.85rem;max-width:34ch;margin-top:10px}
+  .foot-links{display:flex;gap:44px}
+  .foot-links h4{color:#fff;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+  .foot-links li{list-style:none;font-size:.88rem;margin-bottom:9px}
+  .foot-links a:hover{color:#fff}
+  .foot-bottom{margin-top:34px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:.78rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  @media(max-width:920px){
+    .hero-inner{grid-template-columns:1fr;padding:56px 0 48px;gap:36px}
+    .hero-card img{height:380px}
+    .svc-grid,.tst-grid{grid-template-columns:1fr 1fr}
+    .why .wrap,.rdv-grid{grid-template-columns:1fr}
+    section{padding:64px 0}
+  }
+  @media(max-width:640px){
+    .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--paper);flex-direction:column;padding:20px 24px;gap:16px;border-bottom:1px solid var(--line)}
+    .nav-links.open{display:flex}
+    .burger{display:block}
+    .svc-grid,.tst-grid{grid-template-columns:1fr}
+    .hero-proof{gap:20px}
+    .btn{padding:13px 22px}
+    .hero-card img{height:300px}
+  }
+:root{--AC1:#1C2E4A;--AC2:#121E33;--pine:var(--AC1);--pine-deep:var(--AC2)}
+
+/* Solos — sélecteur de couleur d'essai (retiré à la livraison) */
+.solos-picker{position:fixed;bottom:16px;right:16px;z-index:999;background:rgba(18,16,12,.94);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:10px 13px;backdrop-filter:blur(8px);display:flex;flex-direction:column;gap:8px;box-shadow:0 14px 38px rgba(0,0,0,.45);font-family:system-ui,sans-serif}
+.solos-picker .sp-label{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CFC7BA}
+.solos-picker .sp-swatches{display:flex;gap:7px}
+.solos-picker button{width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,255,255,.28);cursor:pointer;padding:0;transition:transform .12s,border-color .12s}
+.solos-picker button:hover{transform:scale(1.18);border-color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">Jalloul<span>.</span> Conseil</a>
+    <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+      <a href="#services">Domaines</a>
+      <a href="#pourquoi">Le cabinet</a>
+      <a href="#avis">Témoignages</a>
+      <a href="#rdv">Contact</a>
+    </nav>
+    <div style="display:flex;gap:12px;align-items:center">
+      <a href="tel:+21670123456" style="font-weight:700;font-size:.92rem">☎ 71 345 678</a>
+      <a href="#rdv" class="nav-cta">Prendre RDV</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" aria-label="Présentation">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Cabinet d'avocat · Tunis</span>
+      <h1>Vos intérêts, <em>défendus avec rigueur</em>.</h1>
+      <p class="lead">Droit des affaires, immobilier, famille et contentieux — une approche claire et stratégique, avec un premier rendez-vous de conseil offert.</p>
+      <div class="hero-actions">
+        <a href="#rdv" class="btn btn-primary">Demander une consultation →</a>
+        <a href="#services" class="btn btn-ghost">Voir nos domaines</a>
+      </div>
+      <div class="hero-proof">
+        <div class="proof"><b>4,9★</b><small>96 avis Google</small></div>
+        <div class="proof"><b>18 ans</b><small>de pratique</small></div>
+        <div class="proof"><b>48h</b><small>réponse garantie</small></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop" alt="Cabinet Jalloul Conseil, Tunis" loading="eager">
+      <div class="badge">
+        <div class="badge-ico" aria-hidden="true">⚖️</div>
+        <div><b>Nouveau : consultation vidéo</b><small>Premier échange à distance, gratuit</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Nos domaines</span>
+      <h2>Une expertise complète, des honoraires transparents.</h2>
+      <p>Chaque dossier commence par une analyse sans engagement. Convention d'honoraires écrite avant toute mission.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><div class="ico" aria-hidden="true">📊</div><h3>Droit des affaires</h3><p>Création de sociétés, contrats commerciaux, recouvrement de créances.</p><span class="price">Sur devis</span></div>
+      <div class="svc"><div class="ico" aria-hidden="true">🏠</div><h3>Immobilier &amp; notarial</h3><p>Ventes, litiges de copropriété, baux commerciaux et résidentiels.</p><span class="price">Sur devis</span></div>
+      <div class="svc"><div class="ico" aria-hidden="true">👨‍👩‍👧</div><h3>Droit de la famille</h3><p>Divorce, pension, garde d'enfants, succession — avec humanité et discrétion.</p><span class="price">Sur devis</span></div>
+      <div class="svc"><div class="ico" aria-hidden="true">🧾</div><h3>Fiscalité</h3><p>Contentieux fiscal, déclarations, redressements et négociations.</p><span class="price">Sur devis</span></div>
+      <div class="svc"><div class="ico" aria-hidden="true">⚡</div><h3>Contentieux</h3><p>Représentation devant toutes les juridictions, du tribunal à la Cour de cassation.</p><span class="price">Sur devis</span></div>
+      <div class="svc"><div class="ico" aria-hidden="true">🤝</div><h3>Conseil &amp; contrats</h3><p>Rédaction et revue de contrats, avis juridiques, médiation.</p><span class="price">Sur devis</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="pourquoi">
+  <div class="wrap">
+    <div>
+      <span class="kicker">La clinique</span>
+      <h2>Pourquoi nos clients nous confient leurs dossiers.</h2>
+      <p>Nous avons construit le cabinet autour d'une seule idée : le droit se pratique avec de l'écoute et de la transparence.</p>
+      <ul class="why-list">
+        <li><span class="n">01</span><span><b>Réponse sous 48h, toujours.</b> Chaque demande reçoit une réponse écrite.</span></li>
+        <li><span class="n">02</span><span><b>Convention d'honoraires écrite.</b> Aucune surprise sur la facture, jamais.</span></li>
+        <li><span class="n">03</span><span><b>Dossiers maîtrisés.</b> Suivi rigoureux, échéances respectées, stratégie claire.</span></li>
+        <li><span class="n">04</span><span><b>Suivi après dossier.</b> Point d'étape régulier et disponibilité réelle.</span></li>
+      </ul>
+    </div>
+    <div class="why-visual">
+      <div class="row"><span>Clients satisfaits</span><b>97<span class="pct">%</span></b></div>
+      <div class="row"><span>Dossiers gagnés</span><b>87<span class="pct">%</span></b></div>
+      <div class="row"><span>Clients fidèles</span><b>78<span class="pct">%</span></b></div>
+      <div class="row"><span>Clients qui nous recommandent</span><b>91<span class="pct">%</span></b></div>
+      <div class="row"><span>Ancienneté moyenne des dossiers</span><b>4,8 ans</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="avis" style="padding:84px 0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Ils nous font confiance</span>
+      <h2>4,9/5 sur Google — 96 avis.</h2>
+      <p>Des patients réels, des mots simples, un rendez-vous d'essai sans engagement.</p>
+    </div>
+    <div class="tst-grid">
+      <div class="tst"><div class="stars" aria-label="5 étoiles sur 5">★★★★★</div><p>« Me Jalloul a défendu mon entreprise dans un litige commercial : stratégie claire, communication constante, résultat excellent. »</p><div class="who"><div class="ava">SI</div><div><b>Hichem B.</b><small>Avis Google · août 2026</small></div></div></div>
+      <div class="tst"><div class="stars" aria-label="5 étoiles sur 5">★★★★★</div><p>« Une succession compliquée réglée en 5 mois, avec une écoute et une patience rares. Je recommande vivement. »</p><div class="who"><div class="ava">MK</div><div><b>Leila T.</b><small>Avis Google · juillet 2026</small></div></div></div>
+      <div class="tst"><div class="stars" aria-label="5 étoiles sur 5">★★★★★</div><p>« Rigueur, disponibilité, honnêteté : tout ce qu'on attend d'un avocat. Mon dossier s'est réglé à l'amiable. »</p><div class="who"><div class="ava">AB</div><div><b>Sami G.</b><small>Avis Google · juin 2026</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="rdv" id="rdv">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Contact &amp; rendez-vous</span>
+      <h2>Le premier rendez-vous de conseil est offert.</h2>
+    </div>
+    <div class="rdv-grid">
+      <div class="rdv-info">
+        <div class="info-row"><div class="ico" aria-hidden="true">📍</div><div><b>Adresse</b><span>18 Rue des Lions, Tunis 1000</span></div></div>
+        <div class="info-row"><div class="ico" aria-hidden="true">📞</div><div><b>Téléphone &amp; WhatsApp</b><span>+216 71 345 678 · +216 20 987 654</span></div></div>
+        <div class="info-row"><div class="ico" aria-hidden="true">🕐</div><div><b>Horaires</b><span>Lun–Ven : 9h–18h · Sam : 9h–13h sur RDV</span></div></div>
+        <div class="info-row"><div class="ico" aria-hidden="true">🅿️</div><div><b>Accès</b><span>Parking rue de Rome à 150 m · Métro République</span></div></div>
+        <div class="info-row"><div class="ico" aria-hidden="true">💳</div><div><b>Honoraires</b><span>Convention écrite avant mission · Paiement échelonné possible</span></div></div>
+      </div>
+      <form id="rdvForm">
+        <h3>Demande de rendez-vous</h3>
+        <div class="field"><label for="nom">Nom complet</label><input id="nom" name="nom" type="text" placeholder="Votre nom" required autocomplete="name"></div>
+        <div class="field"><label for="tel">Téléphone</label><input id="tel" name="tel" type="tel" placeholder="+216 __ ___ ___" required autocomplete="tel"></div>
+        <div class="field"><label for="soin">Motif</label>
+          <select id="soin" name="soin">
+            <option>Droit des affaires</option>
+            <option>Contentieux</option>
+            <option>Immobilier</option>
+            <option>Droit de la famille</option>
+            <option>Fiscalité</option>
+            <option>Conseil / contrat</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="field"><label for="msg">Message (optionnel)</label><textarea id="msg" name="msg" placeholder="Décrivez votre besoin en quelques mots…"></textarea></div>
+        <button type="submit" class="btn btn-primary">Envoyer ma demande →</button>
+        <p class="form-note">Réponse sous 2h ouvrées. Vos données ne sont jamais partagées.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="logo">Jalloul<span style="color:var(--gold)">.</span> Conseil</div>
+        <p>Cabinet d'avocat à Tunis — droit des affaires, immobilier, famille et contentieux.</p>
+      </div>
+      <div class="foot-links">
+        <div><h4>Domaines</h4><ul><li><a href="#services">Affaires</a></li><li><a href="#services">Immobilier</a></li><li><a href="#services">Famille</a></li><li><a href="#services">Contentieux</a></li></ul></div>
+        <div><h4>Contact</h4><ul><li><a href="tel:+21670123456">+216 71 345 678</a></li><li><a href="mailto:contact@jalloul-conseil.tn">contact@jalloul-conseil.tn</a></li><li><a href="#rdv">Plan d'accès</a></li></ul></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Jalloul Conseil — Tous droits réservés.</span>
+      <span>Conçu et réalisé par Solos.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var burger = document.getElementById('burger');
+  var nav = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+  document.getElementById('rdvForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var nom = document.getElementById('nom').value.trim();
+    var tel = document.getElementById('tel').value.trim();
+    if(!nom || !tel) return;
+    try {
+      var hist = JSON.parse(localStorage.getItem('jalloul_rdv') || '[]');
+      hist.push({nom:nom, tel:tel, soin:document.getElementById('soin').value, date:new Date().toISOString()});
+      localStorage.setItem('jalloul_rdv', JSON.stringify(hist));
+    } catch(err){}
+    var btn = this.querySelector('button[type=submit]');
+    btn.textContent = '✅ Demande envoyée — on vous rappelle sous 2h';
+    btn.disabled = true;
+    this.reset();
+  });
+</script>
+
+<div class="solos-picker" aria-label="Couleur d'essai">
+  <span class="sp-label">Couleur d'essai — la vôtre sera appliquée</span>
+  <div class="sp-swatches">
+    <button style="background:#5C2A3E" data-i="0" aria-label="Prune"></button>
+    <button style="background:#14655A" data-i="1" aria-label="Vert sapin"></button>
+    <button style="background:#FF5A36" data-i="2" aria-label="Corail"></button>
+    <button style="background:#1E5AA8" data-i="3" aria-label="Bleu"></button>
+    <button style="background:#B91C1C" data-i="4" aria-label="Rouge"></button>
+    <button style="background:#B8860B" data-i="5" aria-label="Doré"></button>
+    <button style="background:#0F766E" data-i="6" aria-label="Teal"></button>
+    <button style="background:#7C3AED" data-i="7" aria-label="Violet"></button>
+  </div>
+</div>
+<script>
+(function(){
+  var s=[["#5C2A3E","#47202F"],["#14655A","#0E4A42"],["#FF5A36","#D63E1F"],["#1E5AA8","#15407A"],["#B91C1C","#7F1D1D"],["#B8860B","#8A6A00"],["#0F766E","#115E59"],["#7C3AED","#5B21B6"]];
+  var box=document.querySelector('.solos-picker'); if(!box) return;
+  box.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=+b.getAttribute('data-i');
+      document.documentElement.style.setProperty('--AC1',s[i][0]);
+      document.documentElement.style.setProperty('--AC2',s[i][1]);
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boutique Zitouna — Vêtements & accessoires femme · La Marsa</title>
+<meta name="description" content="Boutique de vêtements et accessoires pour femme à La Marsa. Nouvelles collections chaque mois, livraison offerte dès 150 DT, échange sous 7 jours.">
+<meta property="og:title" content="Boutique Zitouna — Vêtements & accessoires femme · La Marsa">
+<meta property="og:description" content="Collections femme, livraison offerte dès 150 DT, échange sous 7 jours. Avenue Habib Bourguiba, La Marsa.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_TN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ClothingStore",
+  "name": "Boutique Zitouna",
+  "description": "Vêtements et accessoires pour femme à La Marsa.",
+  "address": {"@type": "PostalAddress", "streetAddress": "24 Avenue Habib Bourguiba", "addressLocality": "La Marsa", "postalCode": "2078", "addressCountry": "TN"},
+  "telephone": "+216 71 456 789",
+  "openingHours": ["Mo-Sa 09:30-19:30", "Su 10:00-14:00"],
+  "priceRange": "$$"
+}
+</script>
+<style>
+  :root{
+    --paper:#F7F3EC; --ink:#2B2118; --plum:#5C2A3E; --plum-deep:#47202F;
+    --gold:#B98A3E; --mist:#EDE5D8; --line:#DCD2C0; --ok:#3E7A5C;
+    --display:'Marcellus',serif; --body:'Outfit',system-ui,sans-serif;
+    --radius:16px; --shadow:0 24px 60px -24px rgba(43,33,24,.35);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(247,243,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:16px}
+  .logo{font-family:var(--display);font-size:1.45rem;letter-spacing:.06em;text-transform:uppercase}
+  .logo b{color:var(--plum)}
+  .nav-links{display:flex;gap:30px;font-size:.92rem;font-weight:600}
+  .nav-links a:hover{color:var(--plum)}
+  .nav-cta{background:var(--plum);color:#FFF8F0;padding:11px 22px;border-radius:999px;font-weight:600;font-size:.9rem;transition:background .2s}
+  .nav-cta:hover{background:var(--plum-deep)}
+  .burger{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--ink)}
+
+  /* Hero */
+  .hero{display:grid;grid-template-columns:1.02fr .98fr;gap:0;min-height:calc(100vh - 74px)}
+  .hero-copy{display:flex;flex-direction:column;justify-content:center;padding:64px 48px 64px 0}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+  .eyebrow::before{content:"";width:34px;height:1.5px;background:var(--gold)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,5.4vw,4rem);line-height:1.06;letter-spacing:.01em;margin-bottom:22px}
+  h1 em{font-style:normal;color:var(--plum)}
+  .lead{font-size:1.08rem;color:#5D5144;max-width:44ch;margin-bottom:32px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:999px;font-weight:700;font-size:.98rem;transition:transform .15s,box-shadow .15s}
+  .btn-primary{background:var(--plum);color:#FFF8F0;box-shadow:var(--shadow)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{border:1.5px solid var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+  .hero-proof{display:flex;gap:36px;margin-top:44px;flex-wrap:wrap}
+  .proof b{font-family:var(--display);font-size:1.6rem;font-weight:400;color:var(--plum);display:block}
+  .proof small{font-size:.82rem;color:#6B5F52}
+  .hero-img{position:relative;min-height:480px}
+  .hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero-tag{position:absolute;bottom:22px;left:-28px;background:#FFF8F0;border-radius:var(--radius);padding:14px 20px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:center}
+  .hero-tag .dot{width:10px;height:10px;border-radius:50%;background:var(--ok);flex-shrink:0}
+  .hero-tag b{font-size:.92rem;display:block}
+  .hero-tag small{color:#6B5F52;font-size:.8rem}
+
+  /* Bande annonces */
+  .band{background:var(--plum);color:#F7E9DC;padding:14px 0}
+  .band-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:.85rem;font-weight:500;letter-spacing:.04em}
+  .band-inner span{display:inline-flex;align-items:center;gap:8px}
+
+  /* Section générique */
+  section{padding:88px 0}
+  .sec-head{max-width:600px;margin-bottom:48px}
+  .kicker{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  h2{font-family:var(--display);font-weight:400;font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.15;margin-bottom:14px}
+  .sec-head p{color:#5D5144}
+
+  /* Collection */
+  .collection{background:#fff}
+  .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .prod{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--paper)}
+  .prod img{aspect-ratio:3/4;object-fit:cover;width:100%;transition:transform .4s}
+  .prod:hover img{transform:scale(1.04)}
+  .prod .badge{position:absolute;top:12px;left:12px;background:var(--plum);color:#FFF8F0;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
+  .prod-info{padding:16px 18px 20px}
+  .prod-info h3{font-family:var(--display);font-weight:400;font-size:1.08rem}
+  .prod-info .price{color:var(--plum);font-weight:700;font-size:.95rem;margin-top:4px;display:block}
+  .prod-info .price s{color:#9A8C7C;font-weight:400;margin-right:8px}
+  .prod-info small{color:#6B5F52;display:block;margin-top:4px;font-size:.78rem}
+  .collection .btn{align-self:center;margin-top:44px}
+
+  /* Lookbook */
+  .lookbook{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .lb-item{position:relative;border-radius:20px;overflow:hidden}
+  .lb-item img{aspect-ratio:4/5;object-fit:cover;width:100%}
+  .lb-cap{position:absolute;inset:auto 0 0 0;background:linear-gradient(transparent,rgba(43,33,24,.72));color:#fff;padding:60px 26px 22px}
+  .lb-cap b{font-family:var(--display);font-size:1.3rem;font-weight:400}
+  .lb-cap small{display:block;opacity:.85;font-size:.84rem}
+
+  /* Savoir-faire */
+  .savoir{background:var(--mist)}
+  .savoir-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+  .savoir ul{list-style:none;margin-top:8px}
+  .savoir li{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--line);font-size:.97rem}
+  .savoir li:last-child{border:0}
+  .savoir li b{color:var(--plum)}
+  .savoir-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;text-align:center}
+  .stat b{font-family:var(--display);font-size:1.8rem;font-weight:400;color:var(--plum);display:block}
+  .stat small{font-size:.8rem;color:#6B5F52}
+
+  /* Avis */
+  .tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .tst{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .tst .stars{color:var(--gold);letter-spacing:2px;margin-bottom:12px}
+  .tst p{font-size:.93rem;color:#4A3F33}
+  .tst .who{margin-top:16px;display:flex;align-items:center;gap:12px}
+  .tst .ava{width:42px;height:42px;border-radius:50%;background:var(--mist);display:grid;place-items:center;font-weight:700;color:var(--plum)}
+  .tst .who b{font-size:.9rem;display:block}
+  .tst .who small{color:#8A7C6C;font-size:.8rem}
+
+  /* Contact */
+  .contact{background:#fff}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .info-row{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
+  .info-row:last-child{border:0}
+  .info-row .ico{width:44px;height:44px;border-radius:12px;background:var(--mist);display:grid;place-items:center;font-size:1.15rem;flex-shrink:0}
+  .info-row b{display:block;font-size:.95rem}
+  .info-row span{color:#5D5144;font-size:.9rem}
+  form{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:30px;display:flex;flex-direction:column;gap:16px}
+  form h3{font-family:var(--display);font-weight:400;font-size:1.4rem}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field label{font-size:.82rem;font-weight:700;color:#4A3F33}
+  .field input,.field textarea{border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:13px 15px;font-family:var(--body);font-size:.95rem;color:var(--ink);outline:none;transition:border .15s}
+  .field input:focus,.field textarea:focus{border-color:var(--plum)}
+  .field textarea{resize:vertical;min-height:90px}
+  form .btn{border:0;cursor:pointer;font-family:var(--body);align-self:flex-start}
+  .form-note{font-size:.78rem;color:#8A7C6C}
+
+  /* Footer */
+  footer{background:var(--ink);color:#C9BCAB;padding:48px 0 40px}
+  .foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .foot .logo{color:#fff;font-size:1.2rem}
+  .foot p{font-size:.85rem;max-width:34ch;margin-top:10px}
+  .foot-links{display:flex;gap:44px}
+  .foot-links h4{color:#fff;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+  .foot-links li{list-style:none;font-size:.88rem;margin-bottom:9px}
+  .foot-links a:hover{color:#fff}
+  .foot-bottom{margin-top:34px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);font-size:.78rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  @media(max-width:960px){
+    .hero{grid-template-columns:1fr}
+    .hero-copy{padding:56px 0 40px}
+    .hero-img{min-height:420px}
+    .hero-tag{left:16px}
+    .prod-grid{grid-template-columns:1fr 1fr}
+    .savoir-grid,.lookbook,.contact-grid{grid-template-columns:1fr}
+    section{padding:64px 0}
+  }
+  @media(max-width:640px){
+    .nav-links{display:none;position:absolute;top:74px;left:0;right:0;background:var(--paper);flex-direction:column;padding:20px 24px;gap:16px;border-bottom:1px solid var(--line)}
+    .nav-links.open{display:flex}
+    .burger{display:block}
+    .tst-grid{grid-template-columns:1fr}
+    .band-inner{justify-content:center;text-align:center}
+    .hero-proof{gap:20px}
+    .btn{padding:13px 24px}
+  }
+:root{--AC1:#5C2A3E;--AC2:#47202F;--plum:var(--AC1);--plum-deep:var(--AC2)}
+
+/* Solos — sélecteur de couleur d'essai (retiré à la livraison) */
+.solos-picker{position:fixed;bottom:16px;right:16px;z-index:999;background:rgba(18,16,12,.94);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:10px 13px;backdrop-filter:blur(8px);display:flex;flex-direction:column;gap:8px;box-shadow:0 14px 38px rgba(0,0,0,.45);font-family:system-ui,sans-serif}
+.solos-picker .sp-label{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CFC7BA}
+.solos-picker .sp-swatches{display:flex;gap:7px}
+.solos-picker button{width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,255,255,.28);cursor:pointer;padding:0;transition:transform .12s,border-color .12s}
+.solos-picker button:hover{transform:scale(1.18);border-color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">Boutique <b>Zitouna</b></a>
+    <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+      <a href="#collection">Collection</a>
+      <a href="#lookbook">Lookbook</a>
+      <a href="#savoir">Savoir-faire</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div style="display:flex;gap:12px;align-items:center">
+      <a href="tel:+21671456789" style="font-weight:700;font-size:.92rem">☎ 71 456 789</a>
+      <a href="#contact" class="nav-cta">Nous écrire</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" aria-label="Présentation">
+  <div class="hero-copy">
+    <span class="eyebrow">Nouvelle collection · Automne 2026</span>
+    <h1>L'élégance discrète, <em>au quotidien.</em></h1>
+    <p class="lead">Vêtements et accessoires sélectionnés à la main pour la femme moderne. Pièces intemporelles, tissus naturels, coupes qui durent.</p>
+    <div class="hero-actions">
+      <a href="#collection" class="btn btn-primary">Découvrir la collection →</a>
+      <a href="#savoir" class="btn btn-ghost">Notre histoire</a>
+    </div>
+    <div class="hero-proof">
+      <div class="proof"><b>12 ans</b><small>au service du style</small></div>
+      <div class="proof"><b>4,8★</b><small>86 avis Google</small></div>
+      <div class="proof"><b>48h</b><small>livraison Grand Tunis</small></div>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1400&auto=format&fit=crop" alt="Vêtements femme de la collection Boutique Zitouna" loading="eager">
+    <div class="hero-tag">
+      <span class="dot" aria-hidden="true"></span>
+      <div><b>Livraison offerte</b><small>dès 150 DT d'achat · Grand Tunis</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="band" aria-hidden="true">
+  <div class="wrap band-inner">
+    <span>✦ Livraison offerte dès 150 DT</span>
+    <span>✦ Échange sous 7 jours</span>
+    <span>✦ Atelier de retouches sur place</span>
+    <span>✦ Cartes &amp; espèces acceptées</span>
+  </div>
+</div>
+
+<section class="collection" id="collection">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">La collection</span>
+      <h2>Des pièces choisies une à une.</h2>
+      <p>Chaque arrivage est sélectionné par notre équipe — qualité des tissus, coupe et intemporalité avant tout.</p>
+    </div>
+    <div class="prod-grid">
+      <article class="prod">
+        <span class="badge">Nouveau</span>
+        <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?q=80&w=800&auto=format&fit=crop" alt="Haut en crochet beige" loading="lazy">
+        <div class="prod-info"><h3>Haut en crochet</h3><span class="price"><s>220 DT</s>180 DT</span><small>Coton crochet · 2 coloris</small></div>
+      </article>
+      <article class="prod">
+        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=800&auto=format&fit=crop" alt="Pantalon fluide rose" loading="lazy">
+        <div class="prod-info"><h3>Pantalon fluide</h3><span class="price">260 DT</span><small>Viscose · coupe fluide</small></div>
+      </article>
+      <article class="prod">
+        <span class="badge">Best-seller</span>
+        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=800&auto=format&fit=crop" alt="Robe de soirée rouge" loading="lazy">
+        <div class="prod-info"><h3>Robe de soirée</h3><span class="price">240 DT</span><small>Satin · collection limitée</small></div>
+      </article>
+      <article class="prod">
+        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=800&auto=format&fit=crop" alt="Sac à main en cuir cognac" loading="lazy">
+        <div class="prod-info"><h3>Sac cabas cuir</h3><span class="price">320 DT</span><small>Cuir pleine fleur</small></div>
+      </article>
+    </div>
+    <div style="text-align:center"><a href="#contact" class="btn btn-ghost">Commander une pièce →</a></div>
+  </div>
+</section>
+
+<section id="lookbook">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Lookbook</span>
+      <h2>L'inspiration de la saison.</h2>
+    </div>
+    <div class="lookbook">
+      <div class="lb-item">
+        <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?q=80&w=1000&auto=format&fit=crop" alt="Look automne : manteau camel et pantalon large" loading="lazy">
+        <div class="lb-cap"><b>Le total look camel</b><small>Manteau · pantalon large · bottines</small></div>
+      </div>
+      <div class="lb-item">
+        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1000&auto=format&fit=crop" alt="Look soirée : robe satin et bijoux dorés" loading="lazy">
+        <div class="lb-cap"><b>Soirée en satin</b><small>Robe · clutch · boucles d'oreilles</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="savoir" id="savoir">
+  <div class="wrap savoir-grid">
+    <div>
+      <span class="kicker">Savoir-faire</span>
+      <h2>Une boutique de quartier, un service d'exception.</h2>
+      <ul>
+        <li><b>Conseil personnalisé</b> — nous vous accompagnons dans le choix des coupes et des couleurs.</li>
+        <li><b>Retouches sur place</b> — ourlets et ajustements offerts pendant 30 jours.</li>
+        <li><b>Achat responsable</b> — des collections limitées, des tissus durables.</li>
+        <li><b>Fidélité</b> — 10 % de remise dès le 2ᵉ achat de l'année.</li>
+      </ul>
+    </div>
+    <div class="savoir-stats">
+      <div class="stat"><b>1 200+</b><small>clientes fidèles</small></div>
+      <div class="stat"><b>40</b><small>nouvelles pièces / mois</small></div>
+      <div class="stat"><b>98 %</b><small>de retours satisfaits</small></div>
+      <div class="stat"><b>6 j/7</b><small>en boutique</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="avis">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Elles nous font confiance</span>
+      <h2>4,8/5 sur Google — 86 avis.</h2>
+    </div>
+    <div class="tst-grid">
+      <div class="tst"><div class="stars">★★★★★</div><p>« Une robe en lin superbe, conseil impeccable et retouche offerte le jour même. Je reviendrai. »</p><div class="who"><div class="ava">RA</div><div><b>Rim A.</b><small>Avis Google · août 2026</small></div></div></div>
+      <div class="tst"><div class="stars">★★★★★</div><p>« Livraison en 24h à Tunis, emballage soigné, échange sans discussion. Rare de nos jours. »</p><div class="who"><div class="ava">NI</div><div><b>Nesrine I.</b><small>Avis Google · juillet 2026</small></div></div></div>
+      <div class="tst"><div class="stars">★★★★☆</div><p>« Jolies pièces et très bon rapport qualité-prix. La boutique est un peu petite, mais le service compense. »</p><div class="who"><div class="ava">SI</div><div><b>Syrine B.</b><small>Avis Google · juin 2026</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Contact</span>
+      <h2>Passez nous voir, ou écrivez-nous.</h2>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="info-row"><div class="ico">📍</div><div><b>Boutique</b><span>24 Avenue Habib Bourguiba, La Marsa 2078</span></div></div>
+        <div class="info-row"><div class="ico">📞</div><div><b>Téléphone &amp; WhatsApp</b><span>+216 71 456 789 · +216 99 123 456</span></div></div>
+        <div class="info-row"><div class="ico">🕐</div><div><b>Horaires</b><span>Lun–Sam : 9h30–19h30 · Dim : 10h–14h</span></div></div>
+        <div class="info-row"><div class="ico">🅿️</div><div><b>Accès</b><span>Parking gratuit · Bus 20 &amp; 33, arrêt « La Marsa Centre »</span></div></div>
+        <div class="info-row"><div class="ico">💳</div><div><b>Paiement</b><span>Espèces · Carte · Virement</span></div></div>
+      </div>
+      <form id="contactForm">
+        <h3>Demande de renseignement</h3>
+        <div class="field"><label for="nom">Nom complet</label><input id="nom" name="nom" type="text" placeholder="Votre nom" required autocomplete="name"></div>
+        <div class="field"><label for="tel">Téléphone</label><input id="tel" name="tel" type="tel" placeholder="+216 __ ___ ___" required autocomplete="tel"></div>
+        <div class="field"><label for="msg">Message</label><textarea id="msg" name="msg" placeholder="Disponibilité d'une pièce, commande, retouche…" required></textarea></div>
+        <button type="submit" class="btn btn-primary">Envoyer ma demande →</button>
+        <p class="form-note">Réponse sous 2h ouvrées. Vos données ne sont jamais partagées.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="logo">Boutique <b style="color:var(--gold)">Zitouna</b></div>
+        <p>Vêtements et accessoires femme à La Marsa — depuis 2014.</p>
+      </div>
+      <div class="foot-links">
+        <div><h4>Boutique</h4><ul><li><a href="#collection">Collection</a></li><li><a href="#lookbook">Lookbook</a></li><li><a href="#savoir">Savoir-faire</a></li></ul></div>
+        <div><h4>Contact</h4><ul><li><a href="tel:+21671456789">+216 71 456 789</a></li><li><a href="mailto:contact@boutique-zitouna.tn">contact@boutique-zitouna.tn</a></li><li><a href="#contact">Plan d'accès</a></li></ul></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Boutique Zitouna — Tous droits réservés.</span>
+      <span>Conçu et réalisé par Solos.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var burger = document.getElementById('burger');
+  var nav = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var nom = document.getElementById('nom').value.trim();
+    var tel = document.getElementById('tel').value.trim();
+    var msg = document.getElementById('msg').value.trim();
+    if(!nom || !tel || !msg) return;
+    try {
+      var hist = JSON.parse(localStorage.getItem('zitouna_contact') || '[]');
+      hist.push({nom:nom, tel:tel, msg:msg, date:new Date().toISOString()});
+      localStorage.setItem('zitouna_contact', JSON.stringify(hist));
+    } catch(err){}
+    var btn = this.querySelector('button[type=submit]');
+    btn.textContent = '✅ Demande envoyée — on vous répond sous 2h';
+    btn.disabled = true;
+    this.reset();
+  });
+</script>
+
+<div class="solos-picker" aria-label="Couleur d'essai">
+  <span class="sp-label">Couleur d'essai — la vôtre sera appliquée</span>
+  <div class="sp-swatches">
+    <button style="background:#5C2A3E" data-i="0" aria-label="Prune"></button>
+    <button style="background:#14655A" data-i="1" aria-label="Vert sapin"></button>
+    <button style="background:#FF5A36" data-i="2" aria-label="Corail"></button>
+    <button style="background:#1E5AA8" data-i="3" aria-label="Bleu"></button>
+    <button style="background:#B91C1C" data-i="4" aria-label="Rouge"></button>
+    <button style="background:#B8860B" data-i="5" aria-label="Doré"></button>
+    <button style="background:#0F766E" data-i="6" aria-label="Teal"></button>
+    <button style="background:#7C3AED" data-i="7" aria-label="Violet"></button>
+  </div>
+</div>
+<script>
+(function(){
+  var s=[["#5C2A3E","#47202F"],["#14655A","#0E4A42"],["#FF5A36","#D63E1F"],["#1E5AA8","#15407A"],["#B91C1C","#7F1D1D"],["#B8860B","#8A6A00"],["#0F766E","#115E59"],["#7C3AED","#5B21B6"]];
+  var box=document.querySelector('.solos-picker'); if(!box) return;
+  box.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=+b.getAttribute('data-i');
+      document.documentElement.style.setProperty('--AC1',s[i][0]);
+      document.documentElement.style.setProperty('--AC2',s[i][1]);
+    });
+  });
+})();
+</script>
+</body>
+</html>
