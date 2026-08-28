@@ -3,102 +3,188 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Solos — Agence digitale : sites web, Fiche Google, reels, IA pour commerces tunisiens</title>
-<meta name="description" content="Solos rend votre commerce visible sur Google : Fiche Google (250 DT), sites web vitrine/pro/boutique (dès 700 DT), reels motion design (dès 200 DT), intégration IA. Livraison 1-3 jours. Tunis.">
+<title>Solos — Intelligence artificielle pour commerces : sites web, Fiche Google, reels</title>
+<meta name="description" content="Solos conçoit des sites web, fiches Google et reels propulsés par intelligence artificielle pour les commerces tunisiens. Livraison 1-3 jours. Offres de lancement : vitrine 700 DT, site pro 1 400 DT, boutique 2 500 DT.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Tajawal',sans-serif;background:radial-gradient(900px 600px at 85% -10%,rgba(124,58,237,.22),transparent 60%),radial-gradient(700px 500px at -10% 30%,rgba(34,211,238,.14),transparent 60%),linear-gradient(160deg,#0A0E1C,#05070F);min-height:100vh;color:#E2E8F0;line-height:1.6}
-.grad{background:linear-gradient(90deg,#22D3EE,#A78BFA,#F472B6);-webkit-background-clip:text;background-clip:text;color:transparent}
+body{font-family:'Tajawal',sans-serif;background:#05070F;color:#E6EDF7;line-height:1.65;overflow-x:hidden}
+h1,h2,h3,.logo-t{font-family:'Space Grotesk',sans-serif}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.grad{background:linear-gradient(92deg,#22D3EE,#A78BFA 55%,#F472B6);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* fond général : halos */
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(900px 560px at 82% -8%,rgba(124,58,237,.20),transparent 60%),radial-gradient(760px 520px at -12% 28%,rgba(34,211,238,.12),transparent 60%),radial-gradient(700px 600px at 50% 118%,rgba(244,114,182,.08),transparent 60%)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 30%,transparent 75%);pointer-events:none}
+/* LOGO */
+svg.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.lg{width:42px;height:42px;flex:none;filter:drop-shadow(0 0 14px rgba(34,211,238,.35))}
+.logo-row{display:flex;align-items:center;gap:12px}
+.logo-t{font-size:23px;font-weight:700;letter-spacing:7px}
 /* NAV */
-nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(5,7,15,.72);border-bottom:1px solid rgba(255,255,255,.08)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{font-size:24px;font-weight:800;letter-spacing:8px}
-.menu{display:flex;gap:26px;align-items:center;font-size:15.5px;font-weight:700;color:#CBD5E1}
+nav{position:sticky;top:0;z-index:60;backdrop-filter:blur(14px);background:rgba(5,7,15,.75);border-bottom:1px solid rgba(255,255,255,.07)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+.menu{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500;color:#A9B4C7}
+.menu a{transition:.15s}
 .menu a:hover{color:#22D3EE}
-.nav-cta{background:linear-gradient(90deg,#22D3EE,#A78BFA);color:#0B0F1A!important;padding:9px 18px;border-radius:999px;font-weight:800}
-.nav-cta:hover{filter:brightness(1.12);color:#0B0F1A!important}
+.nav-cta{background:linear-gradient(92deg,#22D3EE,#A78BFA);color:#04060D!important;padding:10px 20px;border-radius:12px;font-weight:700;font-size:14.5px;transition:.15s;box-shadow:0 4px 22px rgba(34,211,238,.25)}
+.nav-cta:hover{filter:brightness(1.12)}
 /* HERO */
-.hero{padding:92px 0 64px;text-align:center}
-.badge{display:inline-block;font-size:14px;font-weight:700;color:#67E8F9;border:1px solid rgba(34,211,238,.4);background:rgba(34,211,238,.08);padding:7px 16px;border-radius:999px;margin-bottom:26px}
-h1{font-size:clamp(34px,5.4vw,58px);font-weight:800;line-height:1.15;letter-spacing:-.5px}
-.hero p.sub{font-size:clamp(17px,2.2vw,21px);color:#94A3B8;max-width:680px;margin:20px auto 0}
-.ctas{display:flex;gap:14px;justify-content:center;margin-top:34px;flex-wrap:wrap}
-.btn{display:inline-block;padding:15px 30px;border-radius:16px;font-size:17px;font-weight:800;transition:.15s}
-.btn-p{background:linear-gradient(90deg,#22D3EE,#A78BFA);color:#0B0F1A}
-.btn-p:hover{filter:brightness(1.12);transform:translateY(-1px)}
-.btn-o{border:1px solid rgba(255,255,255,.22);color:#E2E8F0}
-.btn-o:hover{border-color:#22D3EE;color:#22D3EE}
-.stats{display:flex;gap:34px;justify-content:center;margin-top:44px;flex-wrap:wrap;font-size:14.5px;color:#94A3B8;font-weight:700}
-.stats b{display:block;font-size:22px;color:#E2E8F0}
+.hero{position:relative;padding:110px 0 84px;text-align:center}
+.parts{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.parts i{position:absolute;bottom:-12px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.9),rgba(34,211,238,.0) 70%);opacity:0;animation:rise linear infinite}
+@keyframes rise{0%{transform:translateY(0) translateX(0);opacity:0}8%{opacity:.7}100%{transform:translateY(-92vh) translateX(26px);opacity:0}}
+.badge{display:inline-flex;align-items:center;gap:9px;font-size:13.5px;font-weight:500;color:#8FE8FA;border:1px solid rgba(34,211,238,.35);background:rgba(34,211,238,.06);padding:8px 18px;border-radius:999px;letter-spacing:.4px}
+.badge .dot{width:7px;height:7px;border-radius:50%;background:#22D3EE;box-shadow:0 0 12px #22D3EE;animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hero h1{font-size:clamp(36px,5.6vw,62px);font-weight:700;line-height:1.1;letter-spacing:-1.5px;margin:30px auto 0;max-width:900px}
+.hero h1 em{font-style:normal;position:relative;white-space:nowrap}
+.hero .sub{font-size:clamp(16.5px,2vw,20px);color:#93A0B8;max-width:660px;margin:22px auto 0;font-weight:400}
+.ctas{display:flex;gap:14px;justify-content:center;margin-top:38px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:14px;font-size:16px;font-weight:700;transition:.18s;font-family:'Space Grotesk',sans-serif}
+.btn-p{background:linear-gradient(92deg,#22D3EE,#A78BFA);color:#04060D;box-shadow:0 8px 30px rgba(124,58,237,.35)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 12px 38px rgba(34,211,238,.4)}
+.btn-o{border:1px solid rgba(255,255,255,.22);color:#E6EDF7;background:rgba(255,255,255,.02)}
+.btn-o:hover{border-color:#22D3EE;color:#22D3EE;transform:translateY(-2px)}
+.stats{display:flex;gap:52px;justify-content:center;margin-top:56px;flex-wrap:wrap}
+.stats div{text-align:center}
+.stats b{display:block;font-family:'Space Grotesk',sans-serif;font-size:27px;font-weight:700;background:linear-gradient(92deg,#22D3EE,#A78BFA);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stats span{font-size:13.5px;color:#8B96AB;letter-spacing:1.6px;text-transform:uppercase;font-weight:500}
 /* SECTIONS */
-section{padding:70px 0}
-h2{font-size:clamp(26px,3.6vw,38px);font-weight:800;text-align:center}
-.sec-sub{text-align:center;color:#94A3B8;max-width:640px;margin:12px auto 44px;font-size:16.5px}
-/* SERVICES */
+section{padding:86px 0}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:16px}
+.sec-n{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:#F472B6;letter-spacing:3px}
+.sec-head h2{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.8px}
+.sec-sub{color:#93A0B8;max-width:620px;margin-bottom:44px;font-size:16.5px}
+/* CARDS SERVICES */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:28px 24px;transition:.18s}
-.card:hover{transform:translateY(-3px);border-color:rgba(34,211,238,.5);background:rgba(255,255,255,.08)}
-.card .ic{font-size:30px}
-.card h3{font-size:19px;font-weight:800;margin:12px 0 8px}
-.card p{color:#94A3B8;font-size:15px}
-.card .price{display:block;margin-top:14px;font-size:15px;font-weight:800;color:#22D3EE}
+.card{position:relative;background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.09);border-radius:22px;padding:30px 26px;transition:.22s;overflow:hidden}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(34,211,238,.6),transparent);opacity:0;transition:.3s}
+.card:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.35);background:linear-gradient(160deg,rgba(34,211,238,.06),rgba(255,255,255,.02))}
+.card:hover::before{opacity:1}
+.card .ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.22);margin-bottom:18px}
+.card .ic svg{width:25px;height:25px;stroke:#22D3EE}
+.card h3{font-size:19px;font-weight:700;margin-bottom:8px}
+.card p{color:#93A0B8;font-size:15px}
+.card .price{display:block;margin-top:16px;font-size:14.5px;font-weight:700;color:#22D3EE}
+.card .price s{color:#5B6577;font-weight:500;margin-right:8px}
 /* TARIFS */
-.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-.tier{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:30px 26px;display:flex;flex-direction:column}
-.tier.hot{border-color:rgba(167,139,250,.55);background:rgba(167,139,250,.08)}
-.tier .tag{font-size:13px;font-weight:800;letter-spacing:1.5px;color:#67E8F9;text-transform:uppercase}
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.tier{position:relative;background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.09);border-radius:24px;padding:32px 28px;display:flex;flex-direction:column;transition:.22s}
+.tier:hover{transform:translateY(-4px);border-color:rgba(167,139,250,.45)}
+.tier.hot{border-color:rgba(167,139,250,.5);background:linear-gradient(165deg,rgba(124,58,237,.13),rgba(255,255,255,.02));box-shadow:0 0 0 1px rgba(167,139,250,.25),0 18px 50px rgba(124,58,237,.18)}
+.promo{position:absolute;top:-13px;right:22px;background:linear-gradient(92deg,#F472B6,#A78BFA);color:#0A0E1C;font-size:12px;font-weight:700;font-family:'Space Grotesk',sans-serif;letter-spacing:1px;padding:5px 13px;border-radius:999px;box-shadow:0 6px 20px rgba(244,114,182,.4)}
+.tier .tag{font-size:12.5px;font-weight:600;letter-spacing:2.4px;color:#67E8F9;text-transform:uppercase;font-family:'Space Grotesk',sans-serif}
 .tier.hot .tag{color:#C4B5FD}
-.tier h3{font-size:21px;font-weight:800;margin:8px 0 4px}
-.tier .prix{font-size:30px;font-weight:800}
-.tier .prix small{font-size:15px;color:#94A3B8;font-weight:700}
-.tier ul{list-style:none;margin:16px 0 22px;font-size:14.5px;color:#CBD5E1;flex:1}
-.tier ul li{padding:5px 0;padding-left:22px;position:relative}
-.tier ul li::before{content:"✓";position:absolute;left:0;color:#34D399;font-weight:800}
-.tier .btn{text-align:center}
-.extras{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
-.extra{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:18px 20px;font-size:14.5px}
-.extra b{color:#E2E8F0}
-.extra .e-p{float:right;font-weight:800;color:#22D3EE}
+.tier h3{font-size:22px;font-weight:700;margin:10px 0 4px}
+.tier .for{font-size:14px;color:#8B96AB;margin-bottom:18px}
+.tier .prix{font-size:34px;font-weight:700;font-family:'Space Grotesk',sans-serif;letter-spacing:-1px}
+.tier .prix small{font-size:15px;color:#8B96AB;font-weight:500}
+.tier .prix s{display:block;font-size:16.5px;color:#5B6577;font-weight:500;letter-spacing:0;margin-bottom:2px}
+.tier ul{list-style:none;margin:20px 0 26px;font-size:14.5px;color:#B9C3D4;flex:1}
+.tier ul li{padding:5.5px 0;padding-left:26px;position:relative}
+.tier ul li::before{content:"";position:absolute;left:2px;top:11px;width:14px;height:8px;border-left:2px solid #34D399;border-bottom:2px solid #34D399;transform:rotate(-45deg)}
+.tier .btn{justify-content:center}
+.extras{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:20px}
+.extra{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px 20px;font-size:14.5px;transition:.15s}
+.extra:hover{border-color:rgba(34,211,238,.3)}
+.extra b{color:#E6EDF7;display:block;margin-bottom:3px}
+.extra .e-l{color:#8B96AB;font-size:13.5px}
+.extra .e-p{float:right;font-weight:700;color:#22D3EE;font-family:'Space Grotesk',sans-serif}
+.extra .e-p s{color:#5B6577;font-weight:500;margin-right:6px}
+.note-offre{display:flex;gap:14px;align-items:flex-start;margin-top:26px;background:rgba(244,114,182,.05);border:1px solid rgba(244,114,182,.22);border-radius:16px;padding:18px 22px;font-size:14.5px;color:#D5C0D6}
+.note-offre svg{width:20px;height:20px;stroke:#F472B6;flex:none;margin-top:2px}
 /* MODELES */
-.mods{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-.mod{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:24px;overflow:hidden;transition:.18s}
-.mod:hover{transform:translateY(-3px);border-color:rgba(244,114,182,.5)}
-.mod .frame{height:150px;background:radial-gradient(400px 200px at 30% 20%,rgba(34,211,238,.18),transparent 60%),radial-gradient(300px 200px at 80% 90%,rgba(167,139,250,.18),transparent 60%),linear-gradient(150deg,#101631,#0A0E1C);display:flex;align-items:center;justify-content:center;font-size:40px}
-.mod .body{padding:20px 22px 24px}
-.mod .body h3{font-size:18px;font-weight:800}
-.mod .body .m-p{font-size:14px;color:#22D3EE;font-weight:800;margin:2px 0 8px}
-.mod .body p{font-size:14.5px;color:#94A3B8}
-.mod .body .lnk{display:inline-block;margin-top:14px;font-weight:800;color:#F472B6;font-size:14.5px}
-.mod .body .lnk:hover{color:#fff}
-.mods-cta{text-align:center;margin-top:30px}
+.mods{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.mod{background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.09);border-radius:22px;overflow:hidden;transition:.22s;display:flex;flex-direction:column}
+.mod:hover{transform:translateY(-4px);border-color:rgba(244,114,182,.4)}
+.brow{display:flex;align-items:center;gap:10px;padding:11px 16px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.07)}
+.bdots{display:flex;gap:5px}
+.bdots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.16)}
+.bdots i:first-child{background:#F472B6}
+.bdots i:nth-child(2){background:#FBBF24}
+.bdots i:nth-child(3){background:#34D399}
+.burl{font-size:11.5px;color:#7C879B;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);padding:3px 12px;border-radius:7px;margin:0 auto;font-family:'Space Grotesk',sans-serif}
+.bhero{height:86px;position:relative;background:linear-gradient(120deg,rgba(34,211,238,.16),rgba(167,139,250,.16));border-bottom:1px solid rgba(255,255,255,.06)}
+.bhero::after{content:"";position:absolute;left:18px;bottom:14px;width:110px;height:9px;border-radius:5px;background:rgba(255,255,255,.35)}
+.bhero::before{content:"";position:absolute;left:18px;top:18px;width:72px;height:6px;border-radius:4px;background:rgba(255,255,255,.5)}
+.blines{padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.blines i{height:7px;border-radius:4px;background:rgba(255,255,255,.09)}
+.blines i:nth-child(1){width:86%}
+.blines i:nth-child(2){width:64%}
+.blines i:nth-child(3){width:74%}
+.mod .body{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
+.mod .body h3{font-size:19px;font-weight:700}
+.mod .body .m-p{margin:4px 0 10px;font-size:15.5px;font-weight:700;color:#22D3EE;font-family:'Space Grotesk',sans-serif}
+.mod .body .m-p s{color:#5B6577;font-weight:500;margin-right:8px;font-size:14px}
+.mod .body p{font-size:14.5px;color:#93A0B8}
+.mod .btns{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.mod .btns .btn{flex:1;justify-content:center;padding:13px 16px;font-size:14.5px}
+.mods-cta{text-align:center;margin-top:34px}
 /* PROCESS */
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.step{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:24px}
-.step .n{font-size:13px;font-weight:800;color:#F472B6;letter-spacing:2px}
-.step h3{font-size:17px;font-weight:800;margin:8px 0 6px}
-.step p{font-size:14.5px;color:#94A3B8}
-/* CTA FINAL */
-.cta-band{background:radial-gradient(600px 300px at 50% 0%,rgba(124,58,237,.25),transparent 65%),rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);border-radius:32px;padding:56px 30px;text-align:center}
-.cta-band h2{font-size:clamp(26px,3.6vw,36px)}
-.cta-band p{color:#94A3B8;margin:12px auto 28px;max-width:520px;font-size:16.5px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.step{position:relative;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:26px}
+.step .n{font-size:13px;font-weight:600;color:#F472B6;letter-spacing:2.5px;font-family:'Space Grotesk',sans-serif}
+.step h3{font-size:17.5px;font-weight:700;margin:10px 0 7px}
+.step p{font-size:14.5px;color:#93A0B8}
+.step::after{content:"";position:absolute;top:30px;right:-9px;width:18px;height:1px;background:linear-gradient(90deg,rgba(167,139,250,.6),transparent)}
+.step:last-child::after{display:none}
+/* CTA */
+.cta-band{position:relative;background:radial-gradient(600px 320px at 50% 0%,rgba(124,58,237,.28),transparent 65%),linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.12);border-radius:30px;padding:64px 30px;text-align:center;overflow:hidden}
+.cta-band .parts i{animation-duration:9s}
+.cta-band h2{font-size:clamp(26px,3.6vw,38px);font-weight:700;letter-spacing:-.8px}
+.cta-band p{color:#93A0B8;margin:14px auto 30px;max-width:540px;font-size:16.5px}
 /* FOOTER */
-footer{border-top:1px solid rgba(255,255,255,.08);padding:34px 0 44px;margin-top:30px}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:14px;color:#64748B}
-footer .logo{font-size:20px}
-@media(max-width:640px){nav .menu{display:none}.stats{gap:20px}}
+footer{border-top:1px solid rgba(255,255,255,.07);padding:40px 0 46px;margin-top:40px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;font-size:13.5px;color:#6E7A90}
+footer .logo-row .lg{width:30px;height:30px}
+footer .logo-t{font-size:17px;letter-spacing:5px}
+footer a{color:#93A0B8;transition:.15s}
+footer a:hover{color:#22D3EE}
+/* REVEAL */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.rv.on{opacity:1;transform:none}
+@media(max-width:680px){nav .menu{display:none}.stats{gap:30px}}
 </style>
 </head>
 <body>
 
+<!-- sprite logo (dégradés + symbole) -->
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lgCloud" x1="10" y1="42" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#243253"/><stop offset="1" stop-color="#0B1022"/>
+    </linearGradient>
+    <radialGradient id="lgCore" cx="50%" cy="50%" r="50%">
+      <stop stop-color="#A5F3FF"/><stop offset=".45" stop-color="#22D3EE"/><stop offset="1" stop-color="#0E7490"/>
+    </radialGradient>
+    <symbol id="logo" viewBox="0 0 64 64">
+      <path d="M15 44.5a9 9 0 0 1 2.2-17.6 12.2 12.2 0 0 1 23.4-.3A10.2 10.2 0 0 1 50.5 37a8.2 8.2 0 0 1-2.3 16H16.8a6.2 6.2 0 0 1-1.8-8.5Z" fill="url(#lgCloud)" stroke="rgba(255,255,255,.25)" stroke-width="1.1"/>
+      <path d="M32 27.5v3.5" stroke="#22D3EE" stroke-width="1.3" stroke-linecap="round" opacity=".8"/>
+      <path d="M27.5 29l-3.2 3.2" stroke="#A78BFA" stroke-width="1.1" stroke-linecap="round" opacity=".55"/>
+      <path d="M36.5 29l3.2 3.2" stroke="#A78BFA" stroke-width="1.1" stroke-linecap="round" opacity=".55"/>
+      <circle cx="32" cy="21" r="9.5" fill="#22D3EE" opacity=".16"/>
+      <circle cx="32" cy="21" r="6" fill="#22D3EE" opacity=".32"/>
+      <circle cx="32" cy="21" r="3.8" fill="url(#lgCore)"/>
+      <circle cx="19" cy="11.5" r="1.5" fill="#A78BFA" opacity=".9"/>
+      <circle cx="43" cy="8.5" r="1.9" fill="#22D3EE" opacity=".85"/>
+      <circle cx="51" cy="17.5" r="1.15" fill="#F472B6" opacity=".9"/>
+      <circle cx="14" cy="19.5" r="1.15" fill="#67E8F9" opacity=".7"/>
+      <circle cx="47.5" cy="24" r="1" fill="#C4B5FD" opacity=".6"/>
+    </symbol>
+  </defs>
+</svg>
+
 <nav>
   <div class="wrap">
-    <a class="logo grad" href="index.html">SOLOS</a>
+    <a class="logo-row" href="index.html">
+      <svg class="lg"><use href="#logo"/></svg>
+      <span class="logo-t grad">SOLOS</span>
+    </a>
     <div class="menu">
       <a href="#services">Services</a>
       <a href="#tarifs">Tarifs</a>
@@ -110,49 +196,51 @@ footer .logo{font-size:20px}
 </nav>
 
 <header class="hero">
+  <div class="parts" id="parts"></div>
   <div class="wrap">
-    <span class="badge">🚀 Agence digitale — Tunis</span>
-    <h1>Votre commerce mérite<br>d'être <span class="grad">trouvé sur Google</span></h1>
-    <p class="sub">Fiche Google · Site web · Reels · Intégration IA — Solos rend votre business visible, crédible et disponible 24h/24. Livraison en 1 à 3 jours.</p>
+    <span class="badge"><span class="dot"></span>Intelligence artificielle — Tunis</span>
+    <h1>Une <em class="grad">intelligence</em> sortie du cloud,<br>au service de votre commerce</h1>
+    <p class="sub">Solos conçoit des sites web, des fiches Google et des reels qui transforment les visiteurs en clients. Propulsé par IA, livré en 1 à 3 jours, avec un contrôle qualité sans compromis.</p>
     <div class="ctas">
-      <a class="btn btn-p" href="modeles.html">Voir les modèles de sites</a>
+      <a class="btn btn-p" href="modeles.html">Découvrir nos modèles</a>
       <a class="btn btn-o" href="formulaire.html">Demander un devis gratuit</a>
     </div>
     <div class="stats">
-      <div><b>1-3 jours</b>Livraison</div>
-      <div><b>0 bug</b>QC avant livraison</div>
-      <div><b>100 %</b>Design sur mesure</div>
+      <div><b>1-3 j</b><span>Livraison</span></div>
+      <div><b>100 %</b><span>Sur mesure</span></div>
+      <div><b>0 bug</b><span>QC avant livraison</span></div>
+      <div><b>24/7</b><span>Votre commerce répond</span></div>
     </div>
   </div>
 </header>
 
 <section id="services">
   <div class="wrap">
-    <h2>Ce que <span class="grad">Solos</span> fait pour vous</h2>
-    <p class="sec-sub">Quatre services pensés pour les commerces tunisiens — séparément ou en pack complet.</p>
+    <div class="sec-head rv"><span class="sec-n">01</span><h2>Ce que Solos construit pour vous</h2></div>
+    <p class="sec-sub rv">Quatre briques, un même objectif : que votre commerce soit trouvé, compris et choisi — par les humains comme par Google.</p>
     <div class="cards">
-      <div class="card">
-        <div class="ic">📍</div>
+      <div class="card rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <h3>Fiche Google</h3>
-        <p>Création ou optimisation complète de votre fiche : infos exactes, photos, horaires, avis, itinéraire, bouton d'appel. Vos clients vous trouvent immédiatement.</p>
-        <span class="price">250 DT · gestion 150 DT/mois</span>
+        <p>Création ou optimisation complète de votre fiche : infos exactes, photos, avis, itinéraire, bouton d'appel. Vous apparaissez quand on vous cherche.</p>
+        <span class="price"><s>400 DT</s>250 DT · gestion <s>250</s> 150 DT/mois</span>
       </div>
-      <div class="card">
-        <div class="ic">🌐</div>
+      <div class="card rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg></div>
         <h3>Sites web</h3>
-        <p>Vitrine, site pro multi-pages ou boutique en ligne avec paiement tunisien (Flouci / GoPay). Mobile, SEO Google, formulaire qui reçoit vos demandes.</p>
-        <span class="price">Dès 700 DT</span>
+        <p>Vitrine, site pro multi-pages ou boutique en ligne avec paiement tunisien (Flouci / GoPay). Mobile, SEO Google, demandes reçues automatiquement.</p>
+        <span class="price"><s>1 200 DT</s>dès 700 DT</span>
       </div>
-      <div class="card">
-        <div class="ic">🎬</div>
+      <div class="card rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M10 8.5v7l6-3.5-6-3.5Z" fill="rgba(34,211,238,.25)" stroke="#22D3EE"/></svg></div>
         <h3>Reels motion design</h3>
-        <p>Vidéos 1080×1920 sur mesure pour vos réseaux : musique originale, votre logo, votre message. Parfait pour annoncer une promo ou fidéliser.</p>
-        <span class="price">Dès 200 DT</span>
+        <p>Vidéos 1080×1920 sur mesure : musique originale, votre identité, votre message. Pour annoncer, vendre et fidéliser sur les réseaux.</p>
+        <span class="price"><s>320 DT</s>dès 200 DT</span>
       </div>
-      <div class="card">
-        <div class="ic">🤖</div>
+      <div class="card rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="10" y="10" width="4" height="4" rx="1" fill="rgba(34,211,238,.25)" stroke="#22D3EE"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></div>
         <h3>Intégration IA</h3>
-        <p>Automatisation de vos tâches : réponses aux clients, devis, relances, gestion des demandes. Votre commerce répond même quand vous dormez.</p>
+        <p>Automatisation de vos tâches : réponses aux clients, devis, relances, gestion des demandes. Votre commerce travaille même quand vous dormez.</p>
         <span class="price">Sur devis</span>
       </div>
     </div>
@@ -161,116 +249,139 @@ footer .logo{font-size:20px}
 
 <section id="tarifs">
   <div class="wrap">
-    <h2>Tarifs <span class="grad">simples et clairs</span></h2>
-    <p class="sec-sub">Un prix fixe, sans surprise. Paiement par Flouci (particuliers) ou virement bancaire (professionnels).</p>
+    <div class="sec-head rv"><span class="sec-n">02</span><h2>Tarifs — offres de lancement</h2></div>
+    <p class="sec-sub rv">Le prix affiché est exceptionnel et définitif : aucune surprise, aucun coût caché. Paiement par Flouci (particuliers) ou virement bancaire (professionnels).</p>
     <div class="tiers">
-      <div class="tier">
+      <div class="tier rv">
         <span class="tag">Site Vitrine</span>
         <h3>Pour se présenter</h3>
-        <div class="prix">700 <small>DT</small></div>
+        <p class="for">Boutique, salon, resto, pressing, garage…</p>
+        <div class="prix"><s>1 200 DT</s><small>700 DT</small></div>
         <ul>
           <li>1 page professionnelle sur mesure</li>
           <li>Mobile + SEO Google</li>
           <li>Formulaire contact → vos demandes</li>
           <li>Lien vers votre fiche Google</li>
-          <li>Mise en ligne + formation (15 min)</li>
+          <li>Mise en ligne + 15 min de formation</li>
         </ul>
         <a class="btn btn-o" href="formulaire.html?modele=vitrine">Commander</a>
       </div>
-      <div class="tier hot">
+      <div class="tier hot rv">
+        <span class="promo">OFFRE DE LANCEMENT</span>
         <span class="tag">Site Pro</span>
         <h3>Pour gagner la confiance</h3>
-        <div class="prix">1 400 <small>DT</small></div>
+        <p class="for">Dentiste, médecin, avocat, coach, architecte…</p>
+        <div class="prix"><s>2 500 DT</s><small>1 400 DT</small></div>
         <ul>
           <li>4 à 6 pages (services, équipe, avis…)</li>
-          <li>Formulaire de rendez-vous</li>
+          <li>Formulaire de rendez-vous en ligne</li>
           <li>Schéma LocalBusiness (SEO local)</li>
-          <li>Fiche Google intégrée</li>
-          <li>Idéal : santé, conseil, coach, pro</li>
+          <li>Fiche Google intégrée + avis clients</li>
+          <li>Version arabe en option (+150 DT)</li>
         </ul>
         <a class="btn btn-p" href="formulaire.html?modele=pro">Commander</a>
       </div>
-      <div class="tier">
+      <div class="tier rv">
         <span class="tag">Boutique en ligne</span>
         <h3>Pour vendre en ligne</h3>
-        <div class="prix">2 500 <small>DT</small></div>
+        <p class="for">Vêtements, cosmétiques, alimentaire, artisanat…</p>
+        <div class="prix"><s>4 000 DT</s><small>2 500 DT</small></div>
         <ul>
           <li>Catalogue produits + panier</li>
           <li>Commande + paiement Flouci / GoPay</li>
-          <li>Suivi de livraison</li>
+          <li>Suivi de livraison (Tunisie)</li>
           <li>Fiche Google incluse</li>
-          <li>Vêtements, cosmétiques, alimentaire…</li>
+          <li>Packs combinés disponibles</li>
         </ul>
         <a class="btn btn-o" href="formulaire.html?modele=boutique">Commander</a>
       </div>
     </div>
     <div class="extras">
-      <div class="extra"><b>Fiche Google complète</b> <span class="e-p">250 DT</span><br>Optimisation totale + photos + avis</div>
-      <div class="extra"><b>Gestion fiche mensuelle</b> <span class="e-p">150 DT/mois</span><br>Avis, posts Google, statistiques</div>
-      <div class="extra"><b>Reel motion design</b> <span class="e-p">200 DT</span><br>Pack 3 : 540 DT · Pack 5 : 800 DT</div>
-      <div class="extra"><b>Abonnement reels</b> <span class="e-p">680 DT/mois</span><br>4 reels/mois · 8 reels : 1 200 DT/mois</div>
-      <div class="extra"><b>Pack Présence complète</b> <span class="e-p">1 900 DT</span><br>Fiche + site + 3 reels (au lieu de 2 350 DT)</div>
-      <div class="extra"><b>Maintenance site</b> <span class="e-p">120 DT/mois</span><br>Contenu, photos, tarifs, retouches</div>
+      <div class="extra rv"><span class="e-p"><s>400</s>250 DT</span><b>Fiche Google complète</b><span class="e-l">Optimisation totale + photos + avis</span></div>
+      <div class="extra rv"><span class="e-p"><s>250</s>150 DT/mois</span><b>Gestion fiche mensuelle</b><span class="e-l">Avis, posts Google, statistiques</span></div>
+      <div class="extra rv"><span class="e-p"><s>320</s>200 DT</span><b>Reel motion design</b><span class="e-l">Pack 3 : <s>900</s> 540 · Pack 5 : <s>1 300</s> 800 DT</span></div>
+      <div class="extra rv"><span class="e-p"><s>1 100</s>680 DT/mois</span><b>Abonnement 4 reels/mois</b><span class="e-l">8 reels : <s>1 900</s> 1 200 DT/mois</span></div>
+      <div class="extra rv"><span class="e-p"><s>3 200</s>1 900 DT</span><b>Pack Présence complète</b><span class="e-l">Fiche + site + 3 reels (au lieu de 2 350 DT)</span></div>
+      <div class="extra rv"><span class="e-p"><s>200</s>120 DT/mois</span><b>Maintenance site</b><span class="e-l">Contenu, photos, tarifs, retouches</span></div>
+    </div>
+    <div class="note-offre rv">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3.5"/></svg>
+      <span><b>Pourquoi ces prix ?</b> Parce que notre production est propulsée par intelligence artificielle, nous livrons en quelques jours ce qu'une agence livre en plusieurs semaines — et nous répercutons cette efficacité sur nos tarifs de lancement. La qualité, elle, est contrôlée bug par bug avant chaque livraison.</span>
     </div>
   </div>
 </section>
 
 <section id="modeles">
   <div class="wrap">
-    <h2>Nos <span class="grad">modèles de sites</span></h2>
-    <p class="sec-sub">Des bases prêtes, personnalisées à 100 % pour votre commerce : couleurs, textes, photos et logo. Cliquez sur un modèle pour le voir en vrai.</p>
+    <div class="sec-head rv"><span class="sec-n">03</span><h2>Nos modèles de sites</h2></div>
+    <p class="sec-sub rv">Des bases conçues par notre IA, personnalisées à 100 % pour votre commerce : couleurs, textes, photos et logo. Cliquez pour voir chaque modèle en vrai.</p>
     <div class="mods">
-      <div class="mod">
-        <div class="frame">🏪</div>
+      <div class="mod rv">
+        <div class="brow"><div class="bdots"><i></i><i></i><i></i></div><span class="burl">vitrine.solos.tn</span></div>
+        <div class="bhero" style="background:linear-gradient(120deg,rgba(34,211,238,.20),rgba(34,211,238,.05))"></div>
+        <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
           <h3>Vitrine commerce</h3>
-          <span class="m-p">700 DT</span>
-          <p>Boutique, salon, resto, pressing, garage… une page pro qui présente votre activité.</p>
-          <a class="lnk" href="https://solos-tn.github.io/solos/demos/vitrine-commerce/" target="_blank">Voir la démo →</a>
+          <span class="m-p"><s>1 200 DT</s>700 DT</span>
+          <p>Une page pro qui présente votre activité, vos horaires et votre localisation — et reçoit vos demandes.</p>
+          <div class="btns">
+            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/vitrine-commerce/" target="_blank">Démo</a>
+            <a class="btn btn-p" href="formulaire.html?modele=vitrine">Commander</a>
+          </div>
         </div>
       </div>
-      <div class="mod">
-        <div class="frame">🩺</div>
+      <div class="mod rv">
+        <div class="brow"><div class="bdots"><i></i><i></i><i></i></div><span class="burl">pro.solos.tn</span></div>
+        <div class="bhero" style="background:linear-gradient(120deg,rgba(167,139,250,.22),rgba(167,139,250,.05))"></div>
+        <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
           <h3>Santé & services pro</h3>
-          <span class="m-p">1 400 DT</span>
-          <p>Dentiste, médecin, avocat, coach : multi-pages, rendez-vous, confiance immédiate.</p>
-          <a class="lnk" href="https://solos-tn.github.io/solos/demos/pro-sante/" target="_blank">Voir la démo →</a>
+          <span class="m-p"><s>2 500 DT</s>1 400 DT</span>
+          <p>Multi-pages, prise de rendez-vous, avis clients : un site qui inspire confiance avant même la première visite.</p>
+          <div class="btns">
+            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/pro-sante/" target="_blank">Démo</a>
+            <a class="btn btn-p" href="formulaire.html?modele=pro">Commander</a>
+          </div>
         </div>
       </div>
-      <div class="mod">
-        <div class="frame">🛒</div>
+      <div class="mod rv">
+        <div class="brow"><div class="bdots"><i></i><i></i><i></i></div><span class="burl">boutique.solos.tn</span></div>
+        <div class="bhero" style="background:linear-gradient(120deg,rgba(244,114,182,.22),rgba(244,114,182,.05))"></div>
+        <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
           <h3>Boutique en ligne</h3>
-          <span class="m-p">2 500 DT</span>
-          <p>Catalogue, panier, commande et paiement tunisien Flouci / GoPay intégré.</p>
-          <a class="lnk" href="https://solos-tn.github.io/solos/demos/boutique-ecommerce/" target="_blank">Voir la démo →</a>
+          <span class="m-p"><s>4 000 DT</s>2 500 DT</span>
+          <p>Catalogue, panier, commande et paiement 100 % tunisien (Flouci / GoPay) intégré.</p>
+          <div class="btns">
+            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/boutique-ecommerce/" target="_blank">Démo</a>
+            <a class="btn btn-p" href="formulaire.html?modele=boutique">Commander</a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="mods-cta"><a class="btn btn-o" href="modeles.html">Voir tout le catalogue →</a></div>
+    <div class="mods-cta rv"><a class="btn btn-o" href="modeles.html">Voir le catalogue complet</a></div>
   </div>
 </section>
 
 <section id="process">
   <div class="wrap">
-    <h2>Comment ça <span class="grad">marche</span></h2>
-    <p class="sec-sub">Un process simple, sans réunion inutile.</p>
+    <div class="sec-head rv"><span class="sec-n">04</span><h2>Comment ça marche</h2></div>
+    <p class="sec-sub rv">Un process sans réunion inutile, pensé pour les commerçants qui n'ont pas de temps à perdre.</p>
     <div class="steps">
-      <div class="step">
-        <span class="n">ÉTAPE 1</span>
+      <div class="step rv">
+        <span class="n">ÉTAPE 01</span>
         <h3>Vous demandez un devis</h3>
-        <p>Via le formulaire ou Instagram — décrivez votre commerce, on vous répond par email en quelques heures.</p>
+        <p>Via le formulaire ou Instagram. Décrivez votre commerce, on vous répond par email en quelques heures — audit de fiche Google offert.</p>
       </div>
-      <div class="step">
-        <span class="n">ÉTAPE 2</span>
-        <h3>On personnalise (1-3 jours)</h3>
-        <p>Vos photos, vos textes, vos couleurs. Vous validez, on peaufine, aucun bug ne part sans contrôle qualité.</p>
+      <div class="step rv">
+        <span class="n">ÉTAPE 02</span>
+        <h3>L'IA construit, vous validez</h3>
+        <p>Vos photos, vos textes, vos couleurs. Vous validez chaque étape, on peaufine, rien ne part sans contrôle qualité.</p>
       </div>
-      <div class="step">
-        <span class="n">ÉTAPE 3</span>
+      <div class="step rv">
+        <span class="n">ÉTAPE 03</span>
         <h3>Vous êtes en ligne</h3>
-        <p>Site livré, fiche Google à jour, reels publiés. On vous forme 15 minutes, puis on reste disponibles.</p>
+        <p>Site livré, fiche Google à jour, reels publiés. 15 minutes de formation, puis on reste disponibles pour la suite.</p>
       </div>
     </div>
   </div>
@@ -278,21 +389,50 @@ footer .logo{font-size:20px}
 
 <section id="contact">
   <div class="wrap">
-    <div class="cta-band">
-      <h2>Prêt à être <span class="grad">visible sur Google</span> ?</h2>
+    <div class="cta-band rv">
+      <div class="parts" id="parts2"></div>
+      <h2>Prêt à laisser l'intelligence travailler pour vous ?</h2>
       <p>Réponse par email en quelques heures. Audit de votre fiche Google offert — dites-nous juste le nom de votre commerce.</p>
-      <a class="btn btn-p" href="formulaire.html" style="font-size:18px;padding:17px 36px">Demander mon devis gratuit</a>
+      <a class="btn btn-p" href="formulaire.html" style="font-size:17px;padding:18px 40px">Demander mon devis gratuit</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <a class="logo grad" href="index.html">SOLOS</a>
-    <span>Fait avec ❤️ en Tunisie 🇹🇳 · solos-tn.github.io/solos</span>
-    <span><a href="formulaire.html" style="color:#94A3B8">Devis</a> · <a href="modeles.html" style="color:#94A3B8">Modèles</a> · <a href="https://www.instagram.com/solos.tn" target="_blank" style="color:#94A3B8">Instagram</a></span>
+    <a class="logo-row" href="index.html">
+      <svg class="lg"><use href="#logo"/></svg>
+      <span class="logo-t grad">SOLOS</span>
+    </a>
+    <span>Intelligence artificielle · Tunis</span>
+    <span><a href="formulaire.html">Devis</a> &nbsp;·&nbsp; <a href="modeles.html">Modèles</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/solos.tn" target="_blank">Instagram</a></span>
   </div>
 </footer>
 
+<script>
+// particules du hero
+(function(){
+  function spawn(el, n){
+    for(var i=0;i<n;i++){
+      var p=document.createElement('i');
+      var s=1.5+Math.random()*3.2;
+      p.style.width=p.style.height=s+'px';
+      p.style.left=(Math.random()*100)+'%';
+      p.style.animationDuration=(7+Math.random()*11)+'s';
+      p.style.animationDelay=(Math.random()*10)+'s';
+      el.appendChild(p);
+    }
+  }
+  var p1=document.getElementById('parts'); if(p1) spawn(p1,26);
+  var p2=document.getElementById('parts2'); if(p2) spawn(p2,16);
+})();
+// reveal au scroll
+(function(){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+})();
+</script>
 </body>
 </html>

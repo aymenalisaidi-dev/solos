@@ -4,73 +4,124 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Modèles de sites — Solos : vitrine, pro, boutique en ligne</title>
-<meta name="description" content="Catalogue des modèles de sites Solos : vitrine commerce (700 DT), site pro santé/services (1 400 DT), boutique en ligne avec paiement tunisien (2 500 DT). Démos cliquables, personnalisation incluse.">
+<meta name="description" content="Catalogue des modèles de sites Solos : vitrine commerce (700 DT), site pro santé & services (1 400 DT), boutique en ligne avec paiement tunisien (2 500 DT). Démos cliquables, personnalisation incluse.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Tajawal',sans-serif;background:radial-gradient(900px 600px at 85% -10%,rgba(124,58,237,.22),transparent 60%),radial-gradient(700px 500px at -10% 30%,rgba(34,211,238,.14),transparent 60%),linear-gradient(160deg,#0A0E1C,#05070F);min-height:100vh;color:#E2E8F0;line-height:1.6}
-.grad{background:linear-gradient(90deg,#22D3EE,#A78BFA,#F472B6);-webkit-background-clip:text;background-clip:text;color:transparent}
+body{font-family:'Tajawal',sans-serif;background:#05070F;color:#E6EDF7;line-height:1.65;overflow-x:hidden}
+h1,h2,h3,.logo-t{font-family:'Space Grotesk',sans-serif}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
-/* NAV */
-nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(5,7,15,.72);border-bottom:1px solid rgba(255,255,255,.08)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{font-size:24px;font-weight:800;letter-spacing:8px}
-.menu{display:flex;gap:26px;align-items:center;font-size:15.5px;font-weight:700;color:#CBD5E1}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.grad{background:linear-gradient(92deg,#22D3EE,#A78BFA 55%,#F472B6);-webkit-background-clip:text;background-clip:text;color:transparent}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(900px 560px at 82% -8%,rgba(124,58,237,.20),transparent 60%),radial-gradient(760px 520px at -12% 28%,rgba(34,211,238,.12),transparent 60%),radial-gradient(700px 600px at 50% 118%,rgba(244,114,182,.08),transparent 60%)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 30%,transparent 75%);pointer-events:none}
+svg.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.lg{width:42px;height:42px;flex:none;filter:drop-shadow(0 0 14px rgba(34,211,238,.35))}
+.logo-row{display:flex;align-items:center;gap:12px}
+.logo-t{font-size:23px;font-weight:700;letter-spacing:7px}
+nav{position:sticky;top:0;z-index:60;backdrop-filter:blur(14px);background:rgba(5,7,15,.75);border-bottom:1px solid rgba(255,255,255,.07)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+.menu{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500;color:#A9B4C7}
+.menu a{transition:.15s}
 .menu a:hover{color:#22D3EE}
-.nav-cta{background:linear-gradient(90deg,#22D3EE,#A78BFA);color:#0B0F1A!important;padding:9px 18px;border-radius:999px;font-weight:800}
-.nav-cta:hover{filter:brightness(1.12);color:#0B0F1A!important}
-/* HEADER */
-.cat-head{padding:74px 0 20px;text-align:center}
-.cat-head h1{font-size:clamp(30px,4.6vw,46px);font-weight:800}
-.cat-head p{color:#94A3B8;max-width:660px;margin:14px auto 0;font-size:17px}
-/* FILTERS */
-.filters{display:flex;gap:10px;justify-content:center;margin:30px 0 8px;flex-wrap:wrap}
-.chip{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:#CBD5E1;padding:9px 18px;border-radius:999px;font-size:14.5px;font-weight:700;cursor:pointer;transition:.15s}
+.nav-cta{background:linear-gradient(92deg,#22D3EE,#A78BFA);color:#04060D!important;padding:10px 20px;border-radius:12px;font-weight:700;font-size:14.5px;transition:.15s;box-shadow:0 4px 22px rgba(34,211,238,.25)}
+.nav-cta:hover{filter:brightness(1.12)}
+.cat-head{padding:84px 0 10px;text-align:center}
+.cat-head h1{font-size:clamp(32px,4.6vw,48px);font-weight:700;letter-spacing:-1.2px}
+.cat-head p{color:#93A0B8;max-width:680px;margin:16px auto 0;font-size:17px}
+.filters{display:flex;gap:10px;justify-content:center;margin:34px 0 6px;flex-wrap:wrap}
+.chip{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.03);color:#A9B4C7;padding:10px 20px;border-radius:999px;font-size:14px;font-weight:500;cursor:pointer;transition:.15s;font-family:'Space Grotesk',sans-serif}
 .chip:hover{border-color:#22D3EE;color:#22D3EE}
-.chip.on{background:linear-gradient(90deg,#22D3EE,#A78BFA);color:#0B0F1A;border-color:transparent}
-/* CATALOG */
-.catalog{padding:36px 0 20px}
-.cat{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px}
-.m{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:26px;overflow:hidden;display:flex;flex-direction:column;transition:.18s}
-.m:hover{transform:translateY(-3px);border-color:rgba(34,211,238,.5)}
-.m .frame{height:190px;display:flex;align-items:center;justify-content:center;font-size:52px;background:radial-gradient(420px 220px at 30% 20%,rgba(34,211,238,.16),transparent 60%),radial-gradient(320px 220px at 80% 90%,rgba(167,139,250,.16),transparent 60%),linear-gradient(150deg,#101631,#0A0E1C)}
+.chip.on{background:linear-gradient(92deg,#22D3EE,#A78BFA);color:#04060D;border-color:transparent;font-weight:600}
+.catalog{padding:38px 0 20px}
+.cat{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:22px}
+.m{background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.09);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;transition:.22s}
+.m:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.4)}
+.brow{display:flex;align-items:center;gap:10px;padding:11px 16px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.07)}
+.bdots{display:flex;gap:5px}
+.bdots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.16)}
+.bdots i:first-child{background:#F472B6}
+.bdots i:nth-child(2){background:#FBBF24}
+.bdots i:nth-child(3){background:#34D399}
+.burl{font-size:11.5px;color:#7C879B;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);padding:3px 12px;border-radius:7px;margin:0 auto;font-family:'Space Grotesk',sans-serif}
+.bhero{height:104px;position:relative;border-bottom:1px solid rgba(255,255,255,.06)}
+.bhero::before{content:"";position:absolute;left:20px;top:22px;width:84px;height:7px;border-radius:4px;background:rgba(255,255,255,.5)}
+.bhero::after{content:"";position:absolute;left:20px;bottom:18px;width:130px;height:10px;border-radius:5px;background:rgba(255,255,255,.32)}
+.blines{padding:16px 20px;display:flex;flex-direction:column;gap:8px;background:rgba(255,255,255,.015)}
+.blines i{height:7px;border-radius:4px;background:rgba(255,255,255,.09)}
+.blines i:nth-child(1){width:86%}
+.blines i:nth-child(2){width:62%}
+.blines i:nth-child(3){width:72%}
 .m .body{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
-.m .cat-tag{font-size:12.5px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#67E8F9}
-.m h3{font-size:21px;font-weight:800;margin:6px 0 2px}
-.m .prix{font-size:26px;font-weight:800;margin-bottom:10px}
-.m .prix small{font-size:14px;color:#94A3B8;font-weight:700}
-.m p{font-size:15px;color:#94A3B8}
-.m ul{list-style:none;margin:14px 0 18px;font-size:14.5px;color:#CBD5E1;flex:1}
-.m ul li{padding:4px 0;padding-left:22px;position:relative}
-.m ul li::before{content:"✓";position:absolute;left:0;color:#34D399;font-weight:800}
+.cat-tag{font-size:12px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;font-family:'Space Grotesk',sans-serif}
+.m h3{font-size:21px;font-weight:700;margin:7px 0 3px}
+.m .prix{font-size:27px;font-weight:700;font-family:'Space Grotesk',sans-serif;margin-bottom:10px}
+.m .prix small{font-size:14px;color:#8B96AB;font-weight:500}
+.m .prix s{display:block;font-size:15.5px;color:#5B6577;font-weight:500;margin-bottom:2px}
+.m p{font-size:15px;color:#93A0B8}
+.m ul{list-style:none;margin:14px 0 20px;font-size:14.5px;color:#B9C3D4;flex:1}
+.m ul li{padding:4.5px 0;padding-left:26px;position:relative}
+.m ul li::before{content:"";position:absolute;left:2px;top:11px;width:14px;height:8px;border-left:2px solid #34D399;border-bottom:2px solid #34D399;transform:rotate(-45deg)}
 .m .btns{display:flex;gap:10px;flex-wrap:wrap}
-.btn{display:inline-block;padding:12px 20px;border-radius:14px;font-size:15px;font-weight:800;transition:.15s;text-align:center}
-.btn-p{background:linear-gradient(90deg,#22D3EE,#A78BFA);color:#0B0F1A;flex:1}
-.btn-p:hover{filter:brightness(1.12)}
-.btn-o{border:1px solid rgba(255,255,255,.25);color:#E2E8F0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 18px;border-radius:13px;font-size:14.5px;font-weight:700;transition:.18s;font-family:'Space Grotesk',sans-serif}
+.btn-p{background:linear-gradient(92deg,#22D3EE,#A78BFA);color:#04060D;box-shadow:0 6px 24px rgba(124,58,237,.3);flex:1}
+.btn-p:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.btn-o{border:1px solid rgba(255,255,255,.22);color:#E6EDF7}
 .btn-o:hover{border-color:#22D3EE;color:#22D3EE}
-.note{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:22px 26px;margin:34px 0;font-size:15px;color:#CBD5E1}
-.note b{color:#E2E8F0}
-/* CTA */
-.cta-band{background:radial-gradient(600px 300px at 50% 0%,rgba(124,58,237,.25),transparent 65%),rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);border-radius:32px;padding:52px 30px;text-align:center;margin:40px 0}
-.cta-band h2{font-size:clamp(24px,3.4vw,34px);font-weight:800}
-.cta-band p{color:#94A3B8;margin:12px auto 26px;max-width:520px;font-size:16px}
-/* FOOTER */
-footer{border-top:1px solid rgba(255,255,255,.08);padding:34px 0 44px;margin-top:30px}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:14px;color:#64748B}
-footer .logo{font-size:20px}
-@media(max-width:640px){nav .menu{display:none}}
+.note{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:20px 24px;margin:36px 0;font-size:14.5px;color:#B9C3D4}
+.note svg{width:20px;height:20px;stroke:#22D3EE;flex:none;margin-top:3px}
+.note b{color:#E6EDF7}
+.cta-band{position:relative;background:radial-gradient(600px 320px at 50% 0%,rgba(124,58,237,.28),transparent 65%),linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.12);border-radius:30px;padding:56px 30px;text-align:center;overflow:hidden;margin:40px 0}
+.cta-band h2{font-size:clamp(24px,3.4vw,34px);font-weight:700;letter-spacing:-.6px}
+.cta-band p{color:#93A0B8;margin:12px auto 28px;max-width:520px;font-size:16px}
+footer{border-top:1px solid rgba(255,255,255,.07);padding:40px 0 46px;margin-top:40px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;font-size:13.5px;color:#6E7A90}
+footer .logo-row .lg{width:30px;height:30px}
+footer .logo-t{font-size:17px;letter-spacing:5px}
+footer a{color:#93A0B8;transition:.15s}
+footer a:hover{color:#22D3EE}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.rv.on{opacity:1;transform:none}
+@media(max-width:680px){nav .menu{display:none}}
 </style>
 </head>
 <body>
 
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lgCloud" x1="10" y1="42" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#243253"/><stop offset="1" stop-color="#0B1022"/>
+    </linearGradient>
+    <radialGradient id="lgCore" cx="50%" cy="50%" r="50%">
+      <stop stop-color="#A5F3FF"/><stop offset=".45" stop-color="#22D3EE"/><stop offset="1" stop-color="#0E7490"/>
+    </radialGradient>
+    <symbol id="logo" viewBox="0 0 64 64">
+      <path d="M15 44.5a9 9 0 0 1 2.2-17.6 12.2 12.2 0 0 1 23.4-.3A10.2 10.2 0 0 1 50.5 37a8.2 8.2 0 0 1-2.3 16H16.8a6.2 6.2 0 0 1-1.8-8.5Z" fill="url(#lgCloud)" stroke="rgba(255,255,255,.25)" stroke-width="1.1"/>
+      <path d="M32 27.5v3.5" stroke="#22D3EE" stroke-width="1.3" stroke-linecap="round" opacity=".8"/>
+      <path d="M27.5 29l-3.2 3.2" stroke="#A78BFA" stroke-width="1.1" stroke-linecap="round" opacity=".55"/>
+      <path d="M36.5 29l3.2 3.2" stroke="#A78BFA" stroke-width="1.1" stroke-linecap="round" opacity=".55"/>
+      <circle cx="32" cy="21" r="9.5" fill="#22D3EE" opacity=".16"/>
+      <circle cx="32" cy="21" r="6" fill="#22D3EE" opacity=".32"/>
+      <circle cx="32" cy="21" r="3.8" fill="url(#lgCore)"/>
+      <circle cx="19" cy="11.5" r="1.5" fill="#A78BFA" opacity=".9"/>
+      <circle cx="43" cy="8.5" r="1.9" fill="#22D3EE" opacity=".85"/>
+      <circle cx="51" cy="17.5" r="1.15" fill="#F472B6" opacity=".9"/>
+      <circle cx="14" cy="19.5" r="1.15" fill="#67E8F9" opacity=".7"/>
+      <circle cx="47.5" cy="24" r="1" fill="#C4B5FD" opacity=".6"/>
+    </symbol>
+  </defs>
+</svg>
+
 <nav>
   <div class="wrap">
-    <a class="logo grad" href="index.html">SOLOS</a>
+    <a class="logo-row" href="index.html">
+      <svg class="lg"><use href="#logo"/></svg>
+      <span class="logo-t grad">SOLOS</span>
+    </a>
     <div class="menu">
       <a href="index.html#services">Services</a>
       <a href="index.html#tarifs">Tarifs</a>
@@ -84,7 +135,7 @@ footer .logo{font-size:20px}
 <header class="cat-head">
   <div class="wrap">
     <h1>Catalogue de <span class="grad">modèles</span></h1>
-    <p>Chaque modèle est une base que l'on personnalise à 100 % pour votre commerce : vos couleurs, vos textes, vos photos, votre logo. Cliquez sur « Voir la démo » pour le découvrir en vrai.</p>
+    <p>Chaque modèle est une base conçue par notre IA, personnalisée à 100 % pour votre commerce : vos couleurs, vos textes, vos photos, votre logo. Ouvrez une démo pour le voir en vrai.</p>
   </div>
 </header>
 
@@ -99,13 +150,15 @@ footer .logo{font-size:20px}
   <div class="wrap">
     <div class="cat" id="grid">
 
-      <div class="m" data-c="vitrine">
-        <div class="frame">🏪</div>
+      <div class="m rv" data-c="vitrine">
+        <div class="brow"><div class="bdots"><i></i><i></i><i></i></div><span class="burl">vitrine.solos.tn</span></div>
+        <div class="bhero" style="background:linear-gradient(120deg,rgba(34,211,238,.22),rgba(34,211,238,.04))"></div>
+        <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
-          <span class="cat-tag">Vitrine</span>
+          <span class="cat-tag" style="color:#22D3EE">Vitrine</span>
           <h3>Vitrine commerce</h3>
-          <div class="prix">700 <small>DT</small></div>
-          <p>Pour tout commerce de proximité : boutique, salon, restaurant, pressing, garage, épicerie…</p>
+          <div class="prix"><s>1 200 DT</s>700 <small>DT</small></div>
+          <p>Pour tout commerce de proximité : boutique, salon, restaurant, pressing, garage…</p>
           <ul>
             <li>1 page professionnelle sur mesure</li>
             <li>Mobile + SEO Google</li>
@@ -114,18 +167,20 @@ footer .logo{font-size:20px}
             <li>Mise en ligne + 15 min de formation</li>
           </ul>
           <div class="btns">
-            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/vitrine-commerce/" target="_blank">Voir la démo ↗</a>
-            <a class="btn btn-p" href="formulaire.html?modele=vitrine">Commander ce modèle</a>
+            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/vitrine-commerce/" target="_blank">Voir la démo</a>
+            <a class="btn btn-p" href="formulaire.html?modele=vitrine">Commander</a>
           </div>
         </div>
       </div>
 
-      <div class="m" data-c="pro">
-        <div class="frame">🩺</div>
+      <div class="m rv" data-c="pro">
+        <div class="brow"><div class="bdots"><i></i><i></i><i></i></div><span class="burl">pro.solos.tn</span></div>
+        <div class="bhero" style="background:linear-gradient(120deg,rgba(167,139,250,.24),rgba(167,139,250,.05))"></div>
+        <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
-          <span class="cat-tag">Pro / Santé</span>
+          <span class="cat-tag" style="color:#C4B5FD">Pro / Santé</span>
           <h3>Santé & services pro</h3>
-          <div class="prix">1 400 <small>DT</small></div>
+          <div class="prix"><s>2 500 DT</s>1 400 <small>DT</small></div>
           <p>Dentiste, médecin, avocat, coach, architecte : un site qui inspire confiance et remplit votre agenda.</p>
           <ul>
             <li>4 à 6 pages (services, équipe, avis…)</li>
@@ -135,18 +190,20 @@ footer .logo{font-size:20px}
             <li>Version arabe en option (+150 DT)</li>
           </ul>
           <div class="btns">
-            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/pro-sante/" target="_blank">Voir la démo ↗</a>
-            <a class="btn btn-p" href="formulaire.html?modele=pro">Commander ce modèle</a>
+            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/pro-sante/" target="_blank">Voir la démo</a>
+            <a class="btn btn-p" href="formulaire.html?modele=pro">Commander</a>
           </div>
         </div>
       </div>
 
-      <div class="m" data-c="pro">
-        <div class="frame">🦷</div>
+      <div class="m rv" data-c="pro">
+        <div class="brow"><div class="bdots"><i></i><i></i><i></i></div><span class="burl">dentiste.solos.tn</span></div>
+        <div class="bhero" style="background:linear-gradient(120deg,rgba(103,232,249,.22),rgba(103,232,249,.04))"></div>
+        <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
-          <span class="cat-tag">Pro / Santé</span>
+          <span class="cat-tag" style="color:#67E8F9">Pro / Santé</span>
           <h3>Cabinet dentaire</h3>
-          <div class="prix">1 400 <small>DT</small></div>
+          <div class="prix"><s>2 500 DT</s>1 400 <small>DT</small></div>
           <p>Exemple concret pour un cabinet dentaire : spécialités, équipe, prise de rendez-vous en 48 h.</p>
           <ul>
             <li>Présentation des spécialités</li>
@@ -156,18 +213,20 @@ footer .logo{font-size:20px}
             <li>Personnalisé pour votre cabinet</li>
           </ul>
           <div class="btns">
-            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/dentiste/" target="_blank">Voir la démo ↗</a>
-            <a class="btn btn-p" href="formulaire.html?modele=pro">Commander ce modèle</a>
+            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/dentiste/" target="_blank">Voir la démo</a>
+            <a class="btn btn-p" href="formulaire.html?modele=pro">Commander</a>
           </div>
         </div>
       </div>
 
-      <div class="m" data-c="boutique">
-        <div class="frame">🛒</div>
+      <div class="m rv" data-c="boutique">
+        <div class="brow"><div class="bdots"><i></i><i></i><i></i></div><span class="burl">boutique.solos.tn</span></div>
+        <div class="bhero" style="background:linear-gradient(120deg,rgba(244,114,182,.24),rgba(244,114,182,.05))"></div>
+        <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
-          <span class="cat-tag">Boutique</span>
+          <span class="cat-tag" style="color:#F472B6">Boutique</span>
           <h3>Boutique en ligne</h3>
-          <div class="prix">2 500 <small>DT</small></div>
+          <div class="prix"><s>4 000 DT</s>2 500 <small>DT</small></div>
           <p>Vêtements, cosmétiques, alimentaire, artisanat : vendez en ligne avec paiement 100 % tunisien.</p>
           <ul>
             <li>Catalogue produits + recherche</li>
@@ -177,8 +236,8 @@ footer .logo{font-size:20px}
             <li>Fiche Google incluse</li>
           </ul>
           <div class="btns">
-            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/boutique-ecommerce/" target="_blank">Voir la démo ↗</a>
-            <a class="btn btn-p" href="formulaire.html?modele=boutique">Commander ce modèle</a>
+            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/boutique-ecommerce/" target="_blank">Voir la démo</a>
+            <a class="btn btn-p" href="formulaire.html?modele=boutique">Commander</a>
           </div>
         </div>
       </div>
@@ -186,40 +245,40 @@ footer .logo{font-size:20px}
     </div>
 
     <div class="note">
-      <b>Bon à savoir :</b> tous les modèles incluent le design sur mesure, le mobile, le SEO Google, le contrôle qualité sans bug avant livraison et la mise en ligne en 1 à 3 jours. Les photos utilisées sont celles de <b>votre</b> commerce (photos pro sur demande). Paiement à la commande : Flouci ou virement bancaire.
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <span><b>Bon à savoir :</b> tous les modèles incluent le design sur mesure, le mobile, le SEO Google et le contrôle qualité sans bug avant livraison, en 1 à 3 jours. Les photos utilisées sont celles de <b>votre</b> commerce (photos professionnelles sur demande). Paiement à la commande : Flouci ou virement bancaire. Les prix affichés sont nos tarifs de lancement — ils peuvent évoluer, profitez-en.</span>
     </div>
 
     <div class="cta-band">
       <h2>Vous ne savez pas quel modèle choisir ?</h2>
       <p>Décrivez-nous votre commerce, on vous recommande la solution la plus adaptée — gratuitement et sans engagement.</p>
-      <a class="btn btn-p" href="formulaire.html" style="font-size:17px;padding:16px 34px">Parlons de votre projet</a>
+      <a class="btn btn-p" href="formulaire.html" style="font-size:16px;padding:16px 34px">Parlons de votre projet</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <a class="logo grad" href="index.html">SOLOS</a>
-    <span>Fait avec ❤️ en Tunisie 🇹🇳 · solos-tn.github.io/solos</span>
-    <span><a href="formulaire.html" style="color:#94A3B8">Devis</a> · <a href="index.html" style="color:#94A3B8">Accueil</a> · <a href="https://www.instagram.com/solos.tn" target="_blank" style="color:#94A3B8">Instagram</a></span>
+    <a class="logo-row" href="index.html">
+      <svg class="lg"><use href="#logo"/></svg>
+      <span class="logo-t grad">SOLOS</span>
+    </a>
+    <span>Intelligence artificielle · Tunis</span>
+    <span><a href="formulaire.html">Devis</a> &nbsp;·&nbsp; <a href="index.html">Accueil</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/solos.tn" target="_blank">Instagram</a></span>
   </div>
 </footer>
 
 <script>
-// Filtres du catalogue
-var chips = document.querySelectorAll('.chip');
-var cards = document.querySelectorAll('.m');
-chips.forEach(function(c){
-  c.addEventListener('click', function(){
-    chips.forEach(function(x){x.classList.remove('on')});
-    c.classList.add('on');
-    var f = c.getAttribute('data-f');
-    cards.forEach(function(m){
-      m.style.display = (f === 'all' || m.getAttribute('data-c') === f) ? '' : 'none';
-    });
-  });
-});
+// filtres
+var chips=document.querySelectorAll('.chip'), cards=document.querySelectorAll('.m');
+chips.forEach(function(c){c.addEventListener('click',function(){
+  chips.forEach(function(x){x.classList.remove('on')}); c.classList.add('on');
+  var f=c.getAttribute('data-f');
+  cards.forEach(function(m){ m.style.display=(f==='all'||m.getAttribute('data-c')===f)?'':'none'; });
+});});
+// reveal
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 </script>
-
 </body>
 </html>
