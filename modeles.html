@@ -12,42 +12,42 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Tajawal',sans-serif;background:#05070F;color:#E6EDF7;line-height:1.65;overflow-x:hidden}
+body{font-family:'Tajawal',sans-serif;background:#05070F;color:#F0EBDF;line-height:1.65;overflow-x:hidden}
 h1,h2,h3,.logo-t{font-family:'Space Grotesk',sans-serif}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
-.grad{background:linear-gradient(92deg,#22D3EE,#A78BFA 55%,#F472B6);-webkit-background-clip:text;background-clip:text;color:transparent}
-body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(900px 560px at 82% -8%,rgba(124,58,237,.20),transparent 60%),radial-gradient(760px 520px at -12% 28%,rgba(34,211,238,.12),transparent 60%),radial-gradient(700px 600px at 50% 118%,rgba(244,114,182,.08),transparent 60%)}
+.grad{background:linear-gradient(92deg,#E9B44C,#F0C75E 55%,#C9972B);-webkit-background-clip:text;background-clip:text;color:transparent}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(900px 560px at 82% -8%,rgba(201,151,43,.20),transparent 60%),radial-gradient(760px 520px at -12% 28%,rgba(233,180,76,.12),transparent 60%),radial-gradient(700px 600px at 50% 118%,rgba(201,151,43,.08),transparent 60%)}
 body::after{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 30%,transparent 75%);pointer-events:none}
 svg.sprite{position:absolute;width:0;height:0;overflow:hidden}
-.lg{width:42px;height:42px;flex:none;filter:drop-shadow(0 0 14px rgba(34,211,238,.35))}
+.lg{width:42px;height:42px;flex:none;filter:drop-shadow(0 0 14px rgba(233,180,76,.35))}
 .logo-row{display:flex;align-items:center;gap:12px}
 .logo-t{font-size:23px;font-weight:700;letter-spacing:7px}
 nav{position:sticky;top:0;z-index:60;backdrop-filter:blur(14px);background:rgba(5,7,15,.75);border-bottom:1px solid rgba(255,255,255,.07)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
-.menu{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500;color:#A9B4C7}
+.menu{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500;color:#A69D8C}
 .menu a{transition:.15s}
-.menu a:hover{color:#22D3EE}
-.nav-cta{background:linear-gradient(92deg,#22D3EE,#A78BFA);color:#04060D!important;padding:10px 20px;border-radius:12px;font-weight:700;font-size:14.5px;transition:.15s;box-shadow:0 4px 22px rgba(34,211,238,.25)}
+.menu a:hover{color:#E9B44C}
+.nav-cta{background:linear-gradient(92deg,#E9B44C,#F0C75E);color:#120D04!important;padding:10px 20px;border-radius:12px;font-weight:700;font-size:14.5px;transition:.15s;box-shadow:0 4px 22px rgba(233,180,76,.25)}
 .nav-cta:hover{filter:brightness(1.12)}
 .cat-head{padding:84px 0 10px;text-align:center}
 .cat-head h1{font-size:clamp(32px,4.6vw,48px);font-weight:700;letter-spacing:-1.2px}
-.cat-head p{color:#93A0B8;max-width:680px;margin:16px auto 0;font-size:17px}
+.cat-head p{color:#9C9383;max-width:680px;margin:16px auto 0;font-size:17px}
 .filters{display:flex;gap:10px;justify-content:center;margin:34px 0 6px;flex-wrap:wrap}
-.chip{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.03);color:#A9B4C7;padding:10px 20px;border-radius:999px;font-size:14px;font-weight:500;cursor:pointer;transition:.15s;font-family:'Space Grotesk',sans-serif}
-.chip:hover{border-color:#22D3EE;color:#22D3EE}
-.chip.on{background:linear-gradient(92deg,#22D3EE,#A78BFA);color:#04060D;border-color:transparent;font-weight:600}
+.chip{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.03);color:#A69D8C;padding:10px 20px;border-radius:999px;font-size:14px;font-weight:500;cursor:pointer;transition:.15s;font-family:'Space Grotesk',sans-serif}
+.chip:hover{border-color:#E9B44C;color:#E9B44C}
+.chip.on{background:linear-gradient(92deg,#E9B44C,#F0C75E);color:#120D04;border-color:transparent;font-weight:600}
 .catalog{padding:38px 0 20px}
 .cat{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:22px}
 .m{background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.09);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;transition:.22s}
-.m:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.4)}
+.m:hover{transform:translateY(-4px);border-color:rgba(233,180,76,.4)}
 .brow{display:flex;align-items:center;gap:10px;padding:11px 16px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.07)}
 .bdots{display:flex;gap:5px}
 .bdots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.16)}
-.bdots i:first-child{background:#F472B6}
+.bdots i:first-child{background:#C9972B}
 .bdots i:nth-child(2){background:#FBBF24}
-.bdots i:nth-child(3){background:#34D399}
-.burl{font-size:11.5px;color:#7C879B;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);padding:3px 12px;border-radius:7px;margin:0 auto;font-family:'Space Grotesk',sans-serif}
+.bdots i:nth-child(3){background:#E9B44C}
+.burl{font-size:11.5px;color:#6E6657;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);padding:3px 12px;border-radius:7px;margin:0 auto;font-family:'Space Grotesk',sans-serif}
 .bhero{height:104px;position:relative;border-bottom:1px solid rgba(255,255,255,.06)}
 .bhero::before{content:"";position:absolute;left:20px;top:22px;width:84px;height:7px;border-radius:4px;background:rgba(255,255,255,.5)}
 .bhero::after{content:"";position:absolute;left:20px;bottom:18px;width:130px;height:10px;border-radius:5px;background:rgba(255,255,255,.32)}
@@ -60,30 +60,30 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .cat-tag{font-size:12px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;font-family:'Space Grotesk',sans-serif}
 .m h3{font-size:21px;font-weight:700;margin:7px 0 3px}
 .m .prix{font-size:27px;font-weight:700;font-family:'Space Grotesk',sans-serif;margin-bottom:10px}
-.m .prix small{font-size:14px;color:#8B96AB;font-weight:500}
-.m .prix s{display:block;font-size:15.5px;color:#5B6577;font-weight:500;margin-bottom:2px}
-.m p{font-size:15px;color:#93A0B8}
-.m ul{list-style:none;margin:14px 0 20px;font-size:14.5px;color:#B9C3D4;flex:1}
+.m .prix small{font-size:14px;color:#8F8778;font-weight:500}
+.m .prix s{display:block;font-size:15.5px;color:#6E6657;font-weight:500;margin-bottom:2px}
+.m p{font-size:15px;color:#9C9383}
+.m ul{list-style:none;margin:14px 0 20px;font-size:14.5px;color:#B8AF9E;flex:1}
 .m ul li{padding:4.5px 0;padding-left:26px;position:relative}
-.m ul li::before{content:"";position:absolute;left:2px;top:11px;width:14px;height:8px;border-left:2px solid #34D399;border-bottom:2px solid #34D399;transform:rotate(-45deg)}
+.m ul li::before{content:"";position:absolute;left:2px;top:11px;width:14px;height:8px;border-left:2px solid #E9B44C;border-bottom:2px solid #E9B44C;transform:rotate(-45deg)}
 .m .btns{display:flex;gap:10px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 18px;border-radius:13px;font-size:14.5px;font-weight:700;transition:.18s;font-family:'Space Grotesk',sans-serif}
-.btn-p{background:linear-gradient(92deg,#22D3EE,#A78BFA);color:#04060D;box-shadow:0 6px 24px rgba(124,58,237,.3);flex:1}
+.btn-p{background:linear-gradient(92deg,#E9B44C,#F0C75E);color:#120D04;box-shadow:0 6px 24px rgba(201,151,43,.3);flex:1}
 .btn-p:hover{filter:brightness(1.1);transform:translateY(-1px)}
-.btn-o{border:1px solid rgba(255,255,255,.22);color:#E6EDF7}
-.btn-o:hover{border-color:#22D3EE;color:#22D3EE}
-.note{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:20px 24px;margin:36px 0;font-size:14.5px;color:#B9C3D4}
-.note svg{width:20px;height:20px;stroke:#22D3EE;flex:none;margin-top:3px}
-.note b{color:#E6EDF7}
-.cta-band{position:relative;background:radial-gradient(600px 320px at 50% 0%,rgba(124,58,237,.28),transparent 65%),linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.12);border-radius:30px;padding:56px 30px;text-align:center;overflow:hidden;margin:40px 0}
+.btn-o{border:1px solid rgba(255,255,255,.22);color:#F0EBDF}
+.btn-o:hover{border-color:#E9B44C;color:#E9B44C}
+.note{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:20px 24px;margin:36px 0;font-size:14.5px;color:#B8AF9E}
+.note svg{width:20px;height:20px;stroke:#E9B44C;flex:none;margin-top:3px}
+.note b{color:#F0EBDF}
+.cta-band{position:relative;background:radial-gradient(600px 320px at 50% 0%,rgba(201,151,43,.28),transparent 65%),linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.12);border-radius:30px;padding:56px 30px;text-align:center;overflow:hidden;margin:40px 0}
 .cta-band h2{font-size:clamp(24px,3.4vw,34px);font-weight:700;letter-spacing:-.6px}
-.cta-band p{color:#93A0B8;margin:12px auto 28px;max-width:520px;font-size:16px}
+.cta-band p{color:#9C9383;margin:12px auto 28px;max-width:520px;font-size:16px}
 footer{border-top:1px solid rgba(255,255,255,.07);padding:40px 0 46px;margin-top:40px}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;font-size:13.5px;color:#6E7A90}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;font-size:13.5px;color:#6E6657}
 footer .logo-row .lg{width:30px;height:30px}
 footer .logo-t{font-size:17px;letter-spacing:5px}
-footer a{color:#93A0B8;transition:.15s}
-footer a:hover{color:#22D3EE}
+footer a{color:#9C9383;transition:.15s}
+footer a:hover{color:#E9B44C}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
 .rv.on{opacity:1;transform:none}
 @media(max-width:680px){nav .menu{display:none}}
@@ -94,24 +94,24 @@ footer a:hover{color:#22D3EE}
 <svg class="sprite" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="lgCloud" x1="10" y1="42" x2="54" y2="56" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#243253"/><stop offset="1" stop-color="#0B1022"/>
+      <stop stop-color="#3A2C10"/><stop offset="1" stop-color="#0E0B06"/>
     </linearGradient>
     <radialGradient id="lgCore" cx="50%" cy="50%" r="50%">
-      <stop stop-color="#A5F3FF"/><stop offset=".45" stop-color="#22D3EE"/><stop offset="1" stop-color="#0E7490"/>
+      <stop stop-color="#FBE9B0"/><stop offset=".45" stop-color="#E9B44C"/><stop offset="1" stop-color="#8A5A00"/>
     </radialGradient>
     <symbol id="logo" viewBox="0 0 64 64">
       <path d="M15 44.5a9 9 0 0 1 2.2-17.6 12.2 12.2 0 0 1 23.4-.3A10.2 10.2 0 0 1 50.5 37a8.2 8.2 0 0 1-2.3 16H16.8a6.2 6.2 0 0 1-1.8-8.5Z" fill="url(#lgCloud)" stroke="rgba(255,255,255,.25)" stroke-width="1.1"/>
-      <path d="M32 27.5v3.5" stroke="#22D3EE" stroke-width="1.3" stroke-linecap="round" opacity=".8"/>
-      <path d="M27.5 29l-3.2 3.2" stroke="#A78BFA" stroke-width="1.1" stroke-linecap="round" opacity=".55"/>
-      <path d="M36.5 29l3.2 3.2" stroke="#A78BFA" stroke-width="1.1" stroke-linecap="round" opacity=".55"/>
-      <circle cx="32" cy="21" r="9.5" fill="#22D3EE" opacity=".16"/>
-      <circle cx="32" cy="21" r="6" fill="#22D3EE" opacity=".32"/>
+      <path d="M32 27.5v3.5" stroke="#E9B44C" stroke-width="1.3" stroke-linecap="round" opacity=".8"/>
+      <path d="M27.5 29l-3.2 3.2" stroke="#F0C75E" stroke-width="1.1" stroke-linecap="round" opacity=".55"/>
+      <path d="M36.5 29l3.2 3.2" stroke="#F0C75E" stroke-width="1.1" stroke-linecap="round" opacity=".55"/>
+      <circle cx="32" cy="21" r="9.5" fill="#E9B44C" opacity=".16"/>
+      <circle cx="32" cy="21" r="6" fill="#E9B44C" opacity=".32"/>
       <circle cx="32" cy="21" r="3.8" fill="url(#lgCore)"/>
-      <circle cx="19" cy="11.5" r="1.5" fill="#A78BFA" opacity=".9"/>
-      <circle cx="43" cy="8.5" r="1.9" fill="#22D3EE" opacity=".85"/>
-      <circle cx="51" cy="17.5" r="1.15" fill="#F472B6" opacity=".9"/>
-      <circle cx="14" cy="19.5" r="1.15" fill="#67E8F9" opacity=".7"/>
-      <circle cx="47.5" cy="24" r="1" fill="#C4B5FD" opacity=".6"/>
+      <circle cx="19" cy="11.5" r="1.5" fill="#F0C75E" opacity=".9"/>
+      <circle cx="43" cy="8.5" r="1.9" fill="#E9B44C" opacity=".85"/>
+      <circle cx="51" cy="17.5" r="1.15" fill="#C9972B" opacity=".9"/>
+      <circle cx="14" cy="19.5" r="1.15" fill="#F0C75E" opacity=".7"/>
+      <circle cx="47.5" cy="24" r="1" fill="#F0C75E" opacity=".6"/>
     </symbol>
   </defs>
 </svg>
@@ -152,10 +152,10 @@ footer a:hover{color:#22D3EE}
 
       <div class="m rv" data-c="vitrine">
         <div class="brow"><div class="bdots"><i></i><i></i><i></i></div><span class="burl">vitrine.solos.tn</span></div>
-        <div class="bhero" style="background:linear-gradient(120deg,rgba(34,211,238,.22),rgba(34,211,238,.04))"></div>
+        <div class="bhero" style="background:linear-gradient(120deg,rgba(233,180,76,.22),rgba(233,180,76,.04))"></div>
         <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
-          <span class="cat-tag" style="color:#22D3EE">Vitrine</span>
+          <span class="cat-tag" style="color:#E9B44C">Vitrine</span>
           <h3>Vitrine commerce</h3>
           <div class="prix"><s>1 200 DT</s>700 <small>DT</small></div>
           <p>Pour tout commerce de proximité : boutique, salon, restaurant, pressing, garage…</p>
@@ -175,10 +175,10 @@ footer a:hover{color:#22D3EE}
 
       <div class="m rv" data-c="pro">
         <div class="brow"><div class="bdots"><i></i><i></i><i></i></div><span class="burl">pro.solos.tn</span></div>
-        <div class="bhero" style="background:linear-gradient(120deg,rgba(167,139,250,.24),rgba(167,139,250,.05))"></div>
+        <div class="bhero" style="background:linear-gradient(120deg,rgba(233,180,76,.24),rgba(233,180,76,.05))"></div>
         <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
-          <span class="cat-tag" style="color:#C4B5FD">Pro / Santé</span>
+          <span class="cat-tag" style="color:#F0C75E">Pro / Santé</span>
           <h3>Santé & services pro</h3>
           <div class="prix"><s>2 500 DT</s>1 400 <small>DT</small></div>
           <p>Dentiste, médecin, avocat, coach, architecte : un site qui inspire confiance et remplit votre agenda.</p>
@@ -201,7 +201,7 @@ footer a:hover{color:#22D3EE}
         <div class="bhero" style="background:linear-gradient(120deg,rgba(103,232,249,.22),rgba(103,232,249,.04))"></div>
         <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
-          <span class="cat-tag" style="color:#67E8F9">Pro / Santé</span>
+          <span class="cat-tag" style="color:#F0C75E">Pro / Santé</span>
           <h3>Cabinet dentaire</h3>
           <div class="prix"><s>2 500 DT</s>1 400 <small>DT</small></div>
           <p>Exemple concret pour un cabinet dentaire : spécialités, équipe, prise de rendez-vous en 48 h.</p>
@@ -221,10 +221,10 @@ footer a:hover{color:#22D3EE}
 
       <div class="m rv" data-c="boutique">
         <div class="brow"><div class="bdots"><i></i><i></i><i></i></div><span class="burl">boutique.solos.tn</span></div>
-        <div class="bhero" style="background:linear-gradient(120deg,rgba(244,114,182,.24),rgba(244,114,182,.05))"></div>
+        <div class="bhero" style="background:linear-gradient(120deg,rgba(201,151,43,.24),rgba(201,151,43,.05))"></div>
         <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
-          <span class="cat-tag" style="color:#F472B6">Boutique</span>
+          <span class="cat-tag" style="color:#C9972B">Boutique</span>
           <h3>Boutique en ligne</h3>
           <div class="prix"><s>4 000 DT</s>2 500 <small>DT</small></div>
           <p>Vêtements, cosmétiques, alimentaire, artisanat : vendez en ligne avec paiement 100 % tunisien.</p>
