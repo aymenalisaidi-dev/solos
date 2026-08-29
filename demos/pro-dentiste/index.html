@@ -169,6 +169,16 @@
 .solos-picker .sp-swatches{display:flex;gap:7px}
 .solos-picker button{width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,255,255,.28);cursor:pointer;padding:0;transition:transform .12s,border-color .12s}
 .solos-picker button:hover{transform:scale(1.18);border-color:#fff}
+
+/* Solos — sélecteur de langue (inclus) */
+.lang-sw{display:flex;gap:3px;align-items:center;background:rgba(127,127,127,.12);border:1px solid rgba(127,127,127,.35);border-radius:11px;padding:3px;flex:none}
+.lang-btn{background:none;border:none;color:inherit;opacity:.55;font-family:inherit;font-size:11.5px;font-weight:700;letter-spacing:.4px;padding:5px 8px;border-radius:8px;cursor:pointer;transition:.15s}
+.lang-btn:hover{opacity:.9}
+.lang-btn.on{background:var(--AC1,#5C2A3E);color:#fff;opacity:1}
+html[dir=rtl] body{direction:rtl;text-align:right}
+html[dir=rtl] .nav{flex-direction:row-reverse}
+@media(max-width:680px){.lang-sw{margin-right:6px}}
+
 </style>
 </head>
 <body>
@@ -185,7 +195,12 @@
     <div style="display:flex;gap:12px;align-items:center">
       <a href="tel:+21670123456" style="font-weight:700;font-size:.92rem">☎ 70 123 456</a>
       <a href="#rdv" class="nav-cta">Prendre RDV</a>
-      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+            <div class="lang-sw" role="group" aria-label="Langue / Language">
+        <button class="lang-btn on" data-lang="fr" type="button">FR</button>
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
+        <button class="lang-btn" data-lang="ar" type="button">ع</button>
+      </div>
+<button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
     </div>
   </div>
 </header>
@@ -381,5 +396,75 @@
   });
 })();
 </script>
+
+<script>
+// Solos — sélecteur de langue FR/EN/AR (inclus, gratuit)
+(function(){
+  // Dictionnaire d'interface : FR -> [EN, AR] (lookup par contenu, feuilles seulement)
+  var D={
+    "Accueil":["Home","الرئيسية"],
+    "Nouveautés":["New arrivals","الجديد"],
+    "Collections":["Collections","المجموعات"],
+    "Collection":["Collection","التشكيلة"],
+    "Avis":["Reviews","التقييمات"],
+    "Contact":["Contact","اتصل بنا"],
+    "Nous écrire":["Contact us","راسلنا"],
+    "Prendre RDV":["Book now","احجز موعداً"],
+    "Prendre rendez-vous":["Book an appointment","احجز موعداً"],
+    "Rendez-vous":["Appointments","المواعيد"],
+    "Commander":["Order now","اطلب الآن"],
+    "Commander en ligne":["Order online","اطلب الآن"],
+    "Voir le panier":["View cart","عرض السلة"],
+    "Horaires":["Opening hours","ساعات العمل"],
+    "Localisation":["Location","الموقع"],
+    "Nous trouver":["Find us","موقعنا"],
+    "Nous trouver sur Google":["Find us on Google","جدنا على Google"],
+    "Suivez-nous":["Follow us","تابعنا"],
+    "Tous droits réservés":["All rights reserved","جميع الحقوق محفوظة"],
+    "Mentions légales":["Legal notice","إشعار قانوني"],
+    "Politique de confidentialité":["Privacy policy","سياسة الخصوصية"],
+    "Livraison offerte dès 150 DT":["Free delivery from 150 DT","توصيل مجاني من 150 د.ت"],
+    "Échange sous 7 jours":["7-day exchange","إمكانية الإرجاع خلال 7 أيام"],
+    "Paiement à la livraison":["Cash on delivery","الدفع عند الاستلام"],
+    "Nom complet":["Full name","الاسم الكامل"],
+    "Nom":["Name","الاسم"],
+    "Téléphone":["Phone","الهاتف"],
+    "Email":["Email","البريد الإلكتروني"],
+    "Message":["Message","رسالة"],
+    "Envoyer":["Send","إرسال"],
+    "Envoyer ma demande":["Send my request","أرسل طلبي"],
+    "Envoyer le message":["Send the message","أرسل الرسالة"],
+    "Demande de renseignement":["Enquiry form","نموذج استفسار"],
+    "Plan d'accès":["Directions","خطة الوصول"],
+    "Notre histoire":["Our story","قصتنا"],
+    "Savoir-faire":["Expertise","خبرتنا"],
+    "Découvrir la collection":["Discover the collection","اكتشف التشكيلة"],
+    "Commander une pièce":["Order a piece","اطلب قطعة"]
+  };
+  var lang=localStorage.getItem('solos_lang')||'fr';
+  function apply(l){
+    lang=l;localStorage.setItem('solos_lang',l);
+    document.documentElement.lang=l;
+    document.documentElement.dir=(l==='ar')?'rtl':'ltr';
+    document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-lang')===l);});
+    if(l==='fr'){ document.querySelectorAll('[data-i18n-src]').forEach(function(el){el.textContent=el.getAttribute('data-i18n-src');}); return; }
+    document.querySelectorAll('a,button,span,li,h1,h2,h3,p,div,label').forEach(function(el){
+      if(el.children.length) return;               // feuille seulement (ne casse pas les sous-éléments)
+      if(el.closest('.lang-sw')) return;           // jamais le sélecteur lui-même
+      var t=el.textContent.trim();
+      if(!t||t.length>40) return;
+      var tr=D[t];
+      if(!tr) return;
+      if(!el.getAttribute('data-i18n-src')) el.setAttribute('data-i18n-src',el.textContent);
+      el.textContent=(l==='en')?tr[0]:tr[1];
+    });
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click',function(){apply(b.getAttribute('data-lang'));});
+  });
+  apply(lang);
+})();
+</script>
+
 </body>
 </html>

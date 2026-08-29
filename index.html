@@ -23,11 +23,16 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;background-image:linear
 .logo-t{font-size:23px;font-weight:700;letter-spacing:7px}
 nav{position:sticky;top:0;z-index:60;backdrop-filter:blur(14px);background:rgba(5,7,15,.75);border-bottom:1px solid rgba(255,255,255,.07)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
-.menu{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500;color:#A69D8C}
+.menu{display:flex;gap:26px;align-items:center;font-size:15px;font-weight:500;color:#A69D8C}
 .menu a{transition:.15s}
 .menu a:hover{color:#E9B44C}
 .nav-cta{background:linear-gradient(92deg,#E9B44C,#F0C75E);color:#120D04!important;padding:10px 20px;border-radius:12px;font-weight:700;font-size:14.5px;transition:.15s;box-shadow:0 4px 22px rgba(233,180,76,.25)}
 .nav-cta:hover{filter:brightness(1.12)}
+/* LANG SWITCHER */
+.lang-sw{display:flex;gap:3px;align-items:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:11px;padding:3px}
+.lang-btn{background:none;border:none;color:#8F8778;font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px;padding:6px 9px;border-radius:8px;cursor:pointer;transition:.15s}
+.lang-btn:hover{color:#F0EBDF}
+.lang-btn.on{background:linear-gradient(92deg,#E9B44C,#F0C75E);color:#120D04}
 .hero{position:relative;padding:110px 0 84px;text-align:center}
 .parts{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 .parts i{position:absolute;bottom:-12px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.9),rgba(233,180,76,.0) 70%);opacity:0;animation:rise linear infinite}
@@ -211,6 +216,15 @@ footer a:hover{color:#E9B44C}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
 .rv.on{opacity:1;transform:none}
 @media(max-width:680px){nav .menu{display:none}.stats{gap:30px}.agent-grid{grid-template-columns:1fr}.farr{display:none}.fnode{width:150px}}
+html[dir=rtl] .wf .wf-price s{margin-right:0;margin-left:6px}
+html[dir=rtl] .tier .prix s{margin-right:0}
+html[dir=rtl] .agent-txt ul li{padding-left:0;padding-right:28px}
+html[dir=rtl] .agent-txt ul li::before{left:auto;right:2px}
+html[dir=rtl] .tier ul li{padding-left:0;padding-right:26px}
+html[dir=rtl] .tier ul li::before{left:auto;right:2px}
+html[dir=rtl] .step::after{right:auto;left:-9px}
+html[dir=rtl] .promo{right:auto;left:22px}
+html[dir=rtl] .extra .e-p{float:left}
 </style>
 </head>
 <body>
@@ -221,12 +235,17 @@ footer a:hover{color:#E9B44C}
       <span class="logo-t grad">SOLOS</span>
     </a>
     <div class="menu">
-      <a href="#automatisation">Automatisation</a>
-      <a href="#agent-ia">Agent IA</a>
-      <a href="#tarifs">Tarifs</a>
-      <a href="modeles.html">Modèles</a>
-      <a href="#contact">Contact</a>
-      <a class="nav-cta" href="formulaire.html">Devis gratuit</a>
+      <a href="#automatisation" data-i18n="nav_auto">Automatisation</a>
+      <a href="#agent-ia" data-i18n="nav_agent">Agent IA</a>
+      <a href="#tarifs" data-i18n="nav_tarifs">Tarifs</a>
+      <a href="modeles.html" data-i18n="nav_modeles">Modèles</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+      <div class="lang-sw" role="group" aria-label="Langue / Language">
+        <button class="lang-btn on" data-lang="fr" type="button">FR</button>
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
+        <button class="lang-btn" data-lang="ar" type="button">ع</button>
+      </div>
+      <a class="nav-cta" href="formulaire.html" data-i18n="nav_devis">Devis gratuit</a>
     </div>
   </div>
 </nav>
@@ -234,168 +253,168 @@ footer a:hover{color:#E9B44C}
 <header class="hero">
   <div class="parts" id="parts"></div>
   <div class="wrap">
-    <span class="badge"><span class="dot"></span>Automatisation &amp; Intelligence artificielle — Tunis</span>
-    <h1>Votre commerce <span class="grad">travaille 24/7</span><br>même quand vous dormez</h1>
-    <p class="sub">Réponses immédiates à vos clients, rappels de rendez-vous, relances de devis, demandes d'avis : Solos automatise votre activité et l'intelligence artificielle s'occupe du reste — sans embauche, sans logiciel à gérer.</p>
+    <span class="badge"><span class="dot"></span><span data-i18n="hero_badge">Automatisation &amp; Intelligence artificielle — Tunis</span></span>
+    <h1 data-i18n-html="hero_h1">Votre commerce <span class="grad">travaille 24/7</span><br>même quand vous dormez</h1>
+    <p class="sub" data-i18n="hero_sub">Réponses immédiates à vos clients, rappels de rendez-vous, relances de devis, demandes d'avis : Solos automatise votre activité et l'intelligence artificielle s'occupe du reste — sans embauche, sans logiciel à gérer.</p>
     <div class="ctas">
-      <a class="btn btn-p" href="#automatisation">Voir les automatisations en action</a>
-      <a class="btn btn-o" href="formulaire.html">Demander un devis gratuit</a>
+      <a class="btn btn-p" href="#automatisation" data-i18n="hero_cta1">Voir les automatisations en action</a>
+      <a class="btn btn-o" href="formulaire.html" data-i18n="hero_cta2">Demander un devis gratuit</a>
     </div>
     <div class="stats">
-      <div><b>24/7</b><span>Vos clients servis</span></div>
-      <div><b>59 DT</b><span>Automatisation / mois</span></div>
-      <div><b>Sur-mesure</b><span>Agents IA par business</span></div>
-      <div><b>0 bug</b><span>QC avant livraison</span></div>
+      <div><b>24/7</b><span data-i18n="stat1">Vos clients servis</span></div>
+      <div><b>59 DT</b><span data-i18n="stat2">Automatisation / mois</span></div>
+      <div><b data-i18n="stat3b">Sur-mesure</b><span data-i18n="stat3">Agents IA par business</span></div>
+      <div><b>0 bug</b><span data-i18n="stat4">QC avant livraison</span></div>
     </div>
   </div>
 </header>
 
 <section id="automatisation">
   <div class="wrap">
-    <div class="sec-head rv"><span class="sec-n">01</span><h2>Automatisations — le cœur de Solos</h2></div>
-    <p class="sec-sub rv">Chaque automatisation est un scénario qui tourne tout seul, branché sur votre site, vos emails et votre fiche Google. Un client prend rendez-vous la nuit ? Il est accueilli, confirmé, rappelé et remercié — sans que vous leviez le petit doigt.</p>
+    <div class="sec-head rv"><span class="sec-n">01</span><h2 data-i18n="s1_title">Automatisations — le cœur de Solos</h2></div>
+    <p class="sec-sub rv" data-i18n="s1_sub">Chaque automatisation est un scénario qui tourne tout seul, branché sur votre site, vos emails et votre fiche Google. Un client prend rendez-vous la nuit ? Il est accueilli, confirmé, rappelé et remercié — sans que vous leviez le petit doigt.</p>
 
     <div class="demo-wrap rv">
       <div class="demo-title">
-        <h3>Scénario : rendez-vous dentiste</h3>
-        <span>Cliquez pour déclencher la séquence</span>
+        <h3 data-i18n="demo_title">Scénario : rendez-vous dentiste</h3>
+        <span data-i18n="demo_hint">Cliquez pour déclencher la séquence</span>
       </div>
       <div class="demo-flow" id="flow">
         <div class="fnode" data-i="0">
           <span class="f-dot"></span>
           <div class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h5M8 17h3"/></svg></div>
-          <h4>Rendez-vous pris</h4>
-          <p>Le patient réserve sur votre site</p>
-          <span class="f-stat">En attente</span>
+          <h4 data-i18n="demo_n1t">Rendez-vous pris</h4>
+          <p data-i18n="demo_n1d">Le patient réserve sur votre site</p>
+          <span class="f-stat" data-i18n="demo_wait">En attente</span>
         </div>
         <div class="farr">›</div>
         <div class="fnode" data-i="1">
           <span class="f-dot"></span>
           <div class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16v13H4z"/><path d="m4 7 8 6 8-6"/></svg></div>
-          <h4>Email de bienvenue</h4>
-          <p>Confirmation envoyée en 30 s</p>
-          <span class="f-stat">En attente</span>
+          <h4 data-i18n="demo_n2t">Email de bienvenue</h4>
+          <p data-i18n="demo_n2d">Confirmation envoyée en 30 s</p>
+          <span class="f-stat" data-i18n="demo_wait">En attente</span>
         </div>
         <div class="farr">›</div>
         <div class="fnode" data-i="2">
           <span class="f-dot"></span>
           <div class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg></div>
-          <h4>Rappel J-1</h4>
-          <p>Email de rappel la veille</p>
-          <span class="f-stat">En attente</span>
+          <h4 data-i18n="demo_n3t">Rappel J-1</h4>
+          <p data-i18n="demo_n3d">Email de rappel la veille</p>
+          <span class="f-stat" data-i18n="demo_wait">En attente</span>
         </div>
         <div class="farr">›</div>
         <div class="fnode" data-i="3">
           <span class="f-dot"></span>
           <div class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
-          <h4>Confirmation</h4>
-          <p>Le patient confirme sa présence</p>
-          <span class="f-stat">En attente</span>
+          <h4 data-i18n="demo_n4t">Confirmation</h4>
+          <p data-i18n="demo_n4d">Le patient confirme sa présence</p>
+          <span class="f-stat" data-i18n="demo_wait">En attente</span>
         </div>
         <div class="farr">›</div>
         <div class="fnode" data-i="4">
           <span class="f-dot"></span>
           <div class="f-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5.5 5.5 0 0 1 5.5 5.5c0 2.4-1.4 3.9-2.6 5.1-1 1-1.9 2-1.9 3.4h-2c0-1.7.9-2.9 2-3.9 1.1-1.1 2.5-2.3 2.5-4.6A4.5 4.5 0 1 0 12 11v-2a2.5 2.5 0 1 1 2.5-2.5c0 .8-.4 1.3-1.2 2.2l-1 1.2c-1.3 1.5-2.8 3.3-2.8 6.1h7v2H6v-2h3c0-3 1.8-5.2 3.3-6.8l.9-1.1c.5-.6.8-1.1.8-1.9A3.5 3.5 0 1 0 12 8.5V6.5a5.5 5.5 0 0 1 0-4.5Z"/></svg></div>
-          <h4>Avis demandé</h4>
-          <p>Demande d'avis Google après le RDV</p>
-          <span class="f-stat">En attente</span>
+          <h4 data-i18n="demo_n5t">Avis demandé</h4>
+          <p data-i18n="demo_n5d">Demande d'avis Google après le RDV</p>
+          <span class="f-stat" data-i18n="demo_wait">En attente</span>
         </div>
       </div>
       <div class="demo-ctrl">
-        <button class="btn btn-p" id="runFlow" type="button">▶ Déclencher la séquence</button>
+        <button class="btn btn-p" id="runFlow" type="button"><span data-i18n="demo_btn">▶ Déclencher la séquence</span></button>
       </div>
-      <div class="demo-note" id="flowNote">5 étapes · 0 intervention humaine · emails envoyés automatiquement</div>
+      <div class="demo-note" id="flowNote" data-i18n="demo_note">5 étapes · 0 intervention humaine · emails envoyés automatiquement</div>
     </div>
 
     <div class="wf-grid">
       <a class="wf rv" href="formulaire.html?workflow=rdv-sante">
-        <div class="wf-top"><span class="wf-tag">Santé · Dentiste · Médecin</span><span class="wf-price"><s>79 DT</s>59 DT/mois</span></div>
-        <h3>Rendez-vous santé</h3>
-        <p>Bienvenue + rappel J-1 + confirmation + demande d'avis. Fini les rendez-vous oubliés.</p>
-        <div class="wf-seq"><i>RDV pris</i><i>Bienvenue</i><i>Rappel J-1</i><i>Confirmation</i><i>Avis</i></div>
-        <span class="wf-cta">Activer cette automatisation <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="wf-top"><span class="wf-tag" data-i18n="wf1_tag">Santé · Dentiste · Médecin</span><span class="wf-price"><s>79 DT</s>59 DT/mois</span></div>
+        <h3 data-i18n="wf1_t">Rendez-vous santé</h3>
+        <p data-i18n="wf1_d">Bienvenue + rappel J-1 + confirmation + demande d'avis. Fini les rendez-vous oubliés.</p>
+        <div class="wf-seq"><i data-i18n="wf1_s1">RDV pris</i><i data-i18n="wf1_s2">Bienvenue</i><i data-i18n="wf1_s3">Rappel J-1</i><i data-i18n="wf1_s4">Confirmation</i><i data-i18n="wf1_s5">Avis</i></div>
+        <span class="wf-cta"><span data-i18n="wf_cta">Activer cette automatisation</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
       <a class="wf rv" href="formulaire.html?workflow=rdv-salon">
-        <div class="wf-top"><span class="wf-tag">Salon · Coiffure · Beauté</span><span class="wf-price"><s>79 DT</s>59 DT/mois</span></div>
-        <h3>Rendez-vous salon</h3>
-        <p>Confirmation immédiate, rappel la veille, demande d'avis. Moins de no-shows, plus de fidélité.</p>
-        <div class="wf-seq"><i>RDV WhatsApp</i><i>Confirmation</i><i>Rappel J-1</i><i>Avis Google</i></div>
-        <span class="wf-cta">Activer cette automatisation <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="wf-top"><span class="wf-tag" data-i18n="wf2_tag">Salon · Coiffure · Beauté</span><span class="wf-price"><s>79 DT</s>59 DT/mois</span></div>
+        <h3 data-i18n="wf2_t">Rendez-vous salon</h3>
+        <p data-i18n="wf2_d">Confirmation immédiate, rappel la veille, demande d'avis. Moins de no-shows, plus de fidélité.</p>
+        <div class="wf-seq"><i data-i18n="wf2_s1">RDV WhatsApp</i><i data-i18n="wf2_s2">Confirmation</i><i data-i18n="wf2_s3">Rappel J-1</i><i data-i18n="wf2_s4">Avis Google</i></div>
+        <span class="wf-cta"><span data-i18n="wf_cta">Activer cette automatisation</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
       <a class="wf rv" href="formulaire.html?workflow=reservation-resto">
-        <div class="wf-top"><span class="wf-tag">Restaurant · Café</span><span class="wf-price"><s>79 DT</s>59 DT/mois</span></div>
-        <h3>Réservation restaurant</h3>
-        <p>Confirmation de table, rappel le jour même, libération automatique des tables non confirmées.</p>
-        <div class="wf-seq"><i>Réservation</i><i>Confirmation</i><i>Rappel J-0</i><i>Anti-no-show</i></div>
-        <span class="wf-cta">Activer cette automatisation <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="wf-top"><span class="wf-tag" data-i18n="wf3_tag">Restaurant · Café</span><span class="wf-price"><s>79 DT</s>59 DT/mois</span></div>
+        <h3 data-i18n="wf3_t">Réservation restaurant</h3>
+        <p data-i18n="wf3_d">Confirmation de table, rappel le jour même, libération automatique des tables non confirmées.</p>
+        <div class="wf-seq"><i data-i18n="wf3_s1">Réservation</i><i data-i18n="wf3_s2">Confirmation</i><i data-i18n="wf3_s3">Rappel J-0</i><i data-i18n="wf3_s4">Anti-no-show</i></div>
+        <span class="wf-cta"><span data-i18n="wf_cta">Activer cette automatisation</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
       <a class="wf rv" href="formulaire.html?workflow=devis-garage">
-        <div class="wf-top"><span class="wf-tag">Garage · Auto · Atelier</span><span class="wf-price"><s>79 DT</s>59 DT/mois</span></div>
-        <h3>Devis garage</h3>
-        <p>Accusé en 30 s, relance à 48 h, demande d'avis. Les demandes de devis ne dorment plus.</p>
-        <div class="wf-seq"><i>Demande devis</i><i>Accusé 30 s</i><i>Relance 48 h</i><i>Avis</i></div>
-        <span class="wf-cta">Activer cette automatisation <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="wf-top"><span class="wf-tag" data-i18n="wf4_tag">Garage · Auto · Atelier</span><span class="wf-price"><s>79 DT</s>59 DT/mois</span></div>
+        <h3 data-i18n="wf4_t">Devis garage</h3>
+        <p data-i18n="wf4_d">Accusé en 30 s, relance à 48 h, demande d'avis. Les demandes de devis ne dorment plus.</p>
+        <div class="wf-seq"><i data-i18n="wf4_s1">Demande devis</i><i data-i18n="wf4_s2">Accusé 30 s</i><i data-i18n="wf4_s3">Relance 48 h</i><i data-i18n="wf4_s4">Avis</i></div>
+        <span class="wf-cta"><span data-i18n="wf_cta">Activer cette automatisation</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
       <a class="wf rv" href="formulaire.html?workflow=commande-boutique">
-        <div class="wf-top"><span class="wf-tag">Boutique · E-commerce</span><span class="wf-price"><s>79 DT</s>59 DT/mois</span></div>
-        <h3>Commande boutique</h3>
-        <p>Confirmation de commande, suivi à 24 h, demande d'avis après réception. Le client est suivi de A à Z.</p>
-        <div class="wf-seq"><i>Commande</i><i>Confirmation</i><i>Suivi 24 h</i><i>Avis</i></div>
-        <span class="wf-cta">Activer cette automatisation <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="wf-top"><span class="wf-tag" data-i18n="wf5_tag">Boutique · E-commerce</span><span class="wf-price"><s>79 DT</s>59 DT/mois</span></div>
+        <h3 data-i18n="wf5_t">Commande boutique</h3>
+        <p data-i18n="wf5_d">Confirmation de commande, suivi à 24 h, demande d'avis après réception. Le client est suivi de A à Z.</p>
+        <div class="wf-seq"><i data-i18n="wf5_s1">Commande</i><i data-i18n="wf5_s2">Confirmation</i><i data-i18n="wf5_s3">Suivi 24 h</i><i data-i18n="wf5_s4">Avis</i></div>
+        <span class="wf-cta"><span data-i18n="wf_cta">Activer cette automatisation</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
       <a class="wf rv" href="formulaire.html?workflow=lead-immo">
-        <div class="wf-top"><span class="wf-tag">Immobilier · Agence</span><span class="wf-price"><s>79 DT</s>59 DT/mois</span></div>
-        <h3>Lead immobilier</h3>
-        <p>Réponse immédiate au prospect + notification à l'équipe + relance à 48 h. Jamais un lead perdu.</p>
-        <div class="wf-seq"><i>Lead reçu</i><i>Réponse auto</i><i>Alerte équipe</i><i>Relance 48 h</i></div>
-        <span class="wf-cta">Activer cette automatisation <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="wf-top"><span class="wf-tag" data-i18n="wf6_tag">Immobilier · Agence</span><span class="wf-price"><s>79 DT</s>59 DT/mois</span></div>
+        <h3 data-i18n="wf6_t">Lead immobilier</h3>
+        <p data-i18n="wf6_d">Réponse immédiate au prospect + notification à l'équipe + relance à 48 h. Jamais un lead perdu.</p>
+        <div class="wf-seq"><i data-i18n="wf6_s1">Lead reçu</i><i data-i18n="wf6_s2">Réponse auto</i><i data-i18n="wf6_s3">Alerte équipe</i><i data-i18n="wf6_s4">Relance 48 h</i></div>
+        <span class="wf-cta"><span data-i18n="wf_cta">Activer cette automatisation</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
     </div>
-    <div class="mods-cta rv"><a class="btn btn-o" href="formulaire.html?workflow=pack">Composer mon pack de 3 automatisations — 129 DT/mois</a></div>
+    <div class="mods-cta rv"><a class="btn btn-o" href="formulaire.html?workflow=pack" data-i18n="wf_pack">Composer mon pack de 3 automatisations — 129 DT/mois</a></div>
   </div>
 </section>
 
 <section id="agent-ia">
   <div class="wrap">
-    <div class="sec-head rv"><span class="sec-n">02</span><h2>Agent IA sur-mesure</h2></div>
-    <p class="sec-sub rv">Un système d'agents intelligents conçu pour VOTRE business, pas un produit générique. Il travaille en autonomie, produit des rapports et propose des améliorations — jour et nuit.</p>
+    <div class="sec-head rv"><span class="sec-n">02</span><h2 data-i18n="s2_title">Agent IA sur-mesure</h2></div>
+    <p class="sec-sub rv" data-i18n="s2_sub">Un système d'agents intelligents conçu pour VOTRE business, pas un produit générique. Il travaille en autonomie, produit des rapports et propose des améliorations — jour et nuit.</p>
     <div class="agent-grid">
       <div class="harnais rv">
         <div class="core">
           <div class="hub">
-            <span class="hub-t">ORCHESTRATEUR</span>
-            <span class="hub-s">Pilote les agents</span>
+            <span class="hub-t" data-i18n="hub_t">ORCHESTRATEUR</span>
+            <span class="hub-s" data-i18n="hub_s">Pilote les agents</span>
           </div>
           <div class="ag-line"></div>
           <div class="agents">
-            <div class="ag"><div class="ag-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M12 7v5l3 3M21 3v6h-6"/></svg></div><b>Accueil 24/7</b><span>Répond aux clients</span></div>
-            <div class="ag"><div class="ag-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 9h18M8 13h3M8 17h7"/></svg></div><b>Agenda</b><span>Gère les RDV</span></div>
-            <div class="ag"><div class="ag-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div><b>Rapports</b><span>Analyse + suggestions</span></div>
-            <div class="ag"><div class="ag-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 8.6 8.6 0 0 1-3.9-.9L3 21l2-5.6a8.4 8.4 0 1 1 16-3.9Z"/></svg></div><b>Relances</b><span>Devis, no-shows, avis</span></div>
-            <div class="ag"><div class="ag-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6Z"/><path d="m9 12 2 2 4-4"/></svg></div><b>Qualité</b><span>Vérifie chaque action</span></div>
-            <div class="ag"><div class="ag-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-6 4 3 5-7"/></svg></div><b>Analyse</b><span>Propose des améliorations</span></div>
+            <div class="ag"><div class="ag-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M12 7v5l3 3M21 3v6h-6"/></svg></div><b data-i18n="ag1_t">Accueil 24/7</b><span data-i18n="ag1_d">Répond aux clients</span></div>
+            <div class="ag"><div class="ag-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 9h18M8 13h3M8 17h7"/></svg></div><b data-i18n="ag2_t">Agenda</b><span data-i18n="ag2_d">Gère les RDV</span></div>
+            <div class="ag"><div class="ag-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div><b data-i18n="ag3_t">Rapports</b><span data-i18n="ag3_d">Analyse + suggestions</span></div>
+            <div class="ag"><div class="ag-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 8.6 8.6 0 0 1-3.9-.9L3 21l2-5.6a8.4 8.4 0 1 1 16-3.9Z"/></svg></div><b data-i18n="ag4_t">Relances</b><span data-i18n="ag4_d">Devis, no-shows, avis</span></div>
+            <div class="ag"><div class="ag-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6Z"/><path d="m9 12 2 2 4-4"/></svg></div><b data-i18n="ag5_t">Qualité</b><span data-i18n="ag5_d">Vérifie chaque action</span></div>
+            <div class="ag"><div class="ag-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-6 4 3 5-7"/></svg></div><b data-i18n="ag6_t">Analyse</b><span data-i18n="ag6_d">Propose des améliorations</span></div>
           </div>
         </div>
       </div>
       <div class="agent-txt rv">
-        <h3>Conçu pour votre activité,<br>pas l'inverse</h3>
-        <p>Nous étudions votre commerce, identifions vos tâches répétitives et concevons les agents qui les prennent en charge. Vous gardez la main : toute décision importante vous est soumise avant d'être exécutée.</p>
+        <h3 data-i18n-html="agent_h3">Conçu pour votre activité,<br>pas l'inverse</h3>
+        <p data-i18n="agent_p">Nous étudions votre commerce, identifions vos tâches répétitives et concevons les agents qui les prennent en charge. Vous gardez la main : toute décision importante vous est soumise avant d'être exécutée.</p>
         <ul>
-          <li>Diagnostic de votre activité offert</li>
-          <li>Agents conçus sur mesure (accueil, RDV, relances, avis…)</li>
-          <li>Rapport quotidien + analyse hebdomadaire + suggestions</li>
-          <li>Supervision et mises à jour par Solos 24/7</li>
+          <li data-i18n="agent_l1">Diagnostic de votre activité offert</li>
+          <li data-i18n="agent_l2">Agents conçus sur mesure (accueil, RDV, relances, avis…)</li>
+          <li data-i18n="agent_l3">Rapport quotidien + analyse hebdomadaire + suggestions</li>
+          <li data-i18n="agent_l4">Supervision et mises à jour par Solos 24/7</li>
         </ul>
         <div class="agent-price">
-          <div><b><s>1 800 DT</s>1 200 DT</b><span>Construction du système</span></div>
-          <div><b><s>249 DT</s>199 DT/mois</b><span>Hébergement + supervision</span></div>
-          <div><b>+300 DT</b><span>Agent supplémentaire</span></div>
+          <div><b><s>1 800 DT</s>1 200 DT</b><span data-i18n="agent_p1">Construction du système</span></div>
+          <div><b><s>249 DT</s>199 DT/mois</b><span data-i18n="agent_p2">Hébergement + supervision</span></div>
+          <div><b>+300 DT</b><span data-i18n="agent_p3">Agent supplémentaire</span></div>
         </div>
         <div class="llm-note">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.5"/></svg>
-          <span><b>Transparence :</b> la consommation du modèle IA (5 à 40 DT/mois en pratique) est à votre charge, sur votre propre clé — vous gardez le contrôle total de vos données et de vos coûts.</span>
+          <span data-i18n-html="agent_llm"><b>Transparence :</b> la consommation du modèle IA (5 à 40 DT/mois en pratique) est à votre charge, sur votre propre clé — vous gardez le contrôle total de vos données et de vos coûts.</span>
         </div>
-        <a class="btn btn-p" href="formulaire.html?service=agent-ia">Concevoir mes agents — diagnostic offert</a>
+        <a class="btn btn-p" href="formulaire.html?service=agent-ia" data-i18n="agent_cta">Concevoir mes agents — diagnostic offert</a>
       </div>
     </div>
   </div>
@@ -403,20 +422,20 @@ footer a:hover{color:#E9B44C}
 
 <section id="sites">
   <div class="wrap">
-    <div class="sec-head rv"><span class="sec-n">03</span><h2>Sites web — une activité parmi d'autres</h2></div>
-    <p class="sec-sub rv">Un site professionnel est la porte d'entrée : c'est lui qui reçoit les demandes que nos automatisations traitent ensuite. Vitrine, site pro ou boutique : livré en 1 à 3 jours.</p>
+    <div class="sec-head rv"><span class="sec-n">03</span><h2 data-i18n="s3_title">Sites web — une activité parmi d'autres</h2></div>
+    <p class="sec-sub rv" data-i18n="s3_sub">Un site professionnel est la porte d'entrée : c'est lui qui reçoit les demandes que nos automatisations traitent ensuite. Vitrine, site pro ou boutique : livré en 1 à 3 jours.</p>
     <div class="mods">
       <div class="mod rv">
         <div class="brow"><div class="bdots"><i></i><i></i><i></i></div><span class="burl">vitrine.solos.tn</span></div>
         <div class="bhero" style="background:linear-gradient(120deg,rgba(233,180,76,.25),rgba(233,180,76,.04))"></div>
         <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
-          <h3>Vitrines — 3 modèles</h3>
+          <h3 data-i18n="m1_t">Vitrines — 3 modèles</h3>
           <span class="m-p"><s>1 200 DT</s>700 DT</span>
-          <p>Mode, salon, restaurant… une page pro qui présente votre activité et reçoit vos demandes.</p>
+          <p data-i18n="m1_d">Mode, salon, restaurant… une page pro qui présente votre activité et reçoit vos demandes.</p>
           <div class="btns">
-            <a class="btn btn-o" href="modeles.html">Voir les 3 vitrines</a>
-            <a class="btn btn-p" href="formulaire.html?modele=vitrine">Commander</a>
+            <a class="btn btn-o" href="modeles.html" data-i18n="m_voir">Voir les 3 vitrines</a>
+            <a class="btn btn-p" href="formulaire.html?modele=vitrine" data-i18n="m_cmd">Commander</a>
           </div>
         </div>
       </div>
@@ -425,12 +444,12 @@ footer a:hover{color:#E9B44C}
         <div class="bhero" style="background:linear-gradient(120deg,rgba(233,180,76,.25),rgba(233,180,76,.04))"></div>
         <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
-          <h3>Pro &amp; Santé — 3 modèles</h3>
+          <h3 data-i18n="m2_t">Pro &amp; Santé — 3 modèles</h3>
           <span class="m-p"><s>2 500 DT</s>1 400 DT</span>
-          <p>Dentiste, clinique, avocat : multi-pages, rendez-vous en ligne, confiance immédiate.</p>
+          <p data-i18n="m2_d">Dentiste, clinique, avocat : multi-pages, rendez-vous en ligne, confiance immédiate.</p>
           <div class="btns">
-            <a class="btn btn-o" href="modeles.html">Voir les 3 sites pro</a>
-            <a class="btn btn-p" href="formulaire.html?modele=pro">Commander</a>
+            <a class="btn btn-o" href="modeles.html" data-i18n="m_voir2">Voir les 3 sites pro</a>
+            <a class="btn btn-p" href="formulaire.html?modele=pro" data-i18n="m_cmd">Commander</a>
           </div>
         </div>
       </div>
@@ -439,103 +458,103 @@ footer a:hover{color:#E9B44C}
         <div class="bhero" style="background:linear-gradient(120deg,rgba(233,180,76,.25),rgba(233,180,76,.04))"></div>
         <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
-          <h3>Boutiques — 3 modèles</h3>
+          <h3 data-i18n="m3_t">Boutiques — 3 modèles</h3>
           <span class="m-p"><s>4 000 DT</s>2 500 DT</span>
-          <p>Sneakers, cosmétiques, épicerie fine : panier, commande et paiement 100 % tunisien.</p>
+          <p data-i18n="m3_d">Sneakers, cosmétiques, épicerie fine : panier, commande et paiement 100 % tunisien.</p>
           <div class="btns">
-            <a class="btn btn-o" href="modeles.html">Voir les 3 boutiques</a>
-            <a class="btn btn-p" href="formulaire.html?modele=boutique">Commander</a>
+            <a class="btn btn-o" href="modeles.html" data-i18n="m_voir3">Voir les 3 boutiques</a>
+            <a class="btn btn-p" href="formulaire.html?modele=boutique" data-i18n="m_cmd">Commander</a>
           </div>
         </div>
       </div>
     </div>
-    <div class="mods-cta rv"><a class="btn btn-o" href="modeles.html">Voir le catalogue complet — 9 modèles</a></div>
+    <div class="mods-cta rv"><a class="btn btn-o" href="modeles.html" data-i18n="m_catalogue">Voir le catalogue complet — 9 modèles</a></div>
   </div>
 </section>
 
 <section id="tarifs">
   <div class="wrap">
-    <div class="sec-head rv"><span class="sec-n">04</span><h2>Tarifs — offres de lancement</h2></div>
-    <p class="sec-sub rv">Le prix affiché est exceptionnel et définitif : aucune surprise, aucun coût caché. Paiement par Flouci (particuliers) ou virement bancaire (professionnels).</p>
+    <div class="sec-head rv"><span class="sec-n">04</span><h2 data-i18n="s4_title">Tarifs — offres de lancement</h2></div>
+    <p class="sec-sub rv" data-i18n="s4_sub">Le prix affiché est exceptionnel et définitif : aucune surprise, aucun coût caché. Paiement par Flouci (particuliers) ou virement bancaire (professionnels).</p>
     <div class="tiers">
       <div class="tier hot rv">
-        <span class="promo">LE CŒUR DE SOLOS</span>
-        <span class="tag">Automatisation</span>
-        <h3>Votre commerce travaille 24/7</h3>
-        <p class="for">RDV, devis, commandes, avis — pour tous les commerces</p>
+        <span class="promo" data-i18n="t1_promo">LE CŒUR DE SOLOS</span>
+        <span class="tag" data-i18n="t1_tag">Automatisation</span>
+        <h3 data-i18n="t1_t">Votre commerce travaille 24/7</h3>
+        <p class="for" data-i18n="t1_for">RDV, devis, commandes, avis — pour tous les commerces</p>
         <div class="prix"><s>79 DT</s><small>59 DT/mois</small></div>
         <ul>
-          <li>1 automatisation complète (ex. RDV santé)</li>
-          <li>Emails automatiques illimités</li>
-          <li>Mise en place offerte avec un site Solos</li>
-          <li>Pack 3 : 129 DT/mois</li>
-          <li>Sans engagement, résiliable à tout moment</li>
+          <li data-i18n="t1_l1">1 automatisation complète (ex. RDV santé)</li>
+          <li data-i18n="t1_l2">Emails automatiques illimités</li>
+          <li data-i18n="t1_l3">Mise en place offerte avec un site Solos</li>
+          <li data-i18n="t1_l4">Pack 3 : 129 DT/mois</li>
+          <li data-i18n="t1_l5">Sans engagement, résiliable à tout moment</li>
         </ul>
-        <a class="btn btn-p" href="formulaire.html?workflow=rdv-sante">Activer une automatisation</a>
+        <a class="btn btn-p" href="formulaire.html?workflow=rdv-sante" data-i18n="t1_btn">Activer une automatisation</a>
       </div>
       <div class="tier rv">
-        <span class="tag">Agent IA sur-mesure</span>
-        <h3>Votre équipe IA dédiée</h3>
-        <p class="for">Commerces avec volume : santé, immo, services B2B</p>
+        <span class="tag" data-i18n="t2_tag">Agent IA sur-mesure</span>
+        <h3 data-i18n="t2_t">Votre équipe IA dédiée</h3>
+        <p class="for" data-i18n="t2_for">Commerces avec volume : santé, immo, services B2B</p>
         <div class="prix"><s>1 800 DT</s><small>1 200 DT</small></div>
         <ul>
-          <li>Orchestrateur + 2 agents métier + rapports</li>
-          <li>Conçu pour VOTRE business (diagnostic offert)</li>
-          <li>Hébergement + supervision : 199 DT/mois</li>
-          <li>LLM à votre charge (5-40 DT/mois, votre clé)</li>
-          <li>Agent supplémentaire : +300 DT</li>
+          <li data-i18n="t2_l1">Orchestrateur + 2 agents métier + rapports</li>
+          <li data-i18n="t2_l2">Conçu pour VOTRE business (diagnostic offert)</li>
+          <li data-i18n="t2_l3">Hébergement + supervision : 199 DT/mois</li>
+          <li data-i18n="t2_l4">LLM à votre charge (5-40 DT/mois, votre clé)</li>
+          <li data-i18n="t2_l5">Agent supplémentaire : +300 DT</li>
         </ul>
-        <a class="btn btn-o" href="formulaire.html?service=agent-ia">Concevoir mes agents</a>
+        <a class="btn btn-o" href="formulaire.html?service=agent-ia" data-i18n="t2_btn">Concevoir mes agents</a>
       </div>
       <div class="tier rv">
-        <span class="tag">Site web</span>
-        <h3>Votre présence en ligne</h3>
-        <p class="for">Une porte d'entrée pour vos demandes</p>
-        <div class="prix"><s>1 200 DT</s><small>dès 700 DT</small></div>
+        <span class="tag" data-i18n="t3_tag">Site web</span>
+        <h3 data-i18n="t3_t">Votre présence en ligne</h3>
+        <p class="for" data-i18n="t3_for">Une porte d'entrée pour vos demandes</p>
+        <div class="prix"><s>1 200 DT</s><small data-i18n="t3_from">dès 700 DT</small></div>
         <ul>
-          <li>Vitrine 700 DT · Pro 1 400 DT · Boutique 2 500 DT</li>
-          <li>Mobile + SEO Google + formulaire</li>
-          <li>RDV branché sur nos automatisations</li>
-          <li>Livré en 1 à 3 jours</li>
-          <li>Maintenance : 120 DT/mois</li>
+          <li data-i18n="t3_l1">Vitrine 700 DT · Pro 1 400 DT · Boutique 2 500 DT</li>
+          <li data-i18n="t3_l2">Mobile + SEO Google + formulaire</li>
+          <li data-i18n="t3_l3">RDV branché sur nos automatisations</li>
+          <li data-i18n="t3_l4">Livré en 1 à 3 jours</li>
+          <li data-i18n="t3_l5">Maintenance : 120 DT/mois</li>
         </ul>
-        <a class="btn btn-o" href="modeles.html">Voir les modèles</a>
+        <a class="btn btn-o" href="modeles.html" data-i18n="t3_btn">Voir les modèles</a>
       </div>
     </div>
     <div class="extras">
-      <div class="extra rv"><span class="e-p"><s>169</s>129 DT/mois</span><b>Pack 3 automatisations</b><span class="e-l">RDV + devis + avis… au choix</span></div>
-      <div class="extra rv"><span class="e-p"><s>400</s>250 DT</span><b>Fiche Google complète</b><span class="e-l">Optimisation totale + photos + avis</span></div>
-      <div class="extra rv"><span class="e-p"><s>250</s>150 DT/mois</span><b>Gestion fiche mensuelle</b><span class="e-l">Avis, posts Google, statistiques</span></div>
-      <div class="extra rv"><span class="e-p"><s>320</s>200 DT</span><b>Reel motion design</b><span class="e-l">Pack 3 : <s>900</s> 540 · Pack 5 : <s>1 300</s> 800 DT</span></div>
-      <div class="extra rv"><span class="e-p"><s>3 200</s>1 900 DT</span><b>Pack Présence complète</b><span class="e-l">Fiche + site + 3 reels (au lieu de 2 350 DT)</span></div>
-      <div class="extra rv"><span class="e-p"><s>200</s>120 DT/mois</span><b>Maintenance site</b><span class="e-l">Contenu, photos, tarifs, retouches</span></div>
+      <div class="extra rv"><span class="e-p"><s>169</s>129 DT/mois</span><b data-i18n="e1_t">Pack 3 automatisations</b><span class="e-l" data-i18n="e1_d">RDV + devis + avis… au choix</span></div>
+      <div class="extra rv"><span class="e-p"><s>400</s>250 DT</span><b data-i18n="e2_t">Fiche Google complète</b><span class="e-l" data-i18n="e2_d">Optimisation totale + photos + avis</span></div>
+      <div class="extra rv"><span class="e-p"><s>250</s>150 DT/mois</span><b data-i18n="e3_t">Gestion fiche mensuelle</b><span class="e-l" data-i18n="e3_d">Avis, posts Google, statistiques</span></div>
+      <div class="extra rv"><span class="e-p"><s>320</s>200 DT</span><b data-i18n="e4_t">Reel motion design</b><span class="e-l" data-i18n-html="e4_d">Pack 3 : <s>900</s> 540 · Pack 5 : <s>1 300</s> 800 DT</span></div>
+      <div class="extra rv"><span class="e-p"><s>3 200</s>1 900 DT</span><b data-i18n="e5_t">Pack Présence complète</b><span class="e-l" data-i18n="e5_d">Fiche + site + 3 reels (au lieu de 2 350 DT)</span></div>
+      <div class="extra rv"><span class="e-p"><s>200</s>120 DT/mois</span><b data-i18n="e6_t">Maintenance site</b><span class="e-l" data-i18n="e6_d">Contenu, photos, tarifs, retouches</span></div>
     </div>
     <div class="note-offre rv">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3.5"/></svg>
-      <span><b>Pourquoi ces prix ?</b> Parce que notre production est propulsée par intelligence artificielle, nous livrons en quelques jours ce qu'une agence livre en plusieurs semaines — et nous répercutons cette efficacité sur nos tarifs de lancement. La qualité, elle, est contrôlée bug par bug avant chaque livraison.</span>
+      <span data-i18n-html="s4_note"><b>Pourquoi ces prix ?</b> Parce que notre production est propulsée par intelligence artificielle, nous livrons en quelques jours ce qu'une agence livre en plusieurs semaines — et nous répercutons cette efficacité sur nos tarifs de lancement. La qualité, elle, est contrôlée bug par bug avant chaque livraison.</span>
     </div>
   </div>
 </section>
 
 <section id="process">
   <div class="wrap">
-    <div class="sec-head rv"><span class="sec-n">05</span><h2>Comment ça marche</h2></div>
-    <p class="sec-sub rv">Un process sans réunion inutile, pensé pour les commerçants qui n'ont pas de temps à perdre.</p>
+    <div class="sec-head rv"><span class="sec-n">05</span><h2 data-i18n="s5_title">Comment ça marche</h2></div>
+    <p class="sec-sub rv" data-i18n="s5_sub">Un process sans réunion inutile, pensé pour les commerçants qui n'ont pas de temps à perdre.</p>
     <div class="steps">
       <div class="step rv">
-        <span class="n">ÉTAPE 01</span>
-        <h3>Vous demandez un devis</h3>
-        <p>Via le formulaire ou Instagram. Décrivez votre commerce, on vous répond par email en quelques heures — audit de fiche Google offert.</p>
+        <span class="n" data-i18n="p1_n">ÉTAPE 01</span>
+        <h3 data-i18n="p1_t">Vous demandez un devis</h3>
+        <p data-i18n="p1_d">Via le formulaire ou Instagram. Décrivez votre commerce, on vous répond par email en quelques heures — audit de fiche Google offert.</p>
       </div>
       <div class="step rv">
-        <span class="n">ÉTAPE 02</span>
-        <h3>L'IA construit, vous validez</h3>
-        <p>Votre automatisation ou vos agents sont conçus pour votre activité. Vous validez chaque étape, rien ne part sans contrôle qualité.</p>
+        <span class="n" data-i18n="p2_n">ÉTAPE 02</span>
+        <h3 data-i18n="p2_t">L'IA construit, vous validez</h3>
+        <p data-i18n="p2_d">Votre automatisation ou vos agents sont conçus pour votre activité. Vous validez chaque étape, rien ne part sans contrôle qualité.</p>
       </div>
       <div class="step rv">
-        <span class="n">ÉTAPE 03</span>
-        <h3>Ça tourne, vous suivez</h3>
-        <p>Le système est activé et surveillé 24/7. Vous recevez vos rapports, on s'occupe du reste — et on reste disponibles pour la suite.</p>
+        <span class="n" data-i18n="p3_n">ÉTAPE 03</span>
+        <h3 data-i18n="p3_t">Ça tourne, vous suivez</h3>
+        <p data-i18n="p3_d">Le système est activé et surveillé 24/7. Vous recevez vos rapports, on s'occupe du reste — et on reste disponibles pour la suite.</p>
       </div>
     </div>
   </div>
@@ -545,9 +564,9 @@ footer a:hover{color:#E9B44C}
   <div class="wrap">
     <div class="cta-band rv">
       <div class="parts" id="parts2"></div>
-      <h2>Prêt à laisser l'intelligence travailler pour vous ?</h2>
-      <p>Réponse par email en quelques heures. Diagnostic de votre activité offert — dites-nous juste le nom de votre commerce.</p>
-      <a class="btn btn-p" href="formulaire.html" style="font-size:17px;padding:18px 40px">Demander mon devis gratuit</a>
+      <h2 data-i18n="cta_t">Prêt à laisser l'intelligence travailler pour vous ?</h2>
+      <p data-i18n="cta_d">Réponse par email en quelques heures. Diagnostic de votre activité offert — dites-nous juste le nom de votre commerce.</p>
+      <a class="btn btn-p" href="formulaire.html" style="font-size:17px;padding:18px 40px" data-i18n="cta_btn">Demander mon devis gratuit</a>
     </div>
   </div>
 </section>
@@ -557,8 +576,8 @@ footer a:hover{color:#E9B44C}
     <a class="logo-row" href="index.html">
       <span class="logo-t grad">SOLOS</span>
     </a>
-    <span>Automatisation &amp; Intelligence artificielle · Tunis</span>
-    <span><a href="formulaire.html">Devis</a> &nbsp;·&nbsp; <a href="modeles.html">Modèles</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/solos.tn" target="_blank">Instagram</a></span>
+    <span data-i18n="foot_mid">Automatisation &amp; Intelligence artificielle · Tunis</span>
+    <span><a href="formulaire.html" data-i18n="foot_devis">Devis</a> &nbsp;·&nbsp; <a href="modeles.html" data-i18n="foot_modeles">Modèles</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/solos.tn" target="_blank">Instagram</a></span>
   </div>
 </footer>
 
@@ -591,33 +610,207 @@ footer a:hover{color:#E9B44C}
   var nodes=[].slice.call(document.querySelectorAll('#flow .fnode'));
   var note=document.getElementById('flowNote');
   var running=false, timer=null;
+  var msgs={fr:['5 étapes · 0 intervention humaine · emails envoyés automatiquement','Étape 1/5 · RDV reçu ✓ — l\'email de bienvenue part','Étape 2/5 · Email envoyé ✓ — l\'étape suivante démarre','Étape 3/5 · Rappel envoyé ✓ — l\'étape suivante démarre','Étape 4/5 · Confirmation reçue ✓ — l\'étape suivante démarre','Séquence terminée — tout cela s\'est passé sans intervention humaine'],
+      en:['5 steps · 0 human intervention · emails sent automatically','Step 1/5 · Appointment received ✓ — the welcome email goes out','Step 2/5 · Email sent ✓ — starting the next step','Step 3/5 · Reminder sent ✓ — starting the next step','Step 4/5 · Confirmation received ✓ — starting the next step','Sequence complete — all of this happened with zero human intervention'],
+      ar:['5 خطوات · بدون أي تدخل بشري · رسائل تُرسل تلقائياً','الخطوة 1/5 · تم استلام الموعد ✓ — إرسال بريد الترحيب','الخطوة 2/5 · تم إرسال البريد ✓ — الانتقال للخطوة التالية','الخطوة 3/5 · تم إرسال التذكير ✓ — الانتقال للخطوة التالية','الخطوة 4/5 · تم تأكيد الحضور ✓ — الانتقال للخطوة التالية','اكتملت السلسلة — كل هذا حدث دون أي تدخل بشري']};
   function reset(){
     nodes.forEach(function(n){ n.classList.remove('active'); });
-    note.textContent='5 étapes · 0 intervention humaine · emails envoyés automatiquement';
   }
+  function curLang(){ return document.documentElement.lang==='ar'?'ar':(document.documentElement.lang==='en'?'en':'fr'); }
   function run(){
     if(running){ clearTimeout(timer); reset(); }
     running=true;
-    var labels=['Email envoyé','Rappel envoyé','Confirmation reçue','Avis demandé'];
     nodes.forEach(function(n,i){
       timer=setTimeout(function(){
         reset();
         n.classList.add('active');
-        if(i>0) note.textContent='Étape '+(i+1)+'/5 · '+labels[i-1]+' ✓ — l\'étape suivante démarre';
-        else note.textContent='Étape 1/5 · RDV reçu ✓ — l\'email de bienvenue part';
-        if(i===nodes.length-1){
-          running=false;
-          note.textContent='Séquence terminée — tout cela s\'est passé sans intervention humaine';
-        }
+        note.textContent=msgs[curLang()][i+1];
+        if(i===nodes.length-1){ running=false; }
       }, i*900);
     });
   }
   document.getElementById('runFlow').addEventListener('click', run);
-  // auto-déclenchement quand le bloc entre dans l'écran
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){ if(e.isIntersecting && !running){ run(); io.unobserve(e.target);} });
   },{threshold:.35});
   io.observe(document.getElementById('flow').closest('.demo-wrap'));
+})();
+// I18N — sélecteur de langue FR/EN/AR (inclus, gratuit)
+(function(){
+  var I18N={
+  fr:{
+    nav_auto:"Automatisation",nav_agent:"Agent IA",nav_tarifs:"Tarifs",nav_modeles:"Modèles",nav_contact:"Contact",nav_devis:"Devis gratuit",
+    hero_badge:"Automatisation &amp; Intelligence artificielle — Tunis",
+    hero_h1:"Votre commerce <span class=\"grad\">travaille 24/7</span><br>même quand vous dormez",
+    hero_sub:"Réponses immédiates à vos clients, rappels de rendez-vous, relances de devis, demandes d'avis : Solos automatise votre activité et l'intelligence artificielle s'occupe du reste — sans embauche, sans logiciel à gérer.",
+    hero_cta1:"Voir les automatisations en action",hero_cta2:"Demander un devis gratuit",
+    stat1:"Vos clients servis",stat2:"Automatisation / mois",stat3b:"Sur-mesure",stat3:"Agents IA par business",stat4:"QC avant livraison",
+    s1_title:"Automatisations — le cœur de Solos",
+    s1_sub:"Chaque automatisation est un scénario qui tourne tout seul, branché sur votre site, vos emails et votre fiche Google. Un client prend rendez-vous la nuit ? Il est accueilli, confirmé, rappelé et remercié — sans que vous leviez le petit doigt.",
+    demo_title:"Scénario : rendez-vous dentiste",demo_hint:"Cliquez pour déclencher la séquence",
+    demo_n1t:"Rendez-vous pris",demo_n1d:"Le patient réserve sur votre site",
+    demo_n2t:"Email de bienvenue",demo_n2d:"Confirmation envoyée en 30 s",
+    demo_n3t:"Rappel J-1",demo_n3d:"Email de rappel la veille",
+    demo_n4t:"Confirmation",demo_n4d:"Le patient confirme sa présence",
+    demo_n5t:"Avis demandé",demo_n5d:"Demande d'avis Google après le RDV",
+    demo_wait:"En attente",demo_btn:"▶ Déclencher la séquence",demo_note:"5 étapes · 0 intervention humaine · emails envoyés automatiquement",
+    wf1_tag:"Santé · Dentiste · Médecin",wf1_t:"Rendez-vous santé",wf1_d:"Bienvenue + rappel J-1 + confirmation + demande d'avis. Fini les rendez-vous oubliés.",wf1_s1:"RDV pris",wf1_s2:"Bienvenue",wf1_s3:"Rappel J-1",wf1_s4:"Confirmation",wf1_s5:"Avis",
+    wf2_tag:"Salon · Coiffure · Beauté",wf2_t:"Rendez-vous salon",wf2_d:"Confirmation immédiate, rappel la veille, demande d'avis. Moins de no-shows, plus de fidélité.",wf2_s1:"RDV WhatsApp",wf2_s2:"Confirmation",wf2_s3:"Rappel J-1",wf2_s4:"Avis Google",
+    wf3_tag:"Restaurant · Café",wf3_t:"Réservation restaurant",wf3_d:"Confirmation de table, rappel le jour même, libération automatique des tables non confirmées.",wf3_s1:"Réservation",wf3_s2:"Confirmation",wf3_s3:"Rappel J-0",wf3_s4:"Anti-no-show",
+    wf4_tag:"Garage · Auto · Atelier",wf4_t:"Devis garage",wf4_d:"Accusé en 30 s, relance à 48 h, demande d'avis. Les demandes de devis ne dorment plus.",wf4_s1:"Demande devis",wf4_s2:"Accusé 30 s",wf4_s3:"Relance 48 h",wf4_s4:"Avis",
+    wf5_tag:"Boutique · E-commerce",wf5_t:"Commande boutique",wf5_d:"Confirmation de commande, suivi à 24 h, demande d'avis après réception. Le client est suivi de A à Z.",wf5_s1:"Commande",wf5_s2:"Confirmation",wf5_s3:"Suivi 24 h",wf5_s4:"Avis",
+    wf6_tag:"Immobilier · Agence",wf6_t:"Lead immobilier",wf6_d:"Réponse immédiate au prospect + notification à l'équipe + relance à 48 h. Jamais un lead perdu.",wf6_s1:"Lead reçu",wf6_s2:"Réponse auto",wf6_s3:"Alerte équipe",wf6_s4:"Relance 48 h",
+    wf_cta:"Activer cette automatisation",wf_pack:"Composer mon pack de 3 automatisations — 129 DT/mois",
+    s2_title:"Agent IA sur-mesure",s2_sub:"Un système d'agents intelligents conçu pour VOTRE business, pas un produit générique. Il travaille en autonomie, produit des rapports et propose des améliorations — jour et nuit.",
+    hub_t:"ORCHESTRATEUR",hub_s:"Pilote les agents",
+    ag1_t:"Accueil 24/7",ag1_d:"Répond aux clients",ag2_t:"Agenda",ag2_d:"Gère les RDV",ag3_t:"Rapports",ag3_d:"Analyse + suggestions",ag4_t:"Relances",ag4_d:"Devis, no-shows, avis",ag5_t:"Qualité",ag5_d:"Vérifie chaque action",ag6_t:"Analyse",ag6_d:"Propose des améliorations",
+    agent_h3:"Conçu pour votre activité,<br>pas l'inverse",
+    agent_p:"Nous étudions votre commerce, identifions vos tâches répétitives et concevons les agents qui les prennent en charge. Vous gardez la main : toute décision importante vous est soumise avant d'être exécutée.",
+    agent_l1:"Diagnostic de votre activité offert",agent_l2:"Agents conçus sur mesure (accueil, RDV, relances, avis…)",agent_l3:"Rapport quotidien + analyse hebdomadaire + suggestions",agent_l4:"Supervision et mises à jour par Solos 24/7",
+    agent_p1:"Construction du système",agent_p2:"Hébergement + supervision",agent_p3:"Agent supplémentaire",
+    agent_llm:"<b>Transparence :</b> la consommation du modèle IA (5 à 40 DT/mois en pratique) est à votre charge, sur votre propre clé — vous gardez le contrôle total de vos données et de vos coûts.",
+    agent_cta:"Concevoir mes agents — diagnostic offert",
+    s3_title:"Sites web — une activité parmi d'autres",s3_sub:"Un site professionnel est la porte d'entrée : c'est lui qui reçoit les demandes que nos automatisations traitent ensuite. Vitrine, site pro ou boutique : livré en 1 à 3 jours.",
+    m1_t:"Vitrines — 3 modèles",m1_d:"Mode, salon, restaurant… une page pro qui présente votre activité et reçoit vos demandes.",
+    m2_t:"Pro &amp; Santé — 3 modèles",m2_d:"Dentiste, clinique, avocat : multi-pages, rendez-vous en ligne, confiance immédiate.",
+    m3_t:"Boutiques — 3 modèles",m3_d:"Sneakers, cosmétiques, épicerie fine : panier, commande et paiement 100 % tunisien.",
+    m_voir:"Voir les 3 vitrines",m_voir2:"Voir les 3 sites pro",m_voir3:"Voir les 3 boutiques",m_cmd:"Commander",m_catalogue:"Voir le catalogue complet — 9 modèles",
+    s4_title:"Tarifs — offres de lancement",s4_sub:"Le prix affiché est exceptionnel et définitif : aucune surprise, aucun coût caché. Paiement par Flouci (particuliers) ou virement bancaire (professionnels).",
+    t1_promo:"LE CŒUR DE SOLOS",t1_tag:"Automatisation",t1_t:"Votre commerce travaille 24/7",t1_for:"RDV, devis, commandes, avis — pour tous les commerces",t1_l1:"1 automatisation complète (ex. RDV santé)",t1_l2:"Emails automatiques illimités",t1_l3:"Mise en place offerte avec un site Solos",t1_l4:"Pack 3 : 129 DT/mois",t1_l5:"Sans engagement, résiliable à tout moment",t1_btn:"Activer une automatisation",
+    t2_tag:"Agent IA sur-mesure",t2_t:"Votre équipe IA dédiée",t2_for:"Commerces avec volume : santé, immo, services B2B",t2_l1:"Orchestrateur + 2 agents métier + rapports",t2_l2:"Conçu pour VOTRE business (diagnostic offert)",t2_l3:"Hébergement + supervision : 199 DT/mois",t2_l4:"LLM à votre charge (5-40 DT/mois, votre clé)",t2_l5:"Agent supplémentaire : +300 DT",t2_btn:"Concevoir mes agents",
+    t3_tag:"Site web",t3_t:"Votre présence en ligne",t3_for:"Une porte d'entrée pour vos demandes",t3_from:"dès 700 DT",t3_l1:"Vitrine 700 DT · Pro 1 400 DT · Boutique 2 500 DT",t3_l2:"Mobile + SEO Google + formulaire",t3_l3:"RDV branché sur nos automatisations",t3_l4:"Livré en 1 à 3 jours",t3_l5:"Maintenance : 120 DT/mois",t3_btn:"Voir les modèles",
+    e1_t:"Pack 3 automatisations",e1_d:"RDV + devis + avis… au choix",e2_t:"Fiche Google complète",e2_d:"Optimisation totale + photos + avis",e3_t:"Gestion fiche mensuelle",e3_d:"Avis, posts Google, statistiques",e4_t:"Reel motion design",e4_d:"Pack 3 : <s>900</s> 540 · Pack 5 : <s>1 300</s> 800 DT",e5_t:"Pack Présence complète",e5_d:"Fiche + site + 3 reels (au lieu de 2 350 DT)",e6_t:"Maintenance site",e6_d:"Contenu, photos, tarifs, retouches",
+    s4_note:"<b>Pourquoi ces prix ?</b> Parce que notre production est propulsée par intelligence artificielle, nous livrons en quelques jours ce qu'une agence livre en plusieurs semaines — et nous répercutons cette efficacité sur nos tarifs de lancement. La qualité, elle, est contrôlée bug par bug avant chaque livraison.",
+    s5_title:"Comment ça marche",s5_sub:"Un process sans réunion inutile, pensé pour les commerçants qui n'ont pas de temps à perdre.",
+    p1_n:"ÉTAPE 01",p1_t:"Vous demandez un devis",p1_d:"Via le formulaire ou Instagram. Décrivez votre commerce, on vous répond par email en quelques heures — audit de fiche Google offert.",
+    p2_n:"ÉTAPE 02",p2_t:"L'IA construit, vous validez",p2_d:"Votre automatisation ou vos agents sont conçus pour votre activité. Vous validez chaque étape, rien ne part sans contrôle qualité.",
+    p3_n:"ÉTAPE 03",p3_t:"Ça tourne, vous suivez",p3_d:"Le système est activé et surveillé 24/7. Vous recevez vos rapports, on s'occupe du reste — et on reste disponibles pour la suite.",
+    cta_t:"Prêt à laisser l'intelligence travailler pour vous ?",cta_d:"Réponse par email en quelques heures. Diagnostic de votre activité offert — dites-nous juste le nom de votre commerce.",cta_btn:"Demander mon devis gratuit",
+    foot_mid:"Automatisation &amp; Intelligence artificielle · Tunis",foot_devis:"Devis",foot_modeles:"Modèles"
+  },
+  en:{
+    nav_auto:"Automation",nav_agent:"AI Agent",nav_tarifs:"Pricing",nav_modeles:"Templates",nav_contact:"Contact",nav_devis:"Free quote",
+    hero_badge:"Automation &amp; Artificial Intelligence — Tunis",
+    hero_h1:"Your business <span class=\"grad\">works 24/7</span><br>even while you sleep",
+    hero_sub:"Instant replies to your customers, appointment reminders, quote follow-ups, review requests: Solos automates your business and artificial intelligence handles the rest — no hiring, nothing to manage.",
+    hero_cta1:"See automations in action",hero_cta2:"Request a free quote",
+    stat1:"Customers served",stat2:"Automation / month",stat3b:"Tailor-made",stat3:"AI agents per business",stat4:"QC before delivery",
+    s1_title:"Automations — the heart of Solos",
+    s1_sub:"Each automation is a scenario that runs on its own, connected to your website, your emails and your Google profile. A customer books at night? They get welcomed, confirmed, reminded and thanked — without you lifting a finger.",
+    demo_title:"Scenario: dentist appointment",demo_hint:"Click to trigger the sequence",
+    demo_n1t:"Appointment booked",demo_n1d:"The patient books on your site",
+    demo_n2t:"Welcome email",demo_n2d:"Confirmation sent in 30 s",
+    demo_n3t:"D-1 reminder",demo_n3d:"Reminder email the day before",
+    demo_n4t:"Confirmation",demo_n4d:"The patient confirms attendance",
+    demo_n5t:"Review requested",demo_n5d:"Google review request after the visit",
+    demo_wait:"Pending",demo_btn:"▶ Trigger the sequence",demo_note:"5 steps · 0 human intervention · emails sent automatically",
+    wf1_tag:"Health · Dentist · Doctor",wf1_t:"Health appointments",wf1_d:"Welcome + D-1 reminder + confirmation + review request. No more forgotten appointments.",wf1_s1:"Booking",wf1_s2:"Welcome",wf1_s3:"D-1 reminder",wf1_s4:"Confirmation",wf1_s5:"Review",
+    wf2_tag:"Salon · Hairdresser · Beauty",wf2_t:"Salon appointments",wf2_d:"Instant confirmation, reminder the day before, review request. Fewer no-shows, more loyalty.",wf2_s1:"WhatsApp booking",wf2_s2:"Confirmation",wf2_s3:"D-1 reminder",wf2_s4:"Google review",
+    wf3_tag:"Restaurant · Café",wf3_t:"Restaurant reservations",wf3_d:"Table confirmation, same-day reminder, automatic release of unconfirmed tables.",wf3_s1:"Booking",wf3_s2:"Confirmation",wf3_s3:"Same-day reminder",wf3_s4:"Anti-no-show",
+    wf4_tag:"Garage · Auto · Workshop",wf4_t:"Garage quotes",wf4_d:"Acknowledgement in 30 s, 48 h follow-up, review request. Quote requests never sleep.",wf4_s1:"Quote request",wf4_s2:"30 s ack",wf4_s3:"48 h follow-up",wf4_s4:"Review",
+    wf5_tag:"Shop · E-commerce",wf5_t:"Shop orders",wf5_d:"Order confirmation, 24 h tracking, review request after delivery. Customers followed from A to Z.",wf5_s1:"Order",wf5_s2:"Confirmation",wf5_s3:"24 h tracking",wf5_s4:"Review",
+    wf6_tag:"Real estate · Agency",wf6_t:"Real estate leads",wf6_d:"Instant reply to the prospect + team notification + 48 h follow-up. Never a lost lead.",wf6_s1:"Lead received",wf6_s2:"Auto reply",wf6_s3:"Team alert",wf6_s4:"48 h follow-up",
+    wf_cta:"Activate this automation",wf_pack:"Build my 3-automation pack — 129 DT/month",
+    s2_title:"Custom AI Agent",s2_sub:"A system of intelligent agents designed for YOUR business, not a generic product. It works autonomously, produces reports and suggests improvements — day and night.",
+    hub_t:"ORCHESTRATOR",hub_s:"Drives the agents",
+    ag1_t:"24/7 Reception",ag1_d:"Answers customers",ag2_t:"Agenda",ag2_d:"Manages appointments",ag3_t:"Reports",ag3_d:"Analysis + suggestions",ag4_t:"Follow-ups",ag4_d:"Quotes, no-shows, reviews",ag5_t:"Quality",ag5_d:"Checks every action",ag6_t:"Analysis",ag6_d:"Suggests improvements",
+    agent_h3:"Designed for your business,<br>not the other way around",
+    agent_p:"We study your business, identify your repetitive tasks and design the agents that take them over. You stay in control: every important decision is submitted to you before being executed.",
+    agent_l1:"Free diagnosis of your activity",agent_l2:"Custom-designed agents (reception, appointments, follow-ups, reviews…)",agent_l3:"Daily report + weekly analysis + suggestions",agent_l4:"24/7 supervision and updates by Solos",
+    agent_p1:"System build",agent_p2:"Hosting + supervision",agent_p3:"Additional agent",
+    agent_llm:"<b>Transparency:</b> AI model consumption (5 to 40 DT/month in practice) is at your own cost, on your own key — you keep full control of your data and your costs.",
+    agent_cta:"Design my agents — free diagnosis",
+    s3_title:"Websites — one activity among others",s3_sub:"A professional website is the front door: it receives the requests our automations then handle. Showcase, pro site or shop: delivered in 1 to 3 days.",
+    m1_t:"Showcases — 3 templates",m1_d:"Fashion, salon, restaurant… a pro one-pager that presents your business and receives your requests.",
+    m2_t:"Pro &amp; Health — 3 templates",m2_d:"Dentist, clinic, lawyer: multi-page, online booking, instant trust.",
+    m3_t:"Shops — 3 templates",m3_d:"Sneakers, cosmetics, fine grocery: cart, order and 100 % Tunisian payment.",
+    m_voir:"See the 3 showcases",m_voir2:"See the 3 pro sites",m_voir3:"See the 3 shops",m_cmd:"Order",m_catalogue:"See the full catalogue — 9 templates",
+    s4_title:"Pricing — launch offers",s4_sub:"The displayed price is exceptional and final: no surprises, no hidden costs. Payment by Flouci (individuals) or bank transfer (professionals).",
+    t1_promo:"THE HEART OF SOLOS",t1_tag:"Automation",t1_t:"Your business works 24/7",t1_for:"Appointments, quotes, orders, reviews — for every business",t1_l1:"1 complete automation (e.g. health appointments)",t1_l2:"Unlimited automatic emails",t1_l3:"Free setup with a Solos website",t1_l4:"3-pack: 129 DT/month",t1_l5:"No commitment, cancel anytime",t1_btn:"Activate an automation",
+    t2_tag:"Custom AI Agent",t2_t:"Your dedicated AI team",t2_for:"High-volume businesses: health, real estate, B2B services",t2_l1:"Orchestrator + 2 business agents + reports",t2_l2:"Designed for YOUR business (free diagnosis)",t2_l3:"Hosting + supervision: 199 DT/month",t2_l4:"LLM at your cost (5-40 DT/month, your key)",t2_l5:"Additional agent: +300 DT",t2_btn:"Design my agents",
+    t3_tag:"Website",t3_t:"Your online presence",t3_for:"A front door for your requests",t3_from:"from 700 DT",t3_l1:"Showcase 700 DT · Pro 1 400 DT · Shop 2 500 DT",t3_l2:"Mobile + Google SEO + form",t3_l3:"Bookings wired to our automations",t3_l4:"Delivered in 1 to 3 days",t3_l5:"Maintenance: 120 DT/month",t3_btn:"See the templates",
+    e1_t:"3-automation pack",e1_d:"Appointments + quotes + reviews… your pick",e2_t:"Complete Google Profile",e2_d:"Full optimization + photos + reviews",e3_t:"Monthly profile management",e3_d:"Reviews, Google posts, statistics",e4_t:"Motion-design reel",e4_d:"3-pack: <s>900</s> 540 · 5-pack: <s>1 300</s> 800 DT",e5_t:"Complete Presence pack",e5_d:"Profile + site + 3 reels (instead of 2 350 DT)",e6_t:"Website maintenance",e6_d:"Content, photos, prices, tweaks",
+    s4_note:"<b>Why these prices?</b> Because our production is powered by artificial intelligence, we deliver in days what an agency delivers in weeks — and we pass this efficiency on to our launch prices. Quality is checked bug by bug before every delivery.",
+    s5_title:"How it works",s5_sub:"A process without useless meetings, designed for business owners with no time to waste.",
+    p1_n:"STEP 01",p1_t:"You request a quote",p1_d:"Via the form or Instagram. Describe your business, we reply by email within hours — free Google profile audit.",
+    p2_n:"STEP 02",p2_t:"The AI builds, you validate",p2_d:"Your automation or agents are designed for your business. You validate every step, nothing ships without quality control.",
+    p3_n:"STEP 03",p3_t:"It runs, you follow",p3_d:"The system is activated and monitored 24/7. You get your reports, we handle the rest — and we stay available for what's next.",
+    cta_t:"Ready to let intelligence work for you?",cta_d:"Reply by email within hours. Free diagnosis of your business — just tell us your business name.",cta_btn:"Request my free quote",
+    foot_mid:"Automation &amp; Artificial Intelligence · Tunis",foot_devis:"Quote",foot_modeles:"Templates"
+  },
+  ar:{
+    nav_auto:"الأتمتة",nav_agent:"وكيل الذكاء الاصطناعي",nav_tarifs:"الأسعار",nav_modeles:"القوالب",nav_contact:"اتصل بنا",nav_devis:"طلب عرض مجاني",
+    hero_badge:"الأتمتة والذكاء الاصطناعي — تونس",
+    hero_h1:"متجرك <span class=\"grad\">يعمل 24/7</span><br>حتى وأنت نائم",
+    hero_sub:"ردود فورية على عملائك، تذكيرات بالمواعيد، متابعة عروض الأسعار، طلبات التقييمات: سولوس يؤتمت نشاطك والذكاء الاصطناعي يتكفل بالباقي — بدون توظيف، بدون إدارة برامج.",
+    hero_cta1:"شاهد الأتمتة وهي تعمل",hero_cta2:"اطلب عرض سعر مجاني",
+    stat1:"عملاؤك يُخدمون",stat2:"أتمتة / شهرياً",stat3b:"حسب الطلب",stat3:"وكلاء IA لكل نشاط",stat4:"فحص الجودة قبل التسليم",
+    s1_title:"الأتمتة — قلب سولوس",
+    s1_sub:"كل أتمتة هي سيناريو يعمل لوحده، مربوط بموقعك ورسائلك وملفك على Google. عميل يحجز موعداً في الليل؟ يتم استقباله وتأكيده وتذكيره وشكره — دون أن ترفع إصبعك.",
+    demo_title:"سيناريو: موعد طبيب أسنان",demo_hint:"انقر لتشغيل السلسلة",
+    demo_n1t:"تم حجز الموعد",demo_n1d:"الحريف يحجز عبر موقعك",
+    demo_n2t:"بريد الترحيب",demo_n2d:"التأكيد يُرسل خلال 30 ثانية",
+    demo_n3t:"تذكير قبل يوم",demo_n3d:"بريد تذكير في اليوم السابق",
+    demo_n4t:"التأكيد",demo_n4d:"الحريف يؤكد حضوره",
+    demo_n5t:"طلب تقييم",demo_n5d:"طلب تقييم Google بعد الموعد",
+    demo_wait:"قيد الانتظار",demo_btn:"▶ تشغيل السلسلة",demo_note:"5 خطوات · بدون أي تدخل بشري · رسائل تُرسل تلقائياً",
+    wf1_tag:"صحة · أسنان · طبيب",wf1_t:"مواعيد الصحة",wf1_d:"ترحيب + تذكير قبل يوم + تأكيد + طلب تقييم. وداعاً للمواعيد المنسية.",wf1_s1:"حجز الموعد",wf1_s2:"ترحيب",wf1_s3:"تذكير",wf1_s4:"تأكيد",wf1_s5:"تقييم",
+    wf2_tag:"صالون · حلاقة · تجميل",wf2_t:"مواعيد الصالون",wf2_d:"تأكيد فوري، تذكير في اليوم السابق، طلب تقييم. غياب أقل، وفاء أكثر.",wf2_s1:"حجز واتساب",wf2_s2:"تأكيد",wf2_s3:"تذكير",wf2_s4:"تقييم Google",
+    wf3_tag:"مطعم · مقهى",wf3_t:"حجوزات المطعم",wf3_d:"تأكيد الطاولة، تذكير في نفس اليوم، تحرير تلقائي للطاولات غير المؤكدة.",wf3_s1:"حجز",wf3_s2:"تأكيد",wf3_s3:"تذكير اليوم",wf3_s4:"منع الغياب",
+    wf4_tag:"كراج · سيارات · ورشة",wf4_t:"عروض أسعار الكراج",wf4_d:"إشعار استلام خلال 30 ثانية، متابعة بعد 48 ساعة، طلب تقييم. طلبات العروض لا تنام.",wf4_s1:"طلب عرض",wf4_s2:"إشعار 30 ث",wf4_s3:"متابعة 48 س",wf4_s4:"تقييم",
+    wf5_tag:"متجر · تجارة إلكترونية",wf5_t:"طلبات المتجر",wf5_d:"تأكيد الطلب، متابعة بعد 24 ساعة، طلب تقييم بعد الاستلام. العميل متابَع من الألف إلى الياء.",wf5_s1:"طلب",wf5_s2:"تأكيد",wf5_s3:"متابعة 24 س",wf5_s4:"تقييم",
+    wf6_tag:"عقارات · وكالة",wf6_t:"عملاء العقارات",wf6_d:"رد فوري على العميل المحتمل + إشعار الفريق + متابعة بعد 48 ساعة. لا عميل يضيع أبداً.",wf6_s1:"استلام العميل",wf6_s2:"رد تلقائي",wf6_s3:"تنبيه الفريق",wf6_s4:"متابعة 48 س",
+    wf_cta:"تفعيل هذه الأتمتة",wf_pack:"أنشئ باقة 3 أتمتة — 129 دينار/شهر",
+    s2_title:"وكيل ذكاء اصطناعي حسب الطلب",s2_sub:"نظام وكلاء أذكياء مصمم لنشاطك أنت، لا لمنتج عام. يعمل باستقلالية، ينتج تقارير ويقترح تحسينات — ليلاً ونهاراً.",
+    hub_t:"المنسّق",hub_s:"يقود الوكلاء",
+    ag1_t:"استقبال 24/7",ag1_d:"يجيب العملاء",ag2_t:"الجدول",ag2_d:"يدير المواعيد",ag3_t:"تقارير",ag3_d:"تحليل + اقتراحات",ag4_t:"متابعات",ag4_d:"عروض، غياب، تقييمات",ag5_t:"الجودة",ag5_d:"يتحقق من كل إجراء",ag6_t:"تحليل",ag6_d:"يقترح تحسينات",
+    agent_h3:"مصمم لنشاطك،<br>وليس العكس",
+    agent_p:"ندرس متجرك، نحدد مهامك المتكررة ونصمم الوكلاء الذين يتكفلون بها. تبقى مسيطراً: كل قرار مهم يُعرض عليك قبل تنفيذه.",
+    agent_l1:"تشخيص مجاني لنشاطك",agent_l2:"وكلاء مصممون حسب الطلب (استقبال، مواعيد، متابعات، تقييمات…)",agent_l3:"تقرير يومي + تحليل أسبوعي + اقتراحات",agent_l4:"إشراف وتحديثات من سولوس 24/7",
+    agent_p1:"بناء النظام",agent_p2:"استضافة + إشراف",agent_p3:"وكيل إضافي",
+    agent_llm:"<b>شفافية:</b> استهلاك نموذج الذكاء الاصطناعي (5 إلى 40 دينار شهرياً عملياً) على حسابك، بمفتاحك الخاص — تبقى متحكماً كلياً في بياناتك وتكاليفك.",
+    agent_cta:"صمّم وكلائي — التشخيص مجاني",
+    s3_title:"مواقع الويب — نشاط من بين أنشطة أخرى",s3_sub:"الموقع الاحترافي هو الباب الأمامي: هو من يستقبل الطلبات التي تعالجها أتمتتنا. واجهة، موقع متعدد الصفحات أو متجر: تسليم خلال 1 إلى 3 أيام.",
+    m1_t:"الواجهات — 3 قوالب",m1_d:"موضة، صالون، مطعم… صفحة احترافية تعرض نشاطك وتستقبل طلباتك.",
+    m2_t:"احترافي وصحي — 3 قوالب",m2_d:"طبيب أسنان، عيادة، محامي: صفحات متعددة، حجز مواعيد عبر الإنترنت، ثقة فورية.",
+    m3_t:"المتاجر — 3 قوالب",m3_d:"أحذية، مستحضرات، مواد غذائية فاخرة: سلة، طلب ودفع تونسي 100%.",
+    m_voir:"شاهد الواجهات الثلاث",m_voir2:"شاهد المواقع الاحترافية الثلاثة",m_voir3:"شاهد المتاجر الثلاثة",m_cmd:"اطلب",m_catalogue:"شاهد الكتالوج الكامل — 9 قوالب",
+    s4_title:"الأسعار — عروض الإطلاق",s4_sub:"السعر المعروض استثنائي ونهائي: لا مفاجآت، لا تكاليف خفية. الدفع عبر فلوسي (أفراد) أو تحويل بنكي (مؤسسات).",
+    t1_promo:"قلب سولوس",t1_tag:"أتمتة",t1_t:"متجرك يعمل 24/7",t1_for:"مواعيد، عروض، طلبات، تقييمات — لكل الأنشطة",t1_l1:"أتمتة كاملة واحدة (مثال: مواعيد الصحة)",t1_l2:"رسائل تلقائية غير محدودة",t1_l3:"تركيب مجاني مع موقع سولوس",t1_l4:"الباقة الثلاثية: 129 دينار/شهر",t1_l5:"بدون التزام، إلغاء في أي وقت",t1_btn:"فعّل أتمتة",
+    t2_tag:"وكيل IA حسب الطلب",t2_t:"فريقك الذكي الخاص",t2_for:"أنشطة ذات حجم: صحة، عقارات، خدمات B2B",t2_l1:"منسّق + وكيلان نشاط + تقارير",t2_l2:"مصمم لنشاطك (تشخيص مجاني)",t2_l3:"استضافة + إشراف: 199 دينار/شهر",t2_l4:"LLM على حسابك (5-40 دينار/شهر، مفتاحك)",t2_l5:"وكيل إضافي: +300 دينار",t2_btn:"صمّم وكلائي",
+    t3_tag:"موقع ويب",t3_t:"حضورك على الإنترنت",t3_for:"باب أمامي لطلباتك",t3_from:"ابتداءً من 700 د.ت",t3_l1:"واجهة 700 د.ت · احترافي 1400 · متجر 2500",t3_l2:"موبايل + تحسين Google + نموذج",t3_l3:"المواعيد مربوطة بأتمتتنا",t3_l4:"تسليم خلال 1 إلى 3 أيام",t3_l5:"صيانة: 120 دينار/شهر",t3_btn:"شاهد القوالب",
+    e1_t:"باقة 3 أتمتة",e1_d:"مواعيد + عروض + تقييمات… من اختيارك",e2_t:"ملف Google كامل",e2_d:"تحسين شامل + صور + تقييمات",e3_t:"إدارة شهرية للملف",e3_d:"تقييمات، منشورات Google، إحصائيات",e4_t:"ريل موشن ديزاين",e4_d:"باقة 3: <s>900</s> 540 · باقة 5: <s>1 300</s> 800 د.ت",e5_t:"باقة الحضور الكامل",e5_d:"ملف + موقع + 3 ريلات (بدل 2350 د.ت)",e6_t:"صيانة الموقع",e6_d:"محتوى، صور، أسعار، تعديلات",
+    s4_note:"<b>لماذا هذه الأسعار؟</b> لأن إنتاجنا مدعوم بالذكاء الاصطناعي، نسلّم في أيام ما تسلّمه الوكالات في أسابيع — ونعكس هذه الكفاءة على أسعار إطلاقنا. الجودة تُفحص خطوة بخطوة قبل كل تسليم.",
+    s5_title:"كيف يعمل",s5_sub:"مسار بدون اجتماعات عقيمة، مصمم للتجار الذين لا وقت لديهم.",
+    p1_n:"الخطوة 01",p1_t:"تطلب عرض سعر",p1_d:"عبر النموذج أو إنستغرام. صف متجرك، نرد عليك بالبريد خلال ساعات — فحص ملف Google مجاني.",
+    p2_n:"الخطوة 02",p2_t:"الذكاء الاصطناعي يبني، أنت توافق",p2_d:"أتمتتك أو وكلاؤك مصممون لنشاطك. توافق على كل خطوة، ولا شيء يُرسل دون فحص الجودة.",
+    p3_n:"الخطوة 03",p3_t:"يعمل وأنت تتابع",p3_d:"النظام مفعّل ومُراقب 24/7. تستلم تقاريرك، نحن نتكفل بالباقي — ونبقى متاحين لما هو قادم.",
+    cta_t:"مستعد لتترك الذكاء يعمل لأجلك؟",cta_d:"رد بالبريد خلال ساعات. تشخيص مجاني لنشاطك — أخبرنا فقط باسم متجرك.",cta_btn:"اطلب عرض السعر المجاني",
+    foot_mid:"الأتمتة والذكاء الاصطناعي · تونس",foot_devis:"عرض سعر",foot_modeles:"القوالب"
+  }};
+  var lang=localStorage.getItem('solos_lang')||'fr';
+  if(!I18N[lang])lang='fr';
+  function apply(l){
+    lang=l;localStorage.setItem('solos_lang',l);
+    var d=I18N[l];
+    document.documentElement.lang=l;
+    document.documentElement.dir=(l==='ar')?'rtl':'ltr';
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k=el.getAttribute('data-i18n');
+      if(d[k]!==undefined)el.textContent=d[k];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+      var k=el.getAttribute('data-i18n-html');
+      if(d[k]!==undefined)el.innerHTML=d[k];
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('on',b.getAttribute('data-lang')===l);
+    });
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click',function(){apply(b.getAttribute('data-lang'));});
+  });
+  apply(lang);
 })();
 </script>
 </body>

@@ -90,6 +90,11 @@ footer a:hover{color:#E9B44C}
 .wf-strip b{color:#F0EBDF}
 .wf-strip a{margin-left:auto;font-weight:700;color:#E9B44C;font-family:'Space Grotesk',sans-serif;font-size:14px;white-space:nowrap;transition:.15s}
 .wf-strip a:hover{filter:brightness(1.2)}
+.lang-sw{display:flex;gap:3px;align-items:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:11px;padding:3px}
+.lang-btn{background:none;border:none;color:#8F8778;font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px;padding:6px 9px;border-radius:8px;cursor:pointer;transition:.15s}
+.lang-btn:hover{color:#F0EBDF}
+.lang-btn.on{background:linear-gradient(92deg,#E9B44C,#F0C75E);color:#120D04}
+html[dir=rtl] .wf-strip a{margin-left:0;margin-right:auto}
 @media(max-width:680px){nav .menu{display:none}.wf-strip a{margin-left:0}}
 </style>
 </head>
@@ -101,12 +106,17 @@ footer a:hover{color:#E9B44C}
       <span class="logo-t grad">SOLOS</span>
     </a>
     <div class="menu">
-      <a href="index.html#automatisation">Automatisation</a>
-      <a href="index.html#agent-ia">Agent IA</a>
-      <a href="index.html#tarifs">Tarifs</a>
-      <a href="modeles.html">Modèles</a>
-      <a href="index.html#contact">Contact</a>
-      <a class="nav-cta" href="formulaire.html">Devis gratuit</a>
+      <a href="index.html#automatisation" data-i18n="nav_auto">Automatisation</a>
+      <a href="index.html#agent-ia" data-i18n="nav_agent">Agent IA</a>
+      <a href="index.html#tarifs" data-i18n="nav_tarifs">Tarifs</a>
+      <a href="modeles.html" data-i18n="nav_modeles">Modèles</a>
+      <a href="index.html#contact" data-i18n="nav_contact">Contact</a>
+      <div class="lang-sw" role="group" aria-label="Langue / Language">
+        <button class="lang-btn on" data-lang="fr" type="button">FR</button>
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
+        <button class="lang-btn" data-lang="ar" type="button">ع</button>
+      </div>
+      <a class="nav-cta" href="formulaire.html" data-i18n="nav_devis">Devis gratuit</a>
     </div>
   </div>
 </nav>
@@ -114,23 +124,23 @@ footer a:hover{color:#E9B44C}
 <div class="wf-strip">
   <div class="wrap">
     <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16v13H4z"/><path d="m4 7 8 6 8-6"/></svg>
-    <span><b>Un site, c'est la porte d'entrée — l'automatisation, c'est la suite.</b> Chaque modèle se branche sur nos automatisations : RDV, devis, commandes, avis. </span>
-    <a href="index.html#automatisation">Voir les automatisations →</a>
+    <span data-i18n-html="strip"><b>Un site, c'est la porte d'entrée — l'automatisation, c'est la suite.</b> Chaque modèle se branche sur nos automatisations : RDV, devis, commandes, avis. </span>
+    <a href="index.html#automatisation" data-i18n="strip_link">Voir les automatisations →</a>
   </div>
 </div>
 
 <header class="cat-head">
   <div class="wrap">
-    <h1>Catalogue de <span class="grad">modèles</span></h1>
+    <h1 data-i18n-html="cat_h1">Catalogue de <span class="grad">modèles</span></h1>
     <p>Neuf modèles conçus par notre IA, personnalisables à 100 % : vos textes, vos photos, votre logo — <b style="color:#E9B44C">et la couleur de votre choix</b> (essayez-la directement sur chaque démo). Choisissez le modèle, on s'occupe du reste.</p>
   </div>
 </header>
 
 <div class="filters">
-  <span class="chip on" data-f="all">Tous les modèles</span>
-  <span class="chip" data-f="vitrine">Vitrines · 700 DT</span>
-  <span class="chip" data-f="pro">Pro & Santé · 1 400 DT</span>
-  <span class="chip" data-f="boutique">Boutiques · 2 500 DT</span>
+  <span class="chip on" data-f="all" data-i18n="f_all">Tous les modèles</span>
+  <span class="chip" data-f="vitrine" data-i18n="f_vit">Vitrines · 700 DT</span>
+  <span class="chip" data-f="pro" data-i18n="f_pro">Pro & Santé · 1 400 DT</span>
+  <span class="chip" data-f="boutique" data-i18n="f_bout">Boutiques · 2 500 DT</span>
 </div>
 
 <section class="catalog">
@@ -144,18 +154,18 @@ footer a:hover{color:#E9B44C}
         <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
           <span class="cat-tag" style="color:#E9B44C">Vitrine · 700 DT</span>
-          <h3>Vitrine Mode</h3>
+          <h3 data-i18n="mm1_t">Vitrine Mode</h3>
           <span class="sector">Boutique de vêtements femme · La Marsa</span>
           <div class="prix"><s>1 200 DT</s>700 <small>DT</small></div>
-          <p>Élégance intemporelle : collection, lookbook, avis clients et demande de renseignement.</p>
+          <p data-i18n="mm1_d">Élégance intemporelle : collection, lookbook, avis clients et demande de renseignement.</p>
           <ul>
-            <li>Parfait pour : mode, accessoires, bijoux</li>
-            <li>Galerie photos + témoignages Google</li>
-            <li>Formulaire contact intégré</li>
+            <li data-i18n="mm1_l1">Parfait pour : mode, accessoires, bijoux</li>
+            <li data-i18n="mm1_l2">Galerie photos + témoignages Google</li>
+            <li data-i18n="mm1_l3">Formulaire contact intégré</li>
           </ul>
           <div class="btns">
-            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/vitrine-mode/" target="_blank">Voir la démo</a>
-            <a class="btn btn-p" href="formulaire.html?modele=vitrine">Commander</a>
+            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/vitrine-mode/" target="_blank"><span data-i18n="b_demo">Voir la démo</span></a>
+            <a class="btn btn-p" href="formulaire.html?modele=vitrine"><span data-i18n="b_cmd">Commander</span></a>
           </div>
         </div>
       </div>
@@ -166,18 +176,18 @@ footer a:hover{color:#E9B44C}
         <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
           <span class="cat-tag" style="color:#E9B44C">Vitrine · 700 DT</span>
-          <h3>Vitrine Salon</h3>
+          <h3 data-i18n="mm2_t">Vitrine Salon</h3>
           <span class="sector">Salon de coiffure &amp; esthétique · Tunis Centre</span>
           <div class="prix"><s>1 200 DT</s>700 <small>DT</small></div>
-          <p>Prestations, tarifs, galerie avant/après et réservation directe depuis le site.</p>
+          <p data-i18n="mm2_d">Prestations, tarifs, galerie avant/après et réservation directe depuis le site.</p>
           <ul>
-            <li>Parfait pour : coiffure, esthétique, spa</li>
-            <li>Liste des prestations avec prix</li>
-            <li>Réservation en ligne</li>
+            <li data-i18n="mm2_l1">Parfait pour : coiffure, esthétique, spa</li>
+            <li data-i18n="mm2_l2">Liste des prestations avec prix</li>
+            <li data-i18n="mm2_l3">Réservation en ligne</li>
           </ul>
           <div class="btns">
-            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/vitrine-salon/" target="_blank">Voir la démo</a>
-            <a class="btn btn-p" href="formulaire.html?modele=vitrine">Commander</a>
+            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/vitrine-salon/" target="_blank"><span data-i18n="b_demo">Voir la démo</span></a>
+            <a class="btn btn-p" href="formulaire.html?modele=vitrine"><span data-i18n="b_cmd">Commander</span></a>
           </div>
         </div>
       </div>
@@ -188,18 +198,18 @@ footer a:hover{color:#E9B44C}
         <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
           <span class="cat-tag" style="color:#E9B44C">Vitrine · 700 DT</span>
-          <h3>Vitrine Restaurant</h3>
+          <h3 data-i18n="mm3_t">Vitrine Restaurant</h3>
           <span class="sector">Restaurant tunisien · Sidi Bou Saïd</span>
           <div class="prix"><s>1 200 DT</s>700 <small>DT</small></div>
-          <p>La carte, l'ambiance, les avis — et une réservation de table en deux clics.</p>
+          <p data-i18n="mm3_d">La carte, l'ambiance, les avis — et une réservation de table en deux clics.</p>
           <ul>
-            <li>Parfait pour : resto, café, pâtisserie</li>
-            <li>Menu avec photos et prix</li>
-            <li>Réservation de table</li>
+            <li data-i18n="mm3_l1">Parfait pour : resto, café, pâtisserie</li>
+            <li data-i18n="mm3_l2">Menu avec photos et prix</li>
+            <li data-i18n="mm3_l3">Réservation de table</li>
           </ul>
           <div class="btns">
-            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/vitrine-resto/" target="_blank">Voir la démo</a>
-            <a class="btn btn-p" href="formulaire.html?modele=vitrine">Commander</a>
+            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/vitrine-resto/" target="_blank"><span data-i18n="b_demo">Voir la démo</span></a>
+            <a class="btn btn-p" href="formulaire.html?modele=vitrine"><span data-i18n="b_cmd">Commander</span></a>
           </div>
         </div>
       </div>
@@ -211,18 +221,18 @@ footer a:hover{color:#E9B44C}
         <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
           <span class="cat-tag" style="color:#F0C75E">Pro &amp; Santé · 1 400 DT</span>
-          <h3>Cabinet dentaire</h3>
+          <h3 data-i18n="mm4_t">Cabinet dentaire</h3>
           <span class="sector">Implantologie · orthodontie · urgences · La Marsa</span>
           <div class="prix"><s>2 500 DT</s>1 400 <small>DT</small></div>
-          <p>Soins avec tarifs transparents, équipe, avis Google et prise de rendez-vous en ligne.</p>
+          <p data-i18n="mm4_d">Soins avec tarifs transparents, équipe, avis Google et prise de rendez-vous en ligne.</p>
           <ul>
-            <li>Parfait pour : dentiste, clinique, spécialiste</li>
-            <li>6 soins + grille de prix affichée</li>
-            <li>Formulaire de rendez-vous</li>
+            <li data-i18n="mm4_l1">Parfait pour : dentiste, clinique, spécialiste</li>
+            <li data-i18n="mm4_l2">6 soins + grille de prix affichée</li>
+            <li data-i18n="mm4_l3">Formulaire de rendez-vous</li>
           </ul>
           <div class="btns">
-            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/pro-dentiste/" target="_blank">Voir la démo</a>
-            <a class="btn btn-p" href="formulaire.html?modele=pro">Commander</a>
+            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/pro-dentiste/" target="_blank"><span data-i18n="b_demo">Voir la démo</span></a>
+            <a class="btn btn-p" href="formulaire.html?modele=pro"><span data-i18n="b_cmd">Commander</span></a>
           </div>
         </div>
       </div>
@@ -233,18 +243,18 @@ footer a:hover{color:#E9B44C}
         <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
           <span class="cat-tag" style="color:#F0C75E">Pro &amp; Santé · 1 400 DT</span>
-          <h3>Clinique médicale</h3>
+          <h3 data-i18n="mm5_t">Clinique médicale</h3>
           <span class="sector">Médecine générale &amp; pédiatrie · Tunis</span>
           <div class="prix"><s>2 500 DT</s>1 400 <small>DT</small></div>
-          <p>Consultations, tarifs, téléconsultation et prise de rendez-vous en ligne.</p>
+          <p data-i18n="mm5_d">Consultations, tarifs, téléconsultation et prise de rendez-vous en ligne.</p>
           <ul>
-            <li>Parfait pour : médecin, pédiatre, laboratoire</li>
-            <li>Consultations + tarifs transparents</li>
-            <li>RDV en ligne avec motif</li>
+            <li data-i18n="mm5_l1">Parfait pour : médecin, pédiatre, laboratoire</li>
+            <li data-i18n="mm5_l2">Consultations + tarifs transparents</li>
+            <li data-i18n="mm5_l3">RDV en ligne avec motif</li>
           </ul>
           <div class="btns">
-            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/pro-medecin/" target="_blank">Voir la démo</a>
-            <a class="btn btn-p" href="formulaire.html?modele=pro">Commander</a>
+            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/pro-medecin/" target="_blank"><span data-i18n="b_demo">Voir la démo</span></a>
+            <a class="btn btn-p" href="formulaire.html?modele=pro"><span data-i18n="b_cmd">Commander</span></a>
           </div>
         </div>
       </div>
@@ -255,18 +265,18 @@ footer a:hover{color:#E9B44C}
         <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
           <span class="cat-tag" style="color:#F0C75E">Pro &amp; Santé · 1 400 DT</span>
-          <h3>Cabinet d'avocat</h3>
+          <h3 data-i18n="mm6_t">Cabinet d'avocat</h3>
           <span class="sector">Droit des affaires · immobilier · famille · Tunis</span>
           <div class="prix"><s>2 500 DT</s>1 400 <small>DT</small></div>
-          <p>Domaines d'expertise, honoraires clairs et demande de consultation en ligne.</p>
+          <p data-i18n="mm6_d">Domaines d'expertise, honoraires clairs et demande de consultation en ligne.</p>
           <ul>
-            <li>Parfait pour : avocat, expert-comptable, conseil</li>
-            <li>Domaines + honoraires transparents</li>
-            <li>Premier conseil offert</li>
+            <li data-i18n="mm6_l1">Parfait pour : avocat, expert-comptable, conseil</li>
+            <li data-i18n="mm6_l2">Domaines + honoraires transparents</li>
+            <li data-i18n="mm6_l3">Premier conseil offert</li>
           </ul>
           <div class="btns">
-            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/pro-avocat/" target="_blank">Voir la démo</a>
-            <a class="btn btn-p" href="formulaire.html?modele=pro">Commander</a>
+            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/pro-avocat/" target="_blank"><span data-i18n="b_demo">Voir la démo</span></a>
+            <a class="btn btn-p" href="formulaire.html?modele=pro"><span data-i18n="b_cmd">Commander</span></a>
           </div>
         </div>
       </div>
@@ -278,18 +288,18 @@ footer a:hover{color:#E9B44C}
         <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
           <span class="cat-tag" style="color:#F0C75E">Boutique · 2 500 DT</span>
-          <h3>Boutique Sneakers</h3>
+          <h3 data-i18n="mm7_t">Boutique Sneakers</h3>
           <span class="sector">Sneakers &amp; lifestyle · Tunis</span>
           <div class="prix"><s>4 000 DT</s>2 500 <small>DT</small></div>
-          <p>Catalogue filtrable, panier, commande et paiement Flouci / à la livraison.</p>
+          <p data-i18n="mm7_d">Catalogue filtrable, panier, commande et paiement Flouci / à la livraison.</p>
           <ul>
-            <li>Parfait pour : mode, chaussures, sport</li>
-            <li>Catalogue + filtres par catégorie</li>
-            <li>Panier + paiement Flouci / GoPay</li>
+            <li data-i18n="mm7_l1">Parfait pour : mode, chaussures, sport</li>
+            <li data-i18n="mm7_l2">Catalogue + filtres par catégorie</li>
+            <li data-i18n="mm7_l3">Panier + paiement Flouci / GoPay</li>
           </ul>
           <div class="btns">
-            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/boutique-sneakers/" target="_blank">Voir la démo</a>
-            <a class="btn btn-p" href="formulaire.html?modele=boutique">Commander</a>
+            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/boutique-sneakers/" target="_blank"><span data-i18n="b_demo">Voir la démo</span></a>
+            <a class="btn btn-p" href="formulaire.html?modele=boutique"><span data-i18n="b_cmd">Commander</span></a>
           </div>
         </div>
       </div>
@@ -300,18 +310,18 @@ footer a:hover{color:#E9B44C}
         <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
           <span class="cat-tag" style="color:#F0C75E">Boutique · 2 500 DT</span>
-          <h3>Boutique Cosmétiques</h3>
+          <h3 data-i18n="mm8_t">Boutique Cosmétiques</h3>
           <span class="sector">Cosmétiques naturels · Tunis</span>
           <div class="prix"><s>4 000 DT</s>2 500 <small>DT</small></div>
-          <p>Soin, visage, corps : panier, commande et paiement 100 % tunisien intégré.</p>
+          <p data-i18n="mm8_d">Soin, visage, corps : panier, commande et paiement 100 % tunisien intégré.</p>
           <ul>
-            <li>Parfait pour : cosmétiques, parfums, bio</li>
-            <li>Filtres par gamme (soin, visage, corps)</li>
-            <li>Panier + paiement Flouci / GoPay</li>
+            <li data-i18n="mm8_l1">Parfait pour : cosmétiques, parfums, bio</li>
+            <li data-i18n="mm8_l2">Filtres par gamme (soin, visage, corps)</li>
+            <li data-i18n="mm8_l3">Panier + paiement Flouci / GoPay</li>
           </ul>
           <div class="btns">
-            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/boutique-cosmetiques/" target="_blank">Voir la démo</a>
-            <a class="btn btn-p" href="formulaire.html?modele=boutique">Commander</a>
+            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/boutique-cosmetiques/" target="_blank"><span data-i18n="b_demo">Voir la démo</span></a>
+            <a class="btn btn-p" href="formulaire.html?modele=boutique"><span data-i18n="b_cmd">Commander</span></a>
           </div>
         </div>
       </div>
@@ -322,18 +332,18 @@ footer a:hover{color:#E9B44C}
         <div class="blines"><i></i><i></i><i></i></div>
         <div class="body">
           <span class="cat-tag" style="color:#F0C75E">Boutique · 2 500 DT</span>
-          <h3>Épicerie fine</h3>
+          <h3 data-i18n="mm9_t">Épicerie fine</h3>
           <span class="sector">Terroir tunisien · huiles · épices · douceurs</span>
           <div class="prix"><s>4 000 DT</s>2 500 <small>DT</small></div>
-          <p>Huile d'olive, harissa, miel : commande en ligne, livraison et paiement intégrés.</p>
+          <p data-i18n="mm9_d">Huile d'olive, harissa, miel : commande en ligne, livraison et paiement intégrés.</p>
           <ul>
-            <li>Parfait pour : épicerie, miel, huiles, dattes</li>
-            <li>Filtres par catégorie de produits</li>
-            <li>Panier + paiement Flouci / GoPay</li>
+            <li data-i18n="mm9_l1">Parfait pour : épicerie, miel, huiles, dattes</li>
+            <li data-i18n="mm9_l2">Filtres par catégorie de produits</li>
+            <li data-i18n="mm9_l3">Panier + paiement Flouci / GoPay</li>
           </ul>
           <div class="btns">
-            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/boutique-epicerie/" target="_blank">Voir la démo</a>
-            <a class="btn btn-p" href="formulaire.html?modele=boutique">Commander</a>
+            <a class="btn btn-o" href="https://solos-tn.github.io/solos/demos/boutique-epicerie/" target="_blank"><span data-i18n="b_demo">Voir la démo</span></a>
+            <a class="btn btn-p" href="formulaire.html?modele=boutique"><span data-i18n="b_cmd">Commander</span></a>
           </div>
         </div>
       </div>
@@ -342,13 +352,13 @@ footer a:hover{color:#E9B44C}
 
     <div class="note">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-      <span><b>Chaque modèle est personnalisé pour vous :</b> votre nom, vos textes, vos photos, votre logo — <b>et la couleur de votre choix</b> (essayez les pastilles sur chaque démo). Livraison en 1 à 3 jours, contrôle qualité sans bug avant mise en ligne. Les prix affichés sont nos tarifs de lancement — chaque service a le sien : vitrine 700 DT · pro &amp; santé 1 400 DT · boutique 2 500 DT.</span>
+      <span data-i18n-html="cat_note"><b>Chaque modèle est personnalisé pour vous :</b> votre nom, vos textes, vos photos, votre logo — <b>et la couleur de votre choix</b> (essayez les pastilles sur chaque démo). Livraison en 1 à 3 jours, contrôle qualité sans bug avant mise en ligne. Les prix affichés sont nos tarifs de lancement — chaque service a le sien : vitrine 700 DT · pro &amp; santé 1 400 DT · boutique 2 500 DT.</span>
     </div>
 
     <div class="cta-band">
-      <h2>Vous ne savez pas quel modèle choisir ?</h2>
-      <p>Décrivez-nous votre commerce, on vous recommande le modèle le plus adapté — gratuitement et sans engagement.</p>
-      <a class="btn btn-p" href="formulaire.html" style="font-size:16px;padding:16px 34px">Parlons de votre projet</a>
+      <h2 data-i18n="cta2_t">Vous ne savez pas quel modèle choisir ?</h2>
+      <p data-i18n="cta2_d">Décrivez-nous votre commerce, on vous recommande le modèle le plus adapté — gratuitement et sans engagement.</p>
+      <a class="btn btn-p" href="formulaire.html" style="font-size:16px;padding:16px 34px" data-i18n="cta2_btn">Parlons de votre projet</a>
     </div>
   </div>
 </section>
@@ -358,8 +368,8 @@ footer a:hover{color:#E9B44C}
     <a class="logo-row" href="index.html">
       <span class="logo-t grad">SOLOS</span>
     </a>
-    <span>Automatisation &amp; Intelligence artificielle · Tunis</span>
-    <span><a href="formulaire.html">Devis</a> &nbsp;·&nbsp; <a href="index.html">Accueil</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/solos.tn" target="_blank">Instagram</a></span>
+    <span data-i18n="foot_mid">Automatisation &amp; Intelligence artificielle · Tunis</span>
+    <span><a href="formulaire.html" data-i18n="foot_devis">Devis</a> &nbsp;·&nbsp; <a href="index.html" data-i18n="foot_acc">Accueil</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/solos.tn" target="_blank">Instagram</a></span>
   </div>
 </footer>
 
@@ -375,5 +385,93 @@ chips.forEach(function(c){c.addEventListener('click',function(){
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:.1});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 </script>
+<script>
+// I18N — sélecteur de langue FR/EN/AR (inclus, gratuit)
+(function(){
+  var I18N={
+  fr:{
+    nav_auto:"Automatisation",nav_agent:"Agent IA",nav_tarifs:"Tarifs",nav_modeles:"Modèles",nav_contact:"Contact",nav_devis:"Devis gratuit",
+    strip:"<b>Un site, c'est la porte d'entrée — l'automatisation, c'est la suite.</b> Chaque modèle se branche sur nos automatisations : RDV, devis, commandes, avis. ",
+    strip_link:"Voir les automatisations →",
+    cat_h1:"Catalogue de <span class=\"grad\">modèles</span>",
+    f_all:"Tous les modèles",f_vit:"Vitrines · 700 DT",f_pro:"Pro & Santé · 1 400 DT",f_bout:"Boutiques · 2 500 DT",
+    b_demo:"Voir la démo",b_cmd:"Commander",
+    mm1_t:"Vitrine Mode",mm1_d:"Élégance intemporelle : collection, lookbook, avis clients et demande de renseignement.",mm1_l1:"Parfait pour : mode, accessoires, bijoux",mm1_l2:"Galerie photos + témoignages Google",mm1_l3:"Formulaire contact intégré",
+    mm2_t:"Vitrine Salon",mm2_d:"Prestations, tarifs, galerie avant/après et réservation directe depuis le site.",mm2_l1:"Parfait pour : coiffure, esthétique, spa",mm2_l2:"Liste des prestations avec prix",mm2_l3:"Réservation en ligne",
+    mm3_t:"Vitrine Restaurant",mm3_d:"La carte, l'ambiance, les avis — et une réservation de table en deux clics.",mm3_l1:"Parfait pour : resto, café, pâtisserie",mm3_l2:"Menu avec photos et prix",mm3_l3:"Réservation de table",
+    mm4_t:"Cabinet dentaire",mm4_d:"Soins avec tarifs transparents, équipe, avis Google et prise de rendez-vous en ligne.",mm4_l1:"Parfait pour : dentiste, clinique, spécialiste",mm4_l2:"6 soins + grille de prix affichée",mm4_l3:"Formulaire de rendez-vous",
+    mm5_t:"Clinique médicale",mm5_d:"Consultations, tarifs, téléconsultation et prise de rendez-vous en ligne.",mm5_l1:"Parfait pour : médecin, pédiatre, laboratoire",mm5_l2:"Consultations + tarifs transparents",mm5_l3:"RDV en ligne avec motif",
+    mm6_t:"Cabinet d'avocat",mm6_d:"Domaines d'expertise, honoraires clairs et demande de consultation en ligne.",mm6_l1:"Parfait pour : avocat, expert-comptable, conseil",mm6_l2:"Domaines + honoraires transparents",mm6_l3:"Premier conseil offert",
+    mm7_t:"Boutique Sneakers",mm7_d:"Catalogue filtrable, panier, commande et paiement Flouci / à la livraison.",mm7_l1:"Parfait pour : mode, chaussures, sport",mm7_l2:"Catalogue + filtres par catégorie",mm7_l3:"Panier + paiement Flouci / GoPay",
+    mm8_t:"Boutique Cosmétiques",mm8_d:"Soin, visage, corps : panier, commande et paiement 100 % tunisien intégré.",mm8_l1:"Parfait pour : cosmétiques, parfums, bio",mm8_l2:"Filtres par gamme (soin, visage, corps)",mm8_l3:"Panier + paiement Flouci / GoPay",
+    mm9_t:"Épicerie fine",mm9_d:"Huile d'olive, harissa, miel : commande en ligne, livraison et paiement intégrés.",mm9_l1:"Parfait pour : épicerie, miel, huiles, dattes",mm9_l2:"Filtres par catégorie de produits",mm9_l3:"Panier + paiement Flouci / GoPay",
+    cat_note:"<b>Chaque modèle est personnalisé pour vous :</b> votre nom, vos textes, vos photos, votre logo — <b>et la couleur de votre choix</b> (essayez les pastilles sur chaque démo). Livraison en 1 à 3 jours, contrôle qualité sans bug avant mise en ligne. Les prix affichés sont nos tarifs de lancement — chaque service a le sien : vitrine 700 DT · pro &amp; santé 1 400 DT · boutique 2 500 DT.",
+    cta2_t:"Vous ne savez pas quel modèle choisir ?",cta2_d:"Décrivez-nous votre commerce, on vous recommande le modèle le plus adapté — gratuitement et sans engagement.",cta2_btn:"Parlons de votre projet",
+    foot_mid:"Automatisation &amp; Intelligence artificielle · Tunis",foot_devis:"Devis",foot_acc:"Accueil"
+  },
+  en:{
+    nav_auto:"Automation",nav_agent:"AI Agent",nav_tarifs:"Pricing",nav_modeles:"Templates",nav_contact:"Contact",nav_devis:"Free quote",
+    strip:"<b>A website is the front door — automation is what comes next.</b> Every template connects to our automations: appointments, quotes, orders, reviews. ",
+    strip_link:"See the automations →",
+    cat_h1:"Template <span class=\"grad\">catalogue</span>",
+    f_all:"All templates",f_vit:"Showcases · 700 DT",f_pro:"Pro & Health · 1 400 DT",f_bout:"Shops · 2 500 DT",
+    b_demo:"See the demo",b_cmd:"Order",
+    mm1_t:"Fashion Showcase",mm1_d:"Timeless elegance: collection, lookbook, customer reviews and enquiry form.",mm1_l1:"Perfect for: fashion, accessories, jewellery",mm1_l2:"Photo gallery + Google testimonials",mm1_l3:"Built-in contact form",
+    mm2_t:"Salon Showcase",mm2_d:"Services, prices, before/after gallery and direct booking from the site.",mm2_l1:"Perfect for: hairdressing, aesthetics, spa",mm2_l2:"Service list with prices",mm2_l3:"Online booking",
+    mm3_t:"Restaurant Showcase",mm3_d:"The menu, the atmosphere, the reviews — and a table reservation in two clicks.",mm3_l1:"Perfect for: restaurant, café, pastry shop",mm3_l2:"Menu with photos and prices",mm3_l3:"Table reservation",
+    mm4_t:"Dental clinic",mm4_d:"Treatments with transparent prices, team, Google reviews and online appointment booking.",mm4_l1:"Perfect for: dentist, clinic, specialist",mm4_l2:"6 treatments + displayed price list",mm4_l3:"Appointment form",
+    mm5_t:"Medical clinic",mm5_d:"Consultations, prices, teleconsultation and online appointment booking.",mm5_l1:"Perfect for: doctor, paediatrician, laboratory",mm5_l2:"Consultations + transparent prices",mm5_l3:"Online booking with reason",
+    mm6_t:"Law firm",mm6_d:"Areas of expertise, clear fees and online consultation request.",mm6_l1:"Perfect for: lawyer, accountant, consultant",mm6_l2:"Areas + transparent fees",mm6_l3:"First consultation free",
+    mm7_t:"Sneakers Shop",mm7_d:"Filterable catalogue, cart, order and Flouci / cash-on-delivery payment.",mm7_l1:"Perfect for: fashion, shoes, sport",mm7_l2:"Catalogue + category filters",mm7_l3:"Cart + Flouci / GoPay payment",
+    mm8_t:"Cosmetics Shop",mm8_d:"Skincare, face, body: cart, order and 100 % Tunisian integrated payment.",mm8_l1:"Perfect for: cosmetics, perfumes, organic",mm8_l2:"Filters by range (skincare, face, body)",mm8_l3:"Cart + Flouci / GoPay payment",
+    mm9_t:"Fine Grocery",mm9_d:"Olive oil, harissa, honey: online ordering, delivery and integrated payment.",mm9_l1:"Perfect for: grocery, honey, oils, dates",mm9_l2:"Filters by product category",mm9_l3:"Cart + Flouci / GoPay payment",
+    cat_note:"<b>Every template is personalised for you:</b> your name, your texts, your photos, your logo — <b>and the colour of your choice</b> (try the swatches on each demo). Delivery in 1 to 3 days, bug-free quality control before going live. The prices shown are our launch offers — each service has its own: showcase 700 DT · pro &amp; health 1 400 DT · shop 2 500 DT.",
+    cta2_t:"Don't know which template to choose?",cta2_d:"Describe your business and we'll recommend the most suitable template — free and with no commitment.",cta2_btn:"Let's talk about your project",
+    foot_mid:"Automation &amp; Artificial Intelligence · Tunis",foot_devis:"Quote",foot_acc:"Home"
+  },
+  ar:{
+    nav_auto:"الأتمتة",nav_agent:"وكيل الذكاء الاصطناعي",nav_tarifs:"الأسعار",nav_modeles:"القوالب",nav_contact:"اتصل بنا",nav_devis:"طلب عرض مجاني",
+    strip:"<b>الموقع هو الباب الأمامي — والأتمتة هي ما يأتي بعده.</b> كل قالب يرتبط بأتمتتنا: مواعيد، عروض، طلبات، تقييمات. ",
+    strip_link:"شاهد الأتمتة ←",
+    cat_h1:"كتالوج <span class=\"grad\">القوالب</span>",
+    f_all:"كل القوالب",f_vit:"الواجهات · 700 د.ت",f_pro:"احترافي وصحي · 1400 د.ت",f_bout:"المتاجر · 2500 د.ت",
+    b_demo:"شاهد العرض",b_cmd:"اطلب",
+    mm1_t:"واجهة موضة",mm1_d:"أناقة خالدة: تشكيلة، لوك بوك، تقييمات العملاء ونموذج استفسار.",mm1_l1:"مثالي لـ: موضة، إكسسوارات، مجوهرات",mm1_l2:"معرض صور + شهادات Google",mm1_l3:"نموذج اتصال مدمج",
+    mm2_t:"واجهة صالون",mm2_d:"خدمات، أسعار، معرض قبل/بعد وحجز مباشر من الموقع.",mm2_l1:"مثالي لـ: حلاقة، تجميل، سبا",mm2_l2:"قائمة الخدمات مع الأسعار",mm2_l3:"حجز عبر الإنترنت",
+    mm3_t:"واجهة مطعم",mm3_d:"القائمة، الأجواء، التقييمات — وحجز طاولة بنقرتين.",mm3_l1:"مثالي لـ: مطعم، مقهى، حلويات",mm3_l2:"قائمة بالصور والأسعار",mm3_l3:"حجز طاولة",
+    mm4_t:"عيادة أسنان",mm4_d:"علاجات بأسعار شفافة، فريق، تقييمات Google وحجز مواعيد عبر الإنترنت.",mm4_l1:"مثالي لـ: طبيب أسنان، عيادة، أخصائي",mm4_l2:"6 علاجات + قائمة أسعار معروضة",mm4_l3:"نموذج مواعيد",
+    mm5_t:"عيادة طبية",mm5_d:"استشارات، أسعار، استشارة عن بعد وحجز مواعيد عبر الإنترنت.",mm5_l1:"مثالي لـ: طبيب، أطفال، مختبر",mm5_l2:"استشارات + أسعار شفافة",mm5_l3:"حجز موعد مع السبب",
+    mm6_t:"مكتب محاماة",mm6_d:"مجالات الخبرة، أتعاب واضحة وطلب استشارة عبر الإنترنت.",mm6_l1:"مثالي لـ: محامٍ، محاسب، مستشار",mm6_l2:"مجالات + أتعاب شفافة",mm6_l3:"أول استشارة مجانية",
+    mm7_t:"متجر أحذية",mm7_d:"كتالوج قابل للتصفية، سلة، طلب ودفع فلوسي / عند الاستلام.",mm7_l1:"مثالي لـ: موضة، أحذية، رياضة",mm7_l2:"كتالوج + تصفية حسب الفئة",mm7_l3:"سلة + دفع فلوسي / GoPay",
+    mm8_t:"متجر مستحضرات",mm8_d:"عناية، وجه، جسم: سلة، طلب ودفع تونسي 100% مدمج.",mm8_l1:"مثالي لـ: مستحضرات، عطور، طبيعي",mm8_l2:"تصفية حسب النطاق (عناية، وجه، جسم)",mm8_l3:"سلة + دفع فلوسي / GoPay",
+    mm9_t:"مواد غذائية فاخرة",mm9_d:"زيت زيتون، هريسة، عسل: طلب عبر الإنترنت، توصيل ودفع مدمج.",mm9_l1:"مثالي لـ: بقالة، عسل، زيوت، تمر",mm9_l2:"تصفية حسب فئة المنتجات",mm9_l3:"سلة + دفع فلوسي / GoPay",
+    cat_note:"<b>كل قالب مخصص لك:</b> اسمك، نصوصك، صورك، شعارك — <b>ولون من اختيارك</b> (جرّب الباستيلات على كل عرض). تسليم خلال 1 إلى 3 أيام، فحص جودة بدون أخطاء قبل النشر. الأسعار المعروضة هي عروض إطلاقنا — لكل خدمة سعرها: واجهة 700 د.ت · احترافي وصحي 1400 · متجر 2500.",
+    cta2_t:"لا تعرف أي قالب تختار؟",cta2_d:"صف لنا متجرك، نرشح لك القالب الأنسب — مجاناً وبدون التزام.",cta2_btn:"لنتحدث عن مشروعك",
+    foot_mid:"الأتمتة والذكاء الاصطناعي · تونس",foot_devis:"عرض سعر",foot_acc:"الرئيسية"
+  }};
+  var lang=localStorage.getItem('solos_lang')||'fr';
+  if(!I18N[lang])lang='fr';
+  function apply(l){
+    lang=l;localStorage.setItem('solos_lang',l);
+    var d=I18N[l];
+    document.documentElement.lang=l;
+    document.documentElement.dir=(l==='ar')?'rtl':'ltr';
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k=el.getAttribute('data-i18n');
+      if(d[k]!==undefined)el.textContent=d[k];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+      var k=el.getAttribute('data-i18n-html');
+      if(d[k]!==undefined)el.innerHTML=d[k];
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('on',b.getAttribute('data-lang')===l);
+    });
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click',function(){apply(b.getAttribute('data-lang'));});
+  });
+  apply(lang);
+})();
+</script>
 </body>
-</html>

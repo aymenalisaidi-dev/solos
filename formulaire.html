@@ -18,6 +18,11 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;background-image:linear
 .logo-t{font-family:'Space Grotesk',sans-serif;font-size:27px;font-weight:700;letter-spacing:9px;background:linear-gradient(92deg,#E9B44C,#F0C75E 55%,#C9972B);-webkit-background-clip:text;background-clip:text;color:transparent}
 .card{width:100%;max-width:600px;background:linear-gradient(165deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:44px 40px;backdrop-filter:blur(10px);position:relative;overflow:hidden}
 .card::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(233,180,76,.7),rgba(233,180,76,.7),transparent)}
+.top-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.lang-sw{display:flex;gap:3px;align-items:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:11px;padding:3px}
+.lang-btn{background:none;border:none;color:#8F8778;font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px;padding:6px 9px;border-radius:8px;cursor:pointer;transition:.15s}
+.lang-btn:hover{color:#F0EBDF}
+.lang-btn.on{background:linear-gradient(92deg,#E9B44C,#F0C75E);color:#120D04}
 .sub{text-align:center;font-size:17.5px;color:#9C9383;margin-bottom:8px}
 .sub b{color:#F0EBDF}
 label{display:block;font-size:14.5px;font-weight:700;color:#CCC3B2;margin:18px 0 7px}
@@ -33,51 +38,57 @@ textarea{resize:vertical;min-height:100px}
 .demos a{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);color:#9C9383;padding:7px 16px;border-radius:999px;font-size:13px;font-weight:500;transition:.15s;text-decoration:none}
 .demos a:hover{border-color:#E9B44C;color:#E9B44C}
 .hint{font-size:13px;color:#6E6657;margin-top:6px}
-.wf-banner{display:none;margin:16px 0 4px;background:rgba(94,224,108,.06);border:1px solid rgba(94,224,108,.3);border-radius:13px;padding:12px 16px;font-size:14px;color:#B8E6C0}
-.wf-banner b{color:#5EE06C}
+html[dir=rtl] .lang-sw{margin-left:0}
 </style>
 </head>
 <body>
 
 <div class="card">
-  <div class="logo-row">
-    <span class="logo-t">SOLOS</span>
+  <div class="top-row">
+    <div class="logo-row" style="margin-bottom:0">
+      <span class="logo-t">SOLOS</span>
+    </div>
+    <div class="lang-sw" role="group" aria-label="Langue / Language">
+      <button class="lang-btn on" data-lang="fr" type="button">FR</button>
+      <button class="lang-btn" data-lang="en" type="button">EN</button>
+      <button class="lang-btn" data-lang="ar" type="button">ع</button>
+    </div>
   </div>
-  <div class="sub"><b>Devis gratuit</b> — réponse par email en quelques heures.<br>Audit de votre fiche Google / diagnostic de votre activité offert.</div>
+  <div class="sub"><b data-i18n="sub1">Devis gratuit</b> <span data-i18n="sub2">— réponse par email en quelques heures.</span><br><span data-i18n="sub3">Audit de votre fiche Google / diagnostic de votre activité offert.</span></div>
 
   <form id="f">
-    <label>Nom complet *</label>
-    <input id="name" required placeholder="Votre nom">
-    <label>Nom du commerce / entreprise</label>
-    <input id="biz" placeholder="Nom de votre commerce">
-    <label>Téléphone</label>
-    <input id="phone" placeholder="+216 ...">
-    <label>Email (on vous répond sur cette adresse) *</label>
-    <input id="email" type="email" required placeholder="vous@exemple.com">
-    <label>Service souhaité *</label>
+    <label data-i18n="l_name">Nom complet *</label>
+    <input id="name" required placeholder="Votre nom" data-i18n-ph="ph_name">
+    <label data-i18n="l_biz">Nom du commerce / entreprise</label>
+    <input id="biz" placeholder="Nom de votre commerce" data-i18n-ph="ph_biz">
+    <label data-i18n="l_phone">Téléphone</label>
+    <input id="phone" placeholder="+216 ..." data-i18n-ph="ph_phone">
+    <label data-i18n="l_email">Email (on vous répond sur cette adresse) *</label>
+    <input id="email" type="email" required placeholder="vous@exemple.com" data-i18n-ph="ph_email">
+    <label data-i18n="l_svc">Service souhaité *</label>
     <select id="svc" required>
-      <option value="">— Choisir un service —</option>
-      <option>Automatisation — 59 DT/mois</option>
-      <option>Pack 3 automatisations — 129 DT/mois</option>
-      <option>Agent IA sur-mesure — 1 200 DT + 199 DT/mois</option>
-      <option>Site vitrine — 700 DT</option>
-      <option>Site pro / santé — 1 400 DT</option>
-      <option>Boutique en ligne — 2 500 DT</option>
-      <option>Fiche Google — 250 DT</option>
-      <option>Reels — dès 200 DT</option>
-      <option>Plusieurs services</option>
+      <option value="" data-i18n="opt_empty">— Choisir un service —</option>
+      <option data-i18n="opt_auto">Automatisation — 59 DT/mois</option>
+      <option data-i18n="opt_pack">Pack 3 automatisations — 129 DT/mois</option>
+      <option data-i18n="opt_agent">Agent IA sur-mesure — 1 200 DT + 199 DT/mois</option>
+      <option data-i18n="opt_vit">Site vitrine — 700 DT</option>
+      <option data-i18n="opt_pro">Site pro / santé — 1 400 DT</option>
+      <option data-i18n="opt_bout">Boutique en ligne — 2 500 DT</option>
+      <option data-i18n="opt_fiche">Fiche Google — 250 DT</option>
+      <option data-i18n="opt_reels">Reels — dès 200 DT</option>
+      <option data-i18n="opt_plus">Plusieurs services</option>
     </select>
-    <label>Votre besoin</label>
-    <textarea id="msg" placeholder="Décrivez votre besoin..."></textarea>
-    <button class="btn" type="submit">Envoyer ma demande</button>
+    <label data-i18n="l_msg">Votre besoin</label>
+    <textarea id="msg" placeholder="Décrivez votre besoin..." data-i18n-ph="ph_msg"></textarea>
+    <button class="btn" type="submit" data-i18n="btn_send">Envoyer ma demande</button>
   </form>
-  <div class="ok" id="ok">Demande envoyée ! On vous répond par email très vite.</div>
+  <div class="ok" id="ok" data-i18n="ok_msg">Demande envoyée ! On vous répond par email très vite.</div>
   <div class="demos">
-    <a href="https://solos-tn.github.io/solos/demos/vitrine-mode/" target="_blank">Exemple : vitrine</a>
-    <a href="https://solos-tn.github.io/solos/demos/pro-dentiste/" target="_blank">Exemple : santé</a>
-    <a href="https://solos-tn.github.io/solos/demos/boutique-sneakers/" target="_blank">Exemple : boutique</a>
+    <a href="https://solos-tn.github.io/solos/demos/vitrine-mode/" target="_blank" data-i18n="ex_vit">Exemple : vitrine</a>
+    <a href="https://solos-tn.github.io/solos/demos/pro-dentiste/" target="_blank" data-i18n="ex_sante">Exemple : santé</a>
+    <a href="https://solos-tn.github.io/solos/demos/boutique-sneakers/" target="_blank" data-i18n="ex_bout">Exemple : boutique</a>
   </div>
-  <div class="foot">Solos · Automatisation &amp; Intelligence artificielle · solos-tn.github.io/solos</div>
+  <div class="foot" data-i18n="foot">Solos · Automatisation &amp; Intelligence artificielle · solos-tn.github.io/solos</div>
 </div>
 
 <script>
@@ -148,6 +159,63 @@ function showOk(){
   document.getElementById("ok").style.display = "block";
   document.getElementById("f").reset();
 }
+// I18N — sélecteur de langue FR/EN/AR (inclus, gratuit)
+(function(){
+  var I18N={
+  fr:{
+    sub1:"Devis gratuit",sub2:"— réponse par email en quelques heures.",sub3:"Audit de votre fiche Google / diagnostic de votre activité offert.",
+    l_name:"Nom complet *",ph_name:"Votre nom",l_biz:"Nom du commerce / entreprise",ph_biz:"Nom de votre commerce",l_phone:"Téléphone",ph_phone:"+216 ...",l_email:"Email (on vous répond sur cette adresse) *",ph_email:"vous@exemple.com",
+    l_svc:"Service souhaité *",opt_empty:"— Choisir un service —",
+    opt_auto:"Automatisation — 59 DT/mois",opt_pack:"Pack 3 automatisations — 129 DT/mois",opt_agent:"Agent IA sur-mesure — 1 200 DT + 199 DT/mois",
+    opt_vit:"Site vitrine — 700 DT",opt_pro:"Site pro / santé — 1 400 DT",opt_bout:"Boutique en ligne — 2 500 DT",opt_fiche:"Fiche Google — 250 DT",opt_reels:"Reels — dès 200 DT",opt_plus:"Plusieurs services",
+    l_msg:"Votre besoin",ph_msg:"Décrivez votre besoin...",btn_send:"Envoyer ma demande",ok_msg:"Demande envoyée ! On vous répond par email très vite.",
+    ex_vit:"Exemple : vitrine",ex_sante:"Exemple : santé",ex_bout:"Exemple : boutique",
+    foot:"Solos · Automatisation &amp; Intelligence artificielle · solos-tn.github.io/solos"
+  },
+  en:{
+    sub1:"Free quote",sub2:"— reply by email within hours.",sub3:"Free Google Profile audit / free diagnosis of your business.",
+    l_name:"Full name *",ph_name:"Your name",l_biz:"Business / company name",ph_biz:"Your business name",l_phone:"Phone",ph_phone:"+216 ...",l_email:"Email (we reply to this address) *",ph_email:"you@example.com",
+    l_svc:"Service wanted *",opt_empty:"— Choose a service —",
+    opt_auto:"Automation — 59 DT/month",opt_pack:"3-automation pack — 129 DT/month",opt_agent:"Custom AI Agent — 1 200 DT + 199 DT/month",
+    opt_vit:"Showcase website — 700 DT",opt_pro:"Pro / health website — 1 400 DT",opt_bout:"Online shop — 2 500 DT",opt_fiche:"Google Profile — 250 DT",opt_reels:"Reels — from 200 DT",opt_plus:"Several services",
+    l_msg:"Your need",ph_msg:"Describe your need...",btn_send:"Send my request",ok_msg:"Request sent! We'll reply by email very soon.",
+    ex_vit:"Example: showcase",ex_sante:"Example: health",ex_bout:"Example: shop",
+    foot:"Solos · Automation &amp; Artificial Intelligence · solos-tn.github.io/solos"
+  },
+  ar:{
+    sub1:"عرض سعر مجاني",sub2:"— الرد بالبريد خلال ساعات.",sub3:"فحص ملف Google مجاني / تشخيص نشاطك مجاني.",
+    l_name:"الاسم الكامل *",ph_name:"اسمك",l_biz:"اسم المتجر / المؤسسة",ph_biz:"اسم متجرك",l_phone:"الهاتف",ph_phone:"+216 ...",l_email:"البريد الإلكتروني (نرد عليه) *",ph_email:"you@example.com",
+    l_svc:"الخدمة المطلوبة *",opt_empty:"— اختر خدمة —",
+    opt_auto:"أتمتة — 59 دينار/شهر",opt_pack:"باقة 3 أتمتة — 129 دينار/شهر",opt_agent:"وكيل IA حسب الطلب — 1200 د.ت + 199 د.ت/شهر",
+    opt_vit:"موقع واجهة — 700 د.ت",opt_pro:"موقع احترافي/صحي — 1400 د.ت",opt_bout:"متجر إلكتروني — 2500 د.ت",opt_fiche:"ملف Google — 250 د.ت",opt_reels:"ريلز — من 200 د.ت",opt_plus:"عدة خدمات",
+    l_msg:"احتياجك",ph_msg:"صف احتياجك...",btn_send:"أرسل طلبي",ok_msg:"تم إرسال الطلب! سنرد عليك بالبريد قريباً جداً.",
+    ex_vit:"مثال: واجهة",ex_sante:"مثال: صحة",ex_bout:"مثال: متجر",
+    foot:"سولوس · الأتمتة والذكاء الاصطناعي · solos-tn.github.io/solos"
+  }};
+  var lang=localStorage.getItem('solos_lang')||'fr';
+  if(!I18N[lang])lang='fr';
+  function apply(l){
+    lang=l;localStorage.setItem('solos_lang',l);
+    var d=I18N[l];
+    document.documentElement.lang=l;
+    document.documentElement.dir=(l==='ar')?'rtl':'ltr';
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k=el.getAttribute('data-i18n');
+      if(d[k]!==undefined)el.textContent=d[k];
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
+      var k=el.getAttribute('data-i18n-ph');
+      if(d[k]!==undefined)el.placeholder=d[k];
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('on',b.getAttribute('data-lang')===l);
+    });
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click',function(){apply(b.getAttribute('data-lang'));});
+  });
+  apply(lang);
+})();
 </script>
 </body>
 </html>
