@@ -42,7 +42,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .brow{display:flex;align-items:center;gap:10px;padding:11px 16px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.07)}
 .bdots{display:flex;gap:5px}
 .bdots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.16)}
-.bdots i:first-child{background:#F472B6;opacity:.8}
+.bdots i:first-child{background:#C9972B;opacity:.8}
 .bdots i:nth-child(2){background:#FBBF24;opacity:.8}
 .bdots i:nth-child(3){background:#34D399;opacity:.8}
 .burl{font-size:11.5px;color:#6E6657;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);padding:3px 12px;border-radius:7px;margin:0 auto;font-family:'Space Grotesk',sans-serif}
@@ -84,7 +84,13 @@ footer a{color:#9C9383;transition:.15s}
 footer a:hover{color:#E9B44C}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
 .rv.on{opacity:1;transform:none}
-@media(max-width:680px){nav .menu{display:none}}
+.wf-strip{background:rgba(233,180,76,.06);border-bottom:1px solid rgba(233,180,76,.22)}
+.wf-strip .wrap{display:flex;align-items:center;gap:14px;padding:16px 24px;font-size:14.5px;color:#C9BFA9;flex-wrap:wrap}
+.wf-strip svg{width:20px;height:20px;stroke:#E9B44C;flex:none}
+.wf-strip b{color:#F0EBDF}
+.wf-strip a{margin-left:auto;font-weight:700;color:#E9B44C;font-family:'Space Grotesk',sans-serif;font-size:14px;white-space:nowrap;transition:.15s}
+.wf-strip a:hover{filter:brightness(1.2)}
+@media(max-width:680px){nav .menu{display:none}.wf-strip a{margin-left:0}}
 </style>
 </head>
 <body>
@@ -95,7 +101,8 @@ footer a:hover{color:#E9B44C}
       <span class="logo-t grad">SOLOS</span>
     </a>
     <div class="menu">
-      <a href="index.html#services">Services</a>
+      <a href="index.html#automatisation">Automatisation</a>
+      <a href="index.html#agent-ia">Agent IA</a>
       <a href="index.html#tarifs">Tarifs</a>
       <a href="modeles.html">Modèles</a>
       <a href="index.html#contact">Contact</a>
@@ -103,6 +110,14 @@ footer a:hover{color:#E9B44C}
     </div>
   </div>
 </nav>
+
+<div class="wf-strip">
+  <div class="wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16v13H4z"/><path d="m4 7 8 6 8-6"/></svg>
+    <span><b>Un site, c'est la porte d'entrée — l'automatisation, c'est la suite.</b> Chaque modèle se branche sur nos automatisations : RDV, devis, commandes, avis. </span>
+    <a href="index.html#automatisation">Voir les automatisations →</a>
+  </div>
+</div>
 
 <header class="cat-head">
   <div class="wrap">
@@ -343,7 +358,7 @@ footer a:hover{color:#E9B44C}
     <a class="logo-row" href="index.html">
       <span class="logo-t grad">SOLOS</span>
     </a>
-    <span>Intelligence artificielle · Tunis</span>
+    <span>Automatisation &amp; Intelligence artificielle · Tunis</span>
     <span><a href="formulaire.html">Devis</a> &nbsp;·&nbsp; <a href="index.html">Accueil</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/solos.tn" target="_blank">Instagram</a></span>
   </div>
 </footer>

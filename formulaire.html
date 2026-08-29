@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Solos — Demande de devis gratuit</title>
-<meta name="description" content="Demandez votre devis gratuit Solos : fiche Google, site web, reels, intégration IA. Réponse par email en quelques heures.">
+<meta name="description" content="Demandez votre devis gratuit Solos : automatisation, agent IA, fiche Google, site web, reels. Réponse par email en quelques heures.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,6 +33,8 @@ textarea{resize:vertical;min-height:100px}
 .demos a{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);color:#9C9383;padding:7px 16px;border-radius:999px;font-size:13px;font-weight:500;transition:.15s;text-decoration:none}
 .demos a:hover{border-color:#E9B44C;color:#E9B44C}
 .hint{font-size:13px;color:#6E6657;margin-top:6px}
+.wf-banner{display:none;margin:16px 0 4px;background:rgba(94,224,108,.06);border:1px solid rgba(94,224,108,.3);border-radius:13px;padding:12px 16px;font-size:14px;color:#B8E6C0}
+.wf-banner b{color:#5EE06C}
 </style>
 </head>
 <body>
@@ -41,7 +43,7 @@ textarea{resize:vertical;min-height:100px}
   <div class="logo-row">
     <span class="logo-t">SOLOS</span>
   </div>
-  <div class="sub"><b>Devis gratuit</b> — réponse par email en quelques heures.<br>Audit de votre fiche Google offert.</div>
+  <div class="sub"><b>Devis gratuit</b> — réponse par email en quelques heures.<br>Audit de votre fiche Google / diagnostic de votre activité offert.</div>
 
   <form id="f">
     <label>Nom complet *</label>
@@ -55,12 +57,14 @@ textarea{resize:vertical;min-height:100px}
     <label>Service souhaité *</label>
     <select id="svc" required>
       <option value="">— Choisir un service —</option>
+      <option>Automatisation — 59 DT/mois</option>
+      <option>Pack 3 automatisations — 129 DT/mois</option>
+      <option>Agent IA sur-mesure — 1 200 DT + 199 DT/mois</option>
       <option>Site vitrine — 700 DT</option>
       <option>Site pro / santé — 1 400 DT</option>
       <option>Boutique en ligne — 2 500 DT</option>
       <option>Fiche Google — 250 DT</option>
       <option>Reels — dès 200 DT</option>
-      <option>Intégration IA — sur devis</option>
       <option>Plusieurs services</option>
     </select>
     <label>Votre besoin</label>
@@ -69,31 +73,46 @@ textarea{resize:vertical;min-height:100px}
   </form>
   <div class="ok" id="ok">Demande envoyée ! On vous répond par email très vite.</div>
   <div class="demos">
-    <a href="https://solos-tn.github.io/solos/demos/vitrine-commerce/" target="_blank">Exemple : commerce</a>
-    <a href="https://solos-tn.github.io/solos/demos/pro-sante/" target="_blank">Exemple : santé</a>
-    <a href="https://solos-tn.github.io/solos/demos/boutique-ecommerce/" target="_blank">Exemple : boutique</a>
+    <a href="https://solos-tn.github.io/solos/demos/vitrine-mode/" target="_blank">Exemple : vitrine</a>
+    <a href="https://solos-tn.github.io/solos/demos/pro-dentiste/" target="_blank">Exemple : santé</a>
+    <a href="https://solos-tn.github.io/solos/demos/boutique-sneakers/" target="_blank">Exemple : boutique</a>
   </div>
-  <div class="foot">Solos · Intelligence artificielle · solos-tn.github.io/solos</div>
+  <div class="foot">Solos · Automatisation &amp; Intelligence artificielle · solos-tn.github.io/solos</div>
 </div>
 
 <script>
 var WEBHOOK = "https://races-montana-que-gsm.trycloudflare.com/lead";
 var CONTACT_EMAIL = "solos@agentmail.to";
-// Pré-remplissage depuis le catalogue (?modele=vitrine|pro|boutique)
+// Pré-remplissage depuis le catalogue (?modele=vitrine|pro|boutique, ?workflow=<slug>, ?service=agent-ia)
 (function(){
-  var m = new URLSearchParams(location.search).get('modele');
-  if(!m) return;
+  var p = new URLSearchParams(location.search);
+  var m = p.get('modele');
+  var w = p.get('workflow');
+  var s = p.get('service');
+  var sel = document.getElementById('svc');
+  var msg = document.getElementById('msg');
   var map = {
     'vitrine':  ['Site vitrine — 700 DT', 'Modèle souhaité : Vitrine — 700 DT (offre de lancement, au lieu de 1 200 DT). '],
     'pro':      ['Site pro / santé — 1 400 DT', 'Modèle souhaité : Site Pro / Santé — 1 400 DT (offre de lancement, au lieu de 2 500 DT). '],
     'boutique': ['Boutique en ligne — 2 500 DT', 'Modèle souhaité : Boutique en ligne — 2 500 DT (offre de lancement, au lieu de 4 000 DT). ']
   };
-  var v = map[m]; if(!v) return;
-  var sel = document.getElementById('svc');
+  var wfmap = {
+    'rdv-sante':   ['Automatisation — 59 DT/mois', 'Automatisation souhaitée : Rendez-vous Santé (dentiste/médecin) — bienvenue + rappel J-1 + confirmation + avis Google. 59 DT/mois (offre de lancement, au lieu de 79 DT). '],
+    'rdv-salon':   ['Automatisation — 59 DT/mois', 'Automatisation souhaitée : Rendez-vous Salon — confirmation + rappel + avis Google. 59 DT/mois (offre de lancement, au lieu de 79 DT). '],
+    'reservation-resto': ['Automatisation — 59 DT/mois', 'Automatisation souhaitée : Réservation Restaurant — confirmation + rappel + anti-no-show. 59 DT/mois (offre de lancement, au lieu de 79 DT). '],
+    'devis-garage':['Automatisation — 59 DT/mois', 'Automatisation souhaitée : Devis Garage — accusé 30 s + relance 48 h + avis. 59 DT/mois (offre de lancement, au lieu de 79 DT). '],
+    'commande-boutique': ['Automatisation — 59 DT/mois', 'Automatisation souhaitée : Commande Boutique — confirmation + suivi + avis. 59 DT/mois (offre de lancement, au lieu de 79 DT). '],
+    'lead-immo':   ['Automatisation — 59 DT/mois', 'Automatisation souhaitée : Lead Immobilier — réponse auto + alerte équipe + relance. 59 DT/mois (offre de lancement, au lieu de 79 DT). '],
+    'pack':        ['Pack 3 automatisations — 129 DT/mois', 'Pack de 3 automatisations souhaité — 129 DT/mois (offre de lancement, au lieu de 169 DT). Lesquelles ? ']
+  };
+  var v = null;
+  if (s === 'agent-ia') v = ['Agent IA sur-mesure — 1 200 DT + 199 DT/mois', 'Agent IA sur-mesure souhaité — diagnostic offert. 1 200 DT (offre de lancement, au lieu de 1 800 DT) + 199 DT/mois de supervision. Consommation LLM à ma charge sur ma propre clé. '];
+  else if (w && wfmap[w]) v = wfmap[w];
+  else if (m && map[m]) v = map[m];
+  if (!v) return;
   for(var i=0;i<sel.options.length;i++){
     if(sel.options[i].text === v[0]){ sel.selectedIndex = i; break; }
   }
-  var msg = document.getElementById('msg');
   msg.value = v[1] + msg.value;
 })();
 document.getElementById("f").addEventListener("submit", function(e){
