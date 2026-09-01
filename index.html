@@ -33,6 +33,10 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .lang-btn{background:none;border:none;color:#8F8778;font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px;padding:6px 9px;border-radius:8px;cursor:pointer;transition:.15s}
 .lang-btn:hover{color:#F0EBDF}
 .lang-btn.on{background:linear-gradient(92deg,#E9B44C,#F0C75E);color:#120D04}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-burger{display:none;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.15);color:#F0EBDF;width:42px;height:42px;border-radius:11px;align-items:center;justify-content:center;cursor:pointer;transition:.15s}
+.nav-burger:hover{border-color:#E9B44C}
+.nav-burger svg{width:20px;height:20px;stroke:#F0EBDF}
 .hero{position:relative;padding:110px 0 84px;text-align:center}
 .parts{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 .parts i{position:absolute;bottom:-12px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.9),rgba(233,180,76,.0) 70%);opacity:0;animation:rise linear infinite}
@@ -100,6 +104,14 @@ section{padding:86px 0}
 .wf .wf-cta{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:14px;font-weight:700;color:#E9B44C;font-family:'Space Grotesk',sans-serif;transition:.15s}
 .wf .wf-cta svg{width:16px;height:16px;stroke:#E9B44C;transition:.15s}
 .wf:hover .wf-cta{gap:12px}
+/* MARQUEE WORKFLOWS */
+.wf-marquee{position:relative;margin-top:34px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.wf-track{display:flex;width:max-content;animation:wfMarquee 46s linear infinite;will-change:transform}
+.wf-marquee:hover .wf-track,.wf-marquee:focus-within .wf-track{animation-play-state:paused}
+.wf-set{display:flex;gap:16px;padding-right:16px;flex:none}
+@keyframes wfMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.wf{flex:0 0 300px;width:300px}
+.wf-hint{text-align:center;color:#6E6657;font-size:13px;margin-top:16px;letter-spacing:.3px}
 /* AGENT IA */
 .agent-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:center}
 .harnais{position:relative;background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.1);border-radius:26px;padding:34px 26px;overflow:hidden}
@@ -117,6 +129,13 @@ section{padding:86px 0}
 .ag b{display:block;font-size:13px;color:#E8E1D2}
 .ag span{font-size:11px;color:#8F8778}
 .ag-line{width:60%;height:1px;background:linear-gradient(90deg,transparent,rgba(233,180,76,.45),transparent)}
+.hub{position:relative}
+.hub::before{content:"";position:absolute;inset:-9px;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 72%,rgba(233,180,76,.85) 92%,transparent 100%);animation:hubspin 4s linear infinite;-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));pointer-events:none}
+@keyframes hubspin{to{transform:rotate(360deg)}}
+.ag.lit{border-color:rgba(94,224,108,.6);background:rgba(94,224,108,.07);box-shadow:0 0 20px rgba(94,224,108,.2)}
+.ag.lit .ag-ic{background:rgba(94,224,108,.16);border-color:rgba(94,224,108,.6)}
+.ag.lit .ag-ic svg{stroke:#5EE06C}
+.ag.lit b{color:#F5F0E6}
 .agent-txt h3{font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-.6px;margin-bottom:14px}
 .agent-txt p{color:#9C9383;font-size:15.5px;margin-bottom:14px}
 .agent-txt ul{list-style:none;margin:16px 0 22px}
@@ -215,7 +234,19 @@ footer a{color:#9C9383;transition:.15s}
 footer a:hover{color:#E9B44C}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
 .rv.on{opacity:1;transform:none}
-@media(max-width:680px){nav .menu{display:none}.stats{gap:30px}.agent-grid{grid-template-columns:1fr}.farr{display:none}.fnode{width:150px}}
+@media(max-width:680px){
+  nav .menu{display:none;position:absolute;top:70px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:rgba(5,7,15,.98);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.1);padding:8px 24px 18px;box-shadow:0 24px 40px rgba(0,0,0,.5)}
+  nav .menu.open{display:flex}
+  nav .menu a{padding:13px 0;width:100%;font-size:16px;border-bottom:1px solid rgba(255,255,255,.06)}
+  nav .menu a.nav-cta{background:linear-gradient(92deg,#E9B44C,#F0C75E);color:#120D04!important;border-bottom:none;margin-top:8px;padding:12px 18px;border-radius:12px;width:auto}
+  .nav-burger{display:flex}
+  .stats{gap:30px}
+  .agent-grid{grid-template-columns:1fr}
+  .farr{display:none}
+  .fnode{width:150px}
+  .wf{flex:0 0 300px;width:300px}
+}
+@media(prefers-reduced-motion:reduce){.wf-track,.hub::before{animation:none}.wf-marquee{overflow-x:auto}}
 html[dir=rtl] .wf .wf-price s{margin-right:0;margin-left:6px}
 html[dir=rtl] .tier .prix s{margin-right:0}
 html[dir=rtl] .agent-txt ul li{padding-left:0;padding-right:28px}
@@ -234,7 +265,7 @@ html[dir=rtl] .extra .e-p{float:left}
     <a class="logo-row" href="index.html">
       <span class="logo-t grad">SOLOS</span>
     </a>
-    <div class="menu">
+    <div class="menu" id="navMenu">
       <a href="#automatisation" data-i18n="nav_auto">Automatisation</a>
       <a href="#agent-ia" data-i18n="nav_agent">Agent IA</a>
       <a href="#tarifs" data-i18n="nav_tarifs">Tarifs</a>
@@ -242,11 +273,16 @@ html[dir=rtl] .extra .e-p{float:left}
       <a href="#contact" data-i18n="nav_contact">Contact</a>
       <a class="nav-cta" href="formulaire.html" data-i18n="nav_devis">Devis gratuit</a>
     </div>
+    <div class="nav-right">
       <div class="lang-sw" role="group" aria-label="Langue / Language">
         <button class="lang-btn on" data-lang="fr" type="button">FR</button>
         <button class="lang-btn" data-lang="en" type="button">EN</button>
         <button class="lang-btn" data-lang="ar" type="button">ع</button>
       </div>
+      <button class="nav-burger" id="navBurger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -326,49 +362,54 @@ html[dir=rtl] .extra .e-p{float:left}
       <div class="demo-note" id="flowNote" data-i18n="demo_note">5 étapes · 0 intervention humaine · emails envoyés automatiquement</div>
     </div>
 
-    <div class="wf-grid">
-      <a class="wf rv" href="formulaire.html?workflow=rdv-sante">
+    <div class="wf-marquee">
+      <div class="wf-track" id="wfTrack">
+        <div class="wf-set">
+          <a class="wf" href="formulaire.html?workflow=rdv-sante">
         <div class="wf-top"><span class="wf-tag" data-i18n="wf1_tag">Santé · Dentiste · Médecin</span><span class="wf-price"><s>79 DT</s>59 DT/mois</span></div>
         <h3 data-i18n="wf1_t">Rendez-vous santé</h3>
         <p data-i18n="wf1_d">Bienvenue + rappel J-1 + confirmation + demande d'avis. Fini les rendez-vous oubliés.</p>
         <div class="wf-seq"><i data-i18n="wf1_s1">RDV pris</i><i data-i18n="wf1_s2">Bienvenue</i><i data-i18n="wf1_s3">Rappel J-1</i><i data-i18n="wf1_s4">Confirmation</i><i data-i18n="wf1_s5">Avis</i></div>
         <span class="wf-cta"><span data-i18n="wf_cta">Activer cette automatisation</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="wf rv" href="formulaire.html?workflow=rdv-salon">
+      <a class="wf" href="formulaire.html?workflow=rdv-salon">
         <div class="wf-top"><span class="wf-tag" data-i18n="wf2_tag">Salon · Coiffure · Beauté</span><span class="wf-price"><s>79 DT</s>59 DT/mois</span></div>
         <h3 data-i18n="wf2_t">Rendez-vous salon</h3>
         <p data-i18n="wf2_d">Confirmation immédiate, rappel la veille, demande d'avis. Moins de no-shows, plus de fidélité.</p>
         <div class="wf-seq"><i data-i18n="wf2_s1">RDV WhatsApp</i><i data-i18n="wf2_s2">Confirmation</i><i data-i18n="wf2_s3">Rappel J-1</i><i data-i18n="wf2_s4">Avis Google</i></div>
         <span class="wf-cta"><span data-i18n="wf_cta">Activer cette automatisation</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="wf rv" href="formulaire.html?workflow=reservation-resto">
+      <a class="wf" href="formulaire.html?workflow=reservation-resto">
         <div class="wf-top"><span class="wf-tag" data-i18n="wf3_tag">Restaurant · Café</span><span class="wf-price"><s>79 DT</s>59 DT/mois</span></div>
         <h3 data-i18n="wf3_t">Réservation restaurant</h3>
         <p data-i18n="wf3_d">Confirmation de table, rappel le jour même, libération automatique des tables non confirmées.</p>
         <div class="wf-seq"><i data-i18n="wf3_s1">Réservation</i><i data-i18n="wf3_s2">Confirmation</i><i data-i18n="wf3_s3">Rappel J-0</i><i data-i18n="wf3_s4">Anti-no-show</i></div>
         <span class="wf-cta"><span data-i18n="wf_cta">Activer cette automatisation</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="wf rv" href="formulaire.html?workflow=devis-garage">
+      <a class="wf" href="formulaire.html?workflow=devis-garage">
         <div class="wf-top"><span class="wf-tag" data-i18n="wf4_tag">Garage · Auto · Atelier</span><span class="wf-price"><s>79 DT</s>59 DT/mois</span></div>
         <h3 data-i18n="wf4_t">Devis garage</h3>
         <p data-i18n="wf4_d">Accusé en 30 s, relance à 48 h, demande d'avis. Les demandes de devis ne dorment plus.</p>
         <div class="wf-seq"><i data-i18n="wf4_s1">Demande devis</i><i data-i18n="wf4_s2">Accusé 30 s</i><i data-i18n="wf4_s3">Relance 48 h</i><i data-i18n="wf4_s4">Avis</i></div>
         <span class="wf-cta"><span data-i18n="wf_cta">Activer cette automatisation</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="wf rv" href="formulaire.html?workflow=commande-boutique">
+      <a class="wf" href="formulaire.html?workflow=commande-boutique">
         <div class="wf-top"><span class="wf-tag" data-i18n="wf5_tag">Boutique · E-commerce</span><span class="wf-price"><s>79 DT</s>59 DT/mois</span></div>
         <h3 data-i18n="wf5_t">Commande boutique</h3>
         <p data-i18n="wf5_d">Confirmation de commande, suivi à 24 h, demande d'avis après réception. Le client est suivi de A à Z.</p>
         <div class="wf-seq"><i data-i18n="wf5_s1">Commande</i><i data-i18n="wf5_s2">Confirmation</i><i data-i18n="wf5_s3">Suivi 24 h</i><i data-i18n="wf5_s4">Avis</i></div>
         <span class="wf-cta"><span data-i18n="wf_cta">Activer cette automatisation</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="wf rv" href="formulaire.html?workflow=lead-immo">
+      <a class="wf" href="formulaire.html?workflow=lead-immo">
         <div class="wf-top"><span class="wf-tag" data-i18n="wf6_tag">Immobilier · Agence</span><span class="wf-price"><s>79 DT</s>59 DT/mois</span></div>
         <h3 data-i18n="wf6_t">Lead immobilier</h3>
         <p data-i18n="wf6_d">Réponse immédiate au prospect + notification à l'équipe + relance à 48 h. Jamais un lead perdu.</p>
         <div class="wf-seq"><i data-i18n="wf6_s1">Lead reçu</i><i data-i18n="wf6_s2">Réponse auto</i><i data-i18n="wf6_s3">Alerte équipe</i><i data-i18n="wf6_s4">Relance 48 h</i></div>
         <span class="wf-cta"><span data-i18n="wf_cta">Activer cette automatisation</span> <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
+        </div>
+      </div>
+      <div class="wf-hint" data-i18n="wf_hint">Survolez pour explorer — cliquez pour activer</div>
     </div>
     <div class="mods-cta rv"><a class="btn btn-o" href="formulaire.html?workflow=pack" data-i18n="wf_pack">Composer mon pack de 3 automatisations — 129 DT/mois</a></div>
   </div>
@@ -660,7 +701,7 @@ html[dir=rtl] .extra .e-p{float:left}
     wf4_tag:"Garage · Auto · Atelier",wf4_t:"Devis garage",wf4_d:"Accusé en 30 s, relance à 48 h, demande d'avis. Les demandes de devis ne dorment plus.",wf4_s1:"Demande devis",wf4_s2:"Accusé 30 s",wf4_s3:"Relance 48 h",wf4_s4:"Avis",
     wf5_tag:"Boutique · E-commerce",wf5_t:"Commande boutique",wf5_d:"Confirmation de commande, suivi à 24 h, demande d'avis après réception. Le client est suivi de A à Z.",wf5_s1:"Commande",wf5_s2:"Confirmation",wf5_s3:"Suivi 24 h",wf5_s4:"Avis",
     wf6_tag:"Immobilier · Agence",wf6_t:"Lead immobilier",wf6_d:"Réponse immédiate au prospect + notification à l'équipe + relance à 48 h. Jamais un lead perdu.",wf6_s1:"Lead reçu",wf6_s2:"Réponse auto",wf6_s3:"Alerte équipe",wf6_s4:"Relance 48 h",
-    wf_cta:"Activer cette automatisation",wf_pack:"Composer mon pack de 3 automatisations — 129 DT/mois",
+    wf_cta:"Activer cette automatisation",wf_pack:"Composer mon pack de 3 automatisations — 129 DT/mois",wf_hint:"Survolez pour explorer — cliquez pour activer",
     s2_title:"Agent IA sur-mesure",s2_sub:"Un système d'agents intelligents conçu pour VOTRE business, pas un produit générique. Il travaille en autonomie, produit des rapports et propose des améliorations — jour et nuit.",
     hub_t:"ORCHESTRATEUR",hub_s:"Pilote les agents",
     ag1_t:"Accueil 24/7",ag1_d:"Répond aux clients",ag2_t:"Agenda",ag2_d:"Gère les RDV",ag3_t:"Rapports",ag3_d:"Analyse + suggestions",ag4_t:"Relances",ag4_d:"Devis, no-shows, avis",ag5_t:"Qualité",ag5_d:"Vérifie chaque action",ag6_t:"Analyse",ag6_d:"Propose des améliorations",
@@ -710,7 +751,7 @@ html[dir=rtl] .extra .e-p{float:left}
     wf4_tag:"Garage · Auto · Workshop",wf4_t:"Garage quotes",wf4_d:"Acknowledgement in 30 s, 48 h follow-up, review request. Quote requests never sleep.",wf4_s1:"Quote request",wf4_s2:"30 s ack",wf4_s3:"48 h follow-up",wf4_s4:"Review",
     wf5_tag:"Shop · E-commerce",wf5_t:"Shop orders",wf5_d:"Order confirmation, 24 h tracking, review request after delivery. Customers followed from A to Z.",wf5_s1:"Order",wf5_s2:"Confirmation",wf5_s3:"24 h tracking",wf5_s4:"Review",
     wf6_tag:"Real estate · Agency",wf6_t:"Real estate leads",wf6_d:"Instant reply to the prospect + team notification + 48 h follow-up. Never a lost lead.",wf6_s1:"Lead received",wf6_s2:"Auto reply",wf6_s3:"Team alert",wf6_s4:"48 h follow-up",
-    wf_cta:"Activate this automation",wf_pack:"Build my 3-automation pack — 129 DT/month",
+    wf_cta:"Activate this automation",wf_pack:"Build my 3-automation pack — 129 DT/month",wf_hint:"Hover to explore — click to activate",
     s2_title:"Custom AI Agent",s2_sub:"A system of intelligent agents designed for YOUR business, not a generic product. It works autonomously, produces reports and suggests improvements — day and night.",
     hub_t:"ORCHESTRATOR",hub_s:"Drives the agents",
     ag1_t:"24/7 Reception",ag1_d:"Answers customers",ag2_t:"Agenda",ag2_d:"Manages appointments",ag3_t:"Reports",ag3_d:"Analysis + suggestions",ag4_t:"Follow-ups",ag4_d:"Quotes, no-shows, reviews",ag5_t:"Quality",ag5_d:"Checks every action",ag6_t:"Analysis",ag6_d:"Suggests improvements",
@@ -760,7 +801,7 @@ html[dir=rtl] .extra .e-p{float:left}
     wf4_tag:"كراج · سيارات · ورشة",wf4_t:"عروض أسعار الكراج",wf4_d:"إشعار استلام خلال 30 ثانية، متابعة بعد 48 ساعة، طلب تقييم. طلبات العروض لا تنام.",wf4_s1:"طلب عرض",wf4_s2:"إشعار 30 ث",wf4_s3:"متابعة 48 س",wf4_s4:"تقييم",
     wf5_tag:"متجر · تجارة إلكترونية",wf5_t:"طلبات المتجر",wf5_d:"تأكيد الطلب، متابعة بعد 24 ساعة، طلب تقييم بعد الاستلام. العميل متابَع من الألف إلى الياء.",wf5_s1:"طلب",wf5_s2:"تأكيد",wf5_s3:"متابعة 24 س",wf5_s4:"تقييم",
     wf6_tag:"عقارات · وكالة",wf6_t:"عملاء العقارات",wf6_d:"رد فوري على العميل المحتمل + إشعار الفريق + متابعة بعد 48 ساعة. لا عميل يضيع أبداً.",wf6_s1:"استلام العميل",wf6_s2:"رد تلقائي",wf6_s3:"تنبيه الفريق",wf6_s4:"متابعة 48 س",
-    wf_cta:"تفعيل هذه الأتمتة",wf_pack:"أنشئ باقة 3 أتمتة — 129 دينار/شهر",
+    wf_cta:"تفعيل هذه الأتمتة",wf_pack:"أنشئ باقة 3 أتمتة — 129 دينار/شهر",wf_hint:"مرّر للاستكشاف — انقر للتفعيل",
     s2_title:"وكيل ذكاء اصطناعي حسب الطلب",s2_sub:"نظام وكلاء أذكياء مصمم لنشاطك أنت، لا لمنتج عام. يعمل باستقلالية، ينتج تقارير ويقترح تحسينات — ليلاً ونهاراً.",
     hub_t:"المنسّق",hub_s:"يقود الوكلاء",
     ag1_t:"استقبال 24/7",ag1_d:"يجيب العملاء",ag2_t:"الجدول",ag2_d:"يدير المواعيد",ag3_t:"تقارير",ag3_d:"تحليل + اقتراحات",ag4_t:"متابعات",ag4_d:"عروض، غياب، تقييمات",ag5_t:"الجودة",ag5_d:"يتحقق من كل إجراء",ag6_t:"تحليل",ag6_d:"يقترح تحسينات",
@@ -811,6 +852,40 @@ html[dir=rtl] .extra .e-p{float:left}
     b.addEventListener('click',function(){apply(b.getAttribute('data-lang'));});
   });
   apply(lang);
+})();
+// Menu mobile (hamburger)
+(function(){
+  var b=document.getElementById('navBurger'), m=document.getElementById('navMenu');
+  if(!b||!m) return;
+  b.addEventListener('click',function(){
+    m.classList.toggle('open');
+    b.setAttribute('aria-expanded', m.classList.contains('open')?'true':'false');
+  });
+  m.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){ m.classList.remove('open'); b.setAttribute('aria-expanded','false'); });
+  });
+})();
+// Marquee workflows : duplique le set pour une boucle sans couture
+(function(){
+  var track=document.getElementById('wfTrack');
+  if(!track) return;
+  var set=track.querySelector('.wf-set');
+  if(!set) return;
+  var cl=set.cloneNode(true);
+  cl.setAttribute('aria-hidden','true');
+  cl.querySelectorAll('a').forEach(function(a){ a.setAttribute('tabindex','-1'); });
+  track.appendChild(cl);
+})();
+// Agent IA : les agents s'allument en séquence (orchestrateur -> tâches)
+(function(){
+  var ags=[].slice.call(document.querySelectorAll('.harnais .agents .ag'));
+  if(ags.length<2) return;
+  var i=0;
+  setInterval(function(){
+    ags.forEach(function(a){ a.classList.remove('lit'); });
+    ags[i].classList.add('lit');
+    i=(i+1)%ags.length;
+  },900);
 })();
 </script>
 </body>
